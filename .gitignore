@@ -6,4 +6,5 @@ Input/*.smcl
 !Input/training_data.txt
 Output/*.txt
 XMLParam/Temp/*.xml
+XMLParam/Temp/BackUp/*
 *_in_use.txt
