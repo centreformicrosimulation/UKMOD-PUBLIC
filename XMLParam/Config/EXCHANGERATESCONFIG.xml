@@ -1338,7 +1338,7 @@
     <FirstSemester>-1</FirstSemester>
     <SecondSemester>-1</SecondSemester>
     <Default>June 30</Default>
-    <ValidFor>uk_2022, uk_2023, uk_2024, uk_2025, uk_2026</ValidFor>
+    <ValidFor>uk_2022, uk_2023, uk_2024, uk_2025, uk_2026, uk_2024_pre_as</ValidFor>
   </ExchangeRates>
   <ExchangeRates>
     <Country>UK15</Country>
@@ -1449,24 +1449,6 @@
     <ValidFor>uk_2015</ValidFor>
   </ExchangeRates>
   <ExchangeRates>
-    <Country>EN</Country>
-    <June30>0.91243</June30>
-    <YearAverage>0.8897</YearAverage>
-    <FirstSemester>-1</FirstSemester>
-    <SecondSemester>-1</SecondSemester>
-    <Default>June 30</Default>
-    <ValidFor>uk_2020precovid19, uk_2020postcovid19</ValidFor>
-  </ExchangeRates>
-  <ExchangeRates>
-    <Country>EN</Country>
-    <June30>0.8571</June30>
-    <YearAverage>0.8602</YearAverage>
-    <FirstSemester>-1</FirstSemester>
-    <SecondSemester>-1</SecondSemester>
-    <Default>June 30</Default>
-    <ValidFor>uk_2021precovid19, uk_2021postcovid19</ValidFor>
-  </ExchangeRates>
-  <ExchangeRates>
     <Country>NI</Country>
     <June30>0.8265</June30>
     <YearAverage>0.81948</YearAverage>
@@ -1509,7 +1491,7 @@
     <FirstSemester>-1</FirstSemester>
     <SecondSemester>-1</SecondSemester>
     <Default>June 30</Default>
-    <ValidFor>ni_2020, en_2020precovid19, en_2020postcovid19</ValidFor>
+    <ValidFor>ni_2020, uk_2020precovid19, uk_2020postcovid19</ValidFor>
   </ExchangeRates>
   <ExchangeRates>
     <Country>NI</Country>
@@ -1518,10 +1500,19 @@
     <FirstSemester>-1</FirstSemester>
     <SecondSemester>-1</SecondSemester>
     <Default>June 30</Default>
-    <ValidFor>ni_2022, ni_2023, ni_2024, ni_2025, ni_2026, ni_2021, en_2021precovid19, en_2021postcovid19</ValidFor>
+    <ValidFor>ni_2021, uk_2021precovid19, uk_2021postcovid19</ValidFor>
   </ExchangeRates>
   <ExchangeRates>
     <Country>NI</Country>
+    <June30>0.8612</June30>
+    <YearAverage>0.8543</YearAverage>
+    <FirstSemester>-1</FirstSemester>
+    <SecondSemester>-1</SecondSemester>
+    <Default>June 30</Default>
+    <ValidFor>ni_2022, ni_2023, ni_2024, ni_2025, ni_2026, ni_2024_pre_as</ValidFor>
+  </ExchangeRates>
+  <ExchangeRates>
+    <Country>EN</Country>
     <June30>0.91243</June30>
     <YearAverage>0.8897</YearAverage>
     <FirstSemester>-1</FirstSemester>
@@ -1530,13 +1521,22 @@
     <ValidFor>uk_2020precovid19, uk_2020postcovid19</ValidFor>
   </ExchangeRates>
   <ExchangeRates>
-    <Country>NI</Country>
+    <Country>EN</Country>
     <June30>0.8571</June30>
     <YearAverage>0.8602</YearAverage>
     <FirstSemester>-1</FirstSemester>
     <SecondSemester>-1</SecondSemester>
     <Default>June 30</Default>
     <ValidFor>uk_2021precovid19, uk_2021postcovid19</ValidFor>
+  </ExchangeRates>
+  <ExchangeRates>
+    <Country>EN</Country>
+    <June30>0.8612</June30>
+    <YearAverage>0.8543</YearAverage>
+    <FirstSemester>-1</FirstSemester>
+    <SecondSemester>-1</SecondSemester>
+    <Default>June 30</Default>
+    <ValidFor>en_2024_pre_as</ValidFor>
   </ExchangeRates>
   <ExchangeRates>
     <Country>SC</Country>
@@ -1591,6 +1591,15 @@
     <SecondSemester>-1</SecondSemester>
     <Default>June 30</Default>
     <ValidFor>sc_2022, sc_2023, sc_2024, sc_2025, sc_2026, sc_2021, en_2021precovid19, en_2021postcovid19</ValidFor>
+  </ExchangeRates>
+  <ExchangeRates>
+    <Country>SC</Country>
+    <June30>0.8612</June30>
+    <YearAverage>0.8543</YearAverage>
+    <FirstSemester>-1</FirstSemester>
+    <SecondSemester>-1</SecondSemester>
+    <Default>June 30</Default>
+    <ValidFor>sc_2024_pre_as</ValidFor>
   </ExchangeRates>
   <ExchangeRates>
     <Country>SC</Country>
@@ -1663,6 +1672,15 @@
     <SecondSemester>-1</SecondSemester>
     <Default>June 30</Default>
     <ValidFor>wl_2022, wl_2023, wl_2024, wl_2025, wl_2026, wl_2021, en_2021precovid19, en_2021postcovid19</ValidFor>
+  </ExchangeRates>
+  <ExchangeRates>
+    <Country>WL</Country>
+    <June30>0.8612</June30>
+    <YearAverage>0.8543</YearAverage>
+    <FirstSemester>-1</FirstSemester>
+    <SecondSemester>-1</SecondSemester>
+    <Default>June 30</Default>
+    <ValidFor>wl_2024_pre_as</ValidFor>
   </ExchangeRates>
   <ExchangeRates>
     <Country>WL</Country>

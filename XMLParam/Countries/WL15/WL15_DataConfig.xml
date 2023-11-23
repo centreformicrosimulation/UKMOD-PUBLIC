@@ -12,7 +12,6 @@
     <UseCommonDefault>yes</UseCommonDefault>
     <ReadXVariables>no</ReadXVariables>
     <ListStringOutVar />
-    <IndirectTaxTableYear />
     <DBSystemConfig>
       <SystemID>5C0A2815-347E-4B4A-A299-6DA2091637C8</SystemID>
       <SystemName>UK_2005</SystemName>
@@ -1512,7 +1511,6 @@
     <UseCommonDefault>yes</UseCommonDefault>
     <ReadXVariables>no</ReadXVariables>
     <ListStringOutVar>sid_h sft_h</ListStringOutVar>
-    <IndirectTaxTableYear />
     <DBSystemConfig>
       <SystemID>CC164516-B98D-4569-B793-DBA30D1EB6BA</SystemID>
       <SystemName>UK_2009</SystemName>
@@ -2202,7 +2200,6 @@
     <UseCommonDefault>yes</UseCommonDefault>
     <ReadXVariables>no</ReadXVariables>
     <ListStringOutVar>sid_h sft_h</ListStringOutVar>
-    <IndirectTaxTableYear />
     <DBSystemConfig>
       <SystemID>E63FE95D-5803-40B0-9375-BF850895C006</SystemID>
       <SystemName>UK_2010</SystemName>
@@ -2352,7 +2349,6 @@
     <UseCommonDefault>yes</UseCommonDefault>
     <ReadXVariables>no</ReadXVariables>
     <ListStringOutVar>sid_h sft_h</ListStringOutVar>
-    <IndirectTaxTableYear />
     <DBSystemConfig>
       <SystemID>045710EA-C7BF-4718-A1FC-3BDD76A9D79A</SystemID>
       <SystemName>UK_2011</SystemName>
@@ -2502,7 +2498,6 @@
     <UseCommonDefault>yes</UseCommonDefault>
     <ReadXVariables>no</ReadXVariables>
     <ListStringOutVar>sid_h sft_h</ListStringOutVar>
-    <IndirectTaxTableYear />
     <DBSystemConfig>
       <SystemID>B9F75804-BB55-4A8E-9AEB-04F0C598C0D5</SystemID>
       <SystemName>UK_2012</SystemName>
@@ -2652,7 +2647,6 @@
     <UseCommonDefault>yes</UseCommonDefault>
     <ReadXVariables>no</ReadXVariables>
     <ListStringOutVar>sid_h sft_h</ListStringOutVar>
-    <IndirectTaxTableYear />
     <DBSystemConfig>
       <SystemID>ecea8fcc-fb26-43e4-a179-4976ca7baeb9</SystemID>
       <SystemName>UK_2013</SystemName>
@@ -2802,7 +2796,6 @@
     <UseCommonDefault>yes</UseCommonDefault>
     <ReadXVariables>no</ReadXVariables>
     <ListStringOutVar>sid_h sft_h</ListStringOutVar>
-    <IndirectTaxTableYear />
     <DBSystemConfig>
       <SystemID>79093d66-349f-4740-ad40-139cb54a08ba</SystemID>
       <SystemName>UK_2014</SystemName>
@@ -2952,7 +2945,6 @@
     <UseCommonDefault>yes</UseCommonDefault>
     <ReadXVariables>no</ReadXVariables>
     <ListStringOutVar>sid_h sft_h</ListStringOutVar>
-    <IndirectTaxTableYear />
     <DBSystemConfig>
       <SystemID>071abeb7-94eb-49f1-9a0b-3686f31311a7</SystemID>
       <SystemName>UK_2015</SystemName>
@@ -3102,7 +3094,6 @@
     <UseCommonDefault>yes</UseCommonDefault>
     <ReadXVariables>no</ReadXVariables>
     <ListStringOutVar>sid_h sft_h</ListStringOutVar>
-    <IndirectTaxTableYear />
   </DataBase>
   <DataBase>
     <ID>f5ace9a8-8c60-41c5-b107-cacd79c8f805</ID>
@@ -3117,7 +3108,6 @@
     <UseCommonDefault>yes</UseCommonDefault>
     <ReadXVariables>no</ReadXVariables>
     <ListStringOutVar>sid_h sft_h</ListStringOutVar>
-    <IndirectTaxTableYear />
   </DataBase>
   <DataBase>
     <ID>d8a22a2e-9376-47fe-bc1a-3d1df091c019</ID>
@@ -3132,7 +3122,6 @@
     <UseCommonDefault>yes</UseCommonDefault>
     <ReadXVariables>no</ReadXVariables>
     <ListStringOutVar>sid_h sft_h</ListStringOutVar>
-    <IndirectTaxTableYear />
   </DataBase>
   <DataBase>
     <ID>88e63f6c-e3e5-42da-8e4b-8a1277b3e4cf</ID>
@@ -3147,7 +3136,6 @@
     <UseCommonDefault>yes</UseCommonDefault>
     <ReadXVariables>no</ReadXVariables>
     <ListStringOutVar>sid_h sft_h</ListStringOutVar>
-    <IndirectTaxTableYear />
   </DataBase>
   <DataBase>
     <ID>5ebb15ff-bb52-42b3-a377-7ca18e497569</ID>
@@ -3162,7 +3150,6 @@
     <UseCommonDefault>yes</UseCommonDefault>
     <ReadXVariables>no</ReadXVariables>
     <ListStringOutVar>sid_h sft_h</ListStringOutVar>
-    <IndirectTaxTableYear />
   </DataBase>
   <DataBase>
     <ID>f7a5fd0d-e158-435a-98af-8d8c97f25c37</ID>
@@ -3177,7 +3164,6 @@
     <UseCommonDefault>yes</UseCommonDefault>
     <ReadXVariables>no</ReadXVariables>
     <ListStringOutVar>sid_h sft_h</ListStringOutVar>
-    <IndirectTaxTableYear />
   </DataBase>
   <DataBase>
     <ID>c59ce7fc-5957-4c0d-bf65-03cd3b009ece</ID>
@@ -3192,7 +3178,6 @@
     <UseCommonDefault>yes</UseCommonDefault>
     <ReadXVariables>no</ReadXVariables>
     <ListStringOutVar>sid_h sft_h</ListStringOutVar>
-    <IndirectTaxTableYear />
   </DataBase>
   <DataBase>
     <ID>CB3C9319-5E80-4E05-B13A-FC286B446CE1</ID>
@@ -15191,7 +15176,6 @@
     <UseCommonDefault>no</UseCommonDefault>
     <ReadXVariables>no</ReadXVariables>
     <ListStringOutVar />
-    <IndirectTaxTableYear />
     <DBSystemConfig>
       <SystemID>5C0A2815-347E-4B4A-A299-6DA2091637C8</SystemID>
       <SystemName>UK_2005</SystemName>
@@ -18190,7 +18174,6 @@
     <UseCommonDefault>no</UseCommonDefault>
     <ReadXVariables>no</ReadXVariables>
     <ListStringOutVar />
-    <IndirectTaxTableYear />
     <DBSystemConfig>
       <SystemID>5C0A2815-347E-4B4A-A299-6DA2091637C8</SystemID>
       <SystemName>UK_2005</SystemName>
@@ -19690,7 +19673,6 @@
     <UseCommonDefault>no</UseCommonDefault>
     <ReadXVariables>no</ReadXVariables>
     <ListStringOutVar />
-    <IndirectTaxTableYear />
     <DBSystemConfig>
       <SystemID>5C0A2815-347E-4B4A-A299-6DA2091637C8</SystemID>
       <SystemName>UK_2005</SystemName>
@@ -21190,7 +21172,6 @@
     <UseCommonDefault>no</UseCommonDefault>
     <ReadXVariables>no</ReadXVariables>
     <ListStringOutVar />
-    <IndirectTaxTableYear />
     <DBSystemConfig>
       <SystemID>5C0A2815-347E-4B4A-A299-6DA2091637C8</SystemID>
       <SystemName>UK_2005</SystemName>
@@ -22690,7 +22671,6 @@
     <UseCommonDefault>no</UseCommonDefault>
     <ReadXVariables>no</ReadXVariables>
     <ListStringOutVar />
-    <IndirectTaxTableYear />
     <DBSystemConfig>
       <SystemID>5C0A2815-347E-4B4A-A299-6DA2091637C8</SystemID>
       <SystemName>UK_2005</SystemName>
@@ -24190,7 +24170,6 @@
     <UseCommonDefault>no</UseCommonDefault>
     <ReadXVariables>no</ReadXVariables>
     <ListStringOutVar />
-    <IndirectTaxTableYear />
     <DBSystemConfig>
       <SystemID>5C0A2815-347E-4B4A-A299-6DA2091637C8</SystemID>
       <SystemName>UK_2005</SystemName>
@@ -25690,7 +25669,6 @@
     <UseCommonDefault>no</UseCommonDefault>
     <ReadXVariables>no</ReadXVariables>
     <ListStringOutVar />
-    <IndirectTaxTableYear />
     <DBSystemConfig>
       <SystemID>5C0A2815-347E-4B4A-A299-6DA2091637C8</SystemID>
       <SystemName>UK_2005</SystemName>
@@ -27190,7 +27168,6 @@
     <UseCommonDefault>no</UseCommonDefault>
     <ReadXVariables>no</ReadXVariables>
     <ListStringOutVar />
-    <IndirectTaxTableYear />
     <DBSystemConfig>
       <SystemID>5C0A2815-347E-4B4A-A299-6DA2091637C8</SystemID>
       <SystemName>UK_2005</SystemName>
