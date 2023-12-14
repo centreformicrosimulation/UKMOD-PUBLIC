@@ -9,15 +9,6 @@
     <ValidFor>be_2001</ValidFor>
   </ExchangeRates>
   <ExchangeRates>
-    <Country>BG</Country>
-    <June30>1.9558</June30>
-    <YearAverage>1.9558</YearAverage>
-    <FirstSemester>-1</FirstSemester>
-    <SecondSemester>-1</SecondSemester>
-    <Default>June 30</Default>
-    <ValidFor>bg_2022, bg_2006, bg_2007, bg_2008, bg_2009, bg_2010, bg_2011, bg_2012, bg_2013, bg_2001, bg_2014, bg_2015, bg_2016, bg_2017, bg_2018, bg_2019, bg_2020, bg_2021</ValidFor>
-  </ExchangeRates>
-  <ExchangeRates>
     <Country>CZ</Country>
     <June30>30.03</June30>
     <YearAverage>29.782</YearAverage>
@@ -173,7 +164,7 @@
   <ExchangeRates>
     <Country>CZ</Country>
     <June30>24.739</June30>
-    <YearAverage>-1</YearAverage>
+    <YearAverage>24.566</YearAverage>
     <FirstSemester>-1</FirstSemester>
     <SecondSemester>-1</SecondSemester>
     <Default>June 30</Default>
@@ -317,20 +308,11 @@
   <ExchangeRates>
     <Country>DK</Country>
     <June30>7.4392</June30>
-    <YearAverage>-1</YearAverage>
+    <YearAverage>7.4396</YearAverage>
     <FirstSemester>-1</FirstSemester>
     <SecondSemester>-1</SecondSemester>
     <Default>June 30</Default>
     <ValidFor>dk_2022</ValidFor>
-  </ExchangeRates>
-  <ExchangeRates>
-    <Country>EE</Country>
-    <June30>15.6466</June30>
-    <YearAverage>15.6466</YearAverage>
-    <FirstSemester>-1</FirstSemester>
-    <SecondSemester>-1</SecondSemester>
-    <Default>June 30</Default>
-    <ValidFor>ee_2005, ee_2006, ee_2007, ee_2008, ee_2009, ee_2010, ee_2011, ee_2012, ee_2013, ee_2001, ee_2014, ee_2015, ee_2016, ee_2017, ee_2018, ee_2019, ee_2020, ee_2021, ee_2022</ValidFor>
   </ExchangeRates>
   <ExchangeRates>
     <Country>EN</Country>
@@ -693,15 +675,6 @@
     <ValidFor>hr_2021</ValidFor>
   </ExchangeRates>
   <ExchangeRates>
-    <Country>HR</Country>
-    <June30>7.5307</June30>
-    <YearAverage>-1</YearAverage>
-    <FirstSemester>-1</FirstSemester>
-    <SecondSemester>-1</SecondSemester>
-    <Default>June 30</Default>
-    <ValidFor>hr_2022</ValidFor>
-  </ExchangeRates>
-  <ExchangeRates>
     <Country>HU</Country>
     <June30>243.63</June30>
     <YearAverage>244.3835</YearAverage>
@@ -866,7 +839,7 @@
   <ExchangeRates>
     <Country>HU</Country>
     <June30>397.04</June30>
-    <YearAverage>-1</YearAverage>
+    <YearAverage>391.29</YearAverage>
     <FirstSemester>-1</FirstSemester>
     <SecondSemester>-1</SecondSemester>
     <Default>June 30</Default>
@@ -943,15 +916,6 @@
     <SecondSemester>-1</SecondSemester>
     <Default>June 30</Default>
     <ValidFor>lv_2013</ValidFor>
-  </ExchangeRates>
-  <ExchangeRates>
-    <Country>LV</Country>
-    <June30>0.702804</June30>
-    <YearAverage>0.702804</YearAverage>
-    <FirstSemester>-1</FirstSemester>
-    <SecondSemester>-1</SecondSemester>
-    <Default>June 30</Default>
-    <ValidFor>lv_2014, lv_2015, lv_2016, lv_2017, lv_2018, lv_2019, lv_2020, lv_2021, lv_2022</ValidFor>
   </ExchangeRates>
   <ExchangeRates>
     <Country>MT</Country>
@@ -1224,15 +1188,6 @@
     <ValidFor>ni_2015</ValidFor>
   </ExchangeRates>
   <ExchangeRates>
-    <Country>NL</Country>
-    <June30>2.20371</June30>
-    <YearAverage>2.20371</YearAverage>
-    <FirstSemester>-1</FirstSemester>
-    <SecondSemester>-1</SecondSemester>
-    <Default>June 30</Default>
-    <ValidFor>nl_2006, nl_2007, nl_2008, nl_2009, nl_2010, nl_2011, nl_2012, nl_2013, nl_2014, nl_2015, nl_2016, nl_2017, nl_2018, nl_2019, nl_2020, nl_2021, nl_2022</ValidFor>
-  </ExchangeRates>
-  <ExchangeRates>
     <Country>PL</Country>
     <June30>4.0388</June30>
     <YearAverage>4.023</YearAverage>
@@ -1388,7 +1343,7 @@
   <ExchangeRates>
     <Country>PL</Country>
     <June30>4.6904</June30>
-    <YearAverage>-1</YearAverage>
+    <YearAverage>4.6861</YearAverage>
     <FirstSemester>-1</FirstSemester>
     <SecondSemester>-1</SecondSemester>
     <Default>June 30</Default>
@@ -1532,7 +1487,7 @@
   <ExchangeRates>
     <Country>RO</Country>
     <June30>4.9464</June30>
-    <YearAverage>-1</YearAverage>
+    <YearAverage>4.9313</YearAverage>
     <FirstSemester>-1</FirstSemester>
     <SecondSemester>-1</SecondSemester>
     <Default>June 30</Default>
@@ -1946,7 +1901,7 @@
   <ExchangeRates>
     <Country>SE</Country>
     <June30>10.73</June30>
-    <YearAverage>-1</YearAverage>
+    <YearAverage>10.6296</YearAverage>
     <FirstSemester>-1</FirstSemester>
     <SecondSemester>-1</SecondSemester>
     <Default>June 30</Default>
@@ -1971,15 +1926,6 @@
     <ValidFor>si_2006</ValidFor>
   </ExchangeRates>
   <ExchangeRates>
-    <Country>SI</Country>
-    <June30>239.64</June30>
-    <YearAverage>239.64</YearAverage>
-    <FirstSemester>-1</FirstSemester>
-    <SecondSemester>-1</SecondSemester>
-    <Default>June 30</Default>
-    <ValidFor>si_2018, si_2007, si_2008, si_2009, si_2010, si_2011, si_2012, si_2013, si_2014, si_2015, si_2016, si_2017, si_2019, si_2020, si_2021</ValidFor>
-  </ExchangeRates>
-  <ExchangeRates>
     <Country>SK</Country>
     <June30>38.35</June30>
     <YearAverage>37.234</YearAverage>
@@ -1996,15 +1942,6 @@
     <SecondSemester>-1</SecondSemester>
     <Default>June 30</Default>
     <ValidFor>sk_2007</ValidFor>
-  </ExchangeRates>
-  <ExchangeRates>
-    <Country>SK</Country>
-    <June30>30.205</June30>
-    <YearAverage>31.262</YearAverage>
-    <FirstSemester>-1</FirstSemester>
-    <SecondSemester>-1</SecondSemester>
-    <Default>June 30</Default>
-    <ValidFor>sk_2021, sk_2008, sk_2009, sk_2010, sk_2011, sk_2012, sk_2013, sk_2014, sk_2015, sk_2016, sk_2017, sk_2018, sk_2019, sk_2020, sk_2022</ValidFor>
   </ExchangeRates>
   <ExchangeRates>
     <Country>UK</Country>
@@ -2545,5 +2482,122 @@
     <SecondSemester>-1</SecondSemester>
     <Default>June 30</Default>
     <ValidFor>wl_2015</ValidFor>
+  </ExchangeRates>
+  <ExchangeRates>
+    <Country>BG</Country>
+    <June30>1.9558</June30>
+    <YearAverage>1.9558</YearAverage>
+    <FirstSemester>-1</FirstSemester>
+    <SecondSemester>-1</SecondSemester>
+    <Default>June 30</Default>
+    <ValidFor>bg_2022, bg_2006, bg_2007, bg_2008, bg_2009, bg_2010, bg_2011, bg_2012, bg_2013, bg_2001, bg_2014, bg_2015, bg_2016, bg_2017, bg_2018, bg_2019, bg_2020, bg_2021, bg_2023</ValidFor>
+  </ExchangeRates>
+  <ExchangeRates>
+    <Country>CZ</Country>
+    <June30>23.742</June30>
+    <YearAverage>-1</YearAverage>
+    <FirstSemester>-1</FirstSemester>
+    <SecondSemester>-1</SecondSemester>
+    <Default>June 30</Default>
+    <ValidFor>cz_2023</ValidFor>
+  </ExchangeRates>
+  <ExchangeRates>
+    <Country>DK</Country>
+    <June30>7.4474</June30>
+    <YearAverage>-1</YearAverage>
+    <FirstSemester>-1</FirstSemester>
+    <SecondSemester>-1</SecondSemester>
+    <Default>June 30</Default>
+    <ValidFor>dk_2023</ValidFor>
+  </ExchangeRates>
+  <ExchangeRates>
+    <Country>EE</Country>
+    <June30>15.6466</June30>
+    <YearAverage>15.6466</YearAverage>
+    <FirstSemester>-1</FirstSemester>
+    <SecondSemester>-1</SecondSemester>
+    <Default>June 30</Default>
+    <ValidFor>ee_2005, ee_2006, ee_2007, ee_2008, ee_2009, ee_2010, ee_2011, ee_2012, ee_2013, ee_2001, ee_2014, ee_2015, ee_2016, ee_2017, ee_2018, ee_2019, ee_2020, ee_2021, ee_2022, ee_2023</ValidFor>
+  </ExchangeRates>
+  <ExchangeRates>
+    <Country>HR</Country>
+    <June30>7.5307</June30>
+    <YearAverage>7.5349</YearAverage>
+    <FirstSemester>-1</FirstSemester>
+    <SecondSemester>-1</SecondSemester>
+    <Default>June 30</Default>
+    <ValidFor>hr_2022, hr_2023</ValidFor>
+  </ExchangeRates>
+  <ExchangeRates>
+    <Country>HU</Country>
+    <June30>371.93</June30>
+    <YearAverage>-1</YearAverage>
+    <FirstSemester>-1</FirstSemester>
+    <SecondSemester>-1</SecondSemester>
+    <Default>June 30</Default>
+    <ValidFor>hu_2023</ValidFor>
+  </ExchangeRates>
+  <ExchangeRates>
+    <Country>LV</Country>
+    <June30>0.702804</June30>
+    <YearAverage>0.702804</YearAverage>
+    <FirstSemester>-1</FirstSemester>
+    <SecondSemester>-1</SecondSemester>
+    <Default>June 30</Default>
+    <ValidFor>lv_2014, lv_2015, lv_2016, lv_2017, lv_2018, lv_2019, lv_2020, lv_2021, lv_2022, lv_2023</ValidFor>
+  </ExchangeRates>
+  <ExchangeRates>
+    <Country>NL</Country>
+    <June30>2.20371</June30>
+    <YearAverage>2.20371</YearAverage>
+    <FirstSemester>-1</FirstSemester>
+    <SecondSemester>-1</SecondSemester>
+    <Default>June 30</Default>
+    <ValidFor>nl_2006, nl_2007, nl_2008, nl_2009, nl_2010, nl_2011, nl_2012, nl_2013, nl_2014, nl_2015, nl_2016, nl_2017, nl_2018, nl_2019, nl_2020, nl_2021, nl_2022, nl_2023</ValidFor>
+  </ExchangeRates>
+  <ExchangeRates>
+    <Country>PL</Country>
+    <June30>4.4388</June30>
+    <YearAverage>-1</YearAverage>
+    <FirstSemester>-1</FirstSemester>
+    <SecondSemester>-1</SecondSemester>
+    <Default>June 30</Default>
+    <ValidFor>pl_2023</ValidFor>
+  </ExchangeRates>
+  <ExchangeRates>
+    <Country>RO</Country>
+    <June30>4.9635</June30>
+    <YearAverage>-1</YearAverage>
+    <FirstSemester>-1</FirstSemester>
+    <SecondSemester>-1</SecondSemester>
+    <Default>June 30</Default>
+    <ValidFor>ro_2023</ValidFor>
+  </ExchangeRates>
+  <ExchangeRates>
+    <Country>SE</Country>
+    <June30>11.8055</June30>
+    <YearAverage>-1</YearAverage>
+    <FirstSemester>-1</FirstSemester>
+    <SecondSemester>-1</SecondSemester>
+    <Default>June 30</Default>
+    <ValidFor>se_2023</ValidFor>
+  </ExchangeRates>
+  <ExchangeRates>
+    <Country>SI</Country>
+    <June30>239.64</June30>
+    <YearAverage>239.64</YearAverage>
+    <FirstSemester>-1</FirstSemester>
+    <SecondSemester>-1</SecondSemester>
+    <Default>June 30</Default>
+    <ValidFor>si_2018, si_2007, si_2008, si_2009, si_2010, si_2011, si_2012, si_2013, si_2014, si_2015, si_2016, si_2017, si_2019, si_2020, si_2021, si_2023</ValidFor>
+  </ExchangeRates>
+  <ExchangeRates>
+    <Country>SK</Country>
+    <June30>30.205</June30>
+    <YearAverage>31.262</YearAverage>
+    <FirstSemester>-1</FirstSemester>
+    <SecondSemester>-1</SecondSemester>
+    <Default>June 30</Default>
+    <ValidFor>sk_2021, sk_2008, sk_2009, sk_2010, sk_2011, sk_2012, sk_2013, sk_2014, sk_2015, sk_2016, sk_2017, sk_2018, sk_2019, sk_2020, sk_2022, sk_2023</ValidFor>
   </ExchangeRates>
 </ExchangeRatesConfig>
