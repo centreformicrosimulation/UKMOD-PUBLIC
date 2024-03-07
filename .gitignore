@@ -1,7 +1,6 @@
 
 EM3Translation/XMLParam/*
 Input/*.txt
-Input/*.xls
 Input/*.smcl
 !Input/training_data.txt
 Output/*.txt
