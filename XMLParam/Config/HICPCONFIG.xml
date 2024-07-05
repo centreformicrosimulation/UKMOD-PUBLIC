@@ -7,20 +7,8 @@
   </HICP>
   <HICP>
     <Country>UK</Country>
-    <Year>2002</Year>
-    <Value>74.5</Value>
-    <Comment><![CDATA[Until 2023: OECD HICP (All items) for the UK; from 2024 series projected using OBR March 2024 Economic and fiscal outlook, Detailed Forecast Tables: Economy, Table 1.7.]]></Comment>
-  </HICP>
-  <HICP>
-    <Country>UK</Country>
     <Year>2003</Year>
     <Value>75.5</Value>
-    <Comment><![CDATA[Until 2023: OECD HICP (All items) for the UK; from 2024 series projected using OBR March 2024 Economic and fiscal outlook, Detailed Forecast Tables: Economy, Table 1.7.]]></Comment>
-  </HICP>
-  <HICP>
-    <Country>UK</Country>
-    <Year>2004</Year>
-    <Value>76.5</Value>
     <Comment><![CDATA[Until 2023: OECD HICP (All items) for the UK; from 2024 series projected using OBR March 2024 Economic and fiscal outlook, Detailed Forecast Tables: Economy, Table 1.7.]]></Comment>
   </HICP>
   <HICP>
@@ -159,6 +147,18 @@
     <Country>UK</Country>
     <Year>2027</Year>
     <Value>139.64</Value>
+    <Comment><![CDATA[Until 2023: OECD HICP (All items) for the UK; from 2024 series projected using OBR March 2024 Economic and fiscal outlook, Detailed Forecast Tables: Economy, Table 1.7.]]></Comment>
+  </HICP>
+  <HICP>
+    <Country>UK</Country>
+    <Year>2002</Year>
+    <Value>74.5</Value>
+    <Comment><![CDATA[Until 2023: OECD HICP (All items) for the UK; from 2024 series projected using OBR March 2024 Economic and fiscal outlook, Detailed Forecast Tables: Economy, Table 1.7.]]></Comment>
+  </HICP>
+  <HICP>
+    <Country>UK</Country>
+    <Year>2004</Year>
+    <Value>76.5</Value>
     <Comment><![CDATA[Until 2023: OECD HICP (All items) for the UK; from 2024 series projected using OBR March 2024 Economic and fiscal outlook, Detailed Forecast Tables: Economy, Table 1.7.]]></Comment>
   </HICP>
   <HICP>
