@@ -4617,7 +4617,7 @@
             <Name>Var</Name>
             <Comment><![CDATA[]]></Comment>
             <PrivateComment />
-            <Value><![CDATA[i_tin_div]]></Value>
+            <Value><![CDATA[tax_div_s]]></Value>
             <Order>20</Order>
             <ValueType>variable</ValueType>
             <Group />
@@ -4630,7 +4630,7 @@
             <Name>Var</Name>
             <Comment><![CDATA[]]></Comment>
             <PrivateComment />
-            <Value><![CDATA[i_tin_sav]]></Value>
+            <Value><![CDATA[tax_sav_s]]></Value>
             <Order>19</Order>
             <ValueType>variable</ValueType>
             <Group />
@@ -4643,7 +4643,7 @@
             <Name>Var</Name>
             <Comment><![CDATA[]]></Comment>
             <PrivateComment />
-            <Value><![CDATA[i_tin_rUK_NSND]]></Value>
+            <Value><![CDATA[tax_nsnd_s]]></Value>
             <Order>18</Order>
             <ValueType>variable</ValueType>
             <Group />
@@ -5599,7 +5599,7 @@
             <Name>Formula</Name>
             <Comment><![CDATA[]]></Comment>
             <PrivateComment />
-            <Value><![CDATA[ils_earns_prim1 + ils_tax_prim1 + ils_sicee_prim1 + ils_sicse_prim1 + ils_sicer_prim1 + ils_sicct_prim1 + ils_ben_prim1 + ils_benmt_prim1 + ils_bennt_prim1 + ils_pen_prim1 + tin00_s_prim1 + tin11_s_prim1 + tin12_s_prim1 + i_tin_rUK_NSND_prim1 + i_tin_sav_prim1 + i_tin_div_prim1 + ils_sicot_prim1 + i_bmu_tmu_prim1]]></Value>
+            <Value><![CDATA[ils_earns_prim1 + ils_tax_prim1 + ils_sicee_prim1 + ils_sicse_prim1 + ils_sicer_prim1 + ils_sicct_prim1 + ils_ben_prim1 + ils_benmt_prim1 + ils_bennt_prim1 + ils_pen_prim1 + tin00_s_prim1 + tin11_s_prim1 + tin12_s_prim1 + tax_nsnd_s_prim1 + tax_sav_s_prim1 + tax_div_s_prim1 + ils_sicot_prim1 + i_bmu_tmu_prim1]]></Value>
             <Order>1</Order>
             <ValueType>formula</ValueType>
             <Group />

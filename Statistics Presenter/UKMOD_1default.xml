@@ -12,7 +12,9 @@
       ]]>
     </Description>
     <GeneralDescription>
-      <![CDATA[<p style='line-height:1.5'><b><span style='color:#0070C0'>Income concepts: </span></b></p>
+      <![CDATA[
+        <p style='line-height:1.5'><b><span style='color:#0070C0'>Template version: 2024.01 </span></b></p>
+        <p style='line-height:1.5'><b><span style='color:#0070C0'>Income concepts: </span></b></p>
         <p style='line-height:1.5'><u>Market/Original incomes</u> are the sum of income from employment and self-employment plus income from other sources. Other sources of market income include income from investment, property, private pensions, private transfers, and income of children younger than 16, minus private transfers paid to other households.</p>
         <p style='line-height:1.5'>All analyses of disposable income are presented on two bases: Before Housing Costs (BHC) and After Housing Costs (AHC).</p>
         <p style='line-height:1.5'><u>Disposable income BHC</u> is the sum of market incomes and benefits (incl. pensions) minus taxes and national insurance contributions.</p>
@@ -56,10 +58,10 @@
         <p style='line-height:1.5;margin-left:24.0pt;'>      Personal income tax: ils_taxsim = tin_s = tin12_s + tin11_s + tin00_s</p>
         <p style='line-height:1.5;margin-left:36.0pt;'>         Devolved taxes in Scotland: tin12_s</p>
         <p style='line-height:1.5;margin-left:36.0pt;'>         Devolved taxes in Wales: tin11_s</p>
-        <p style='line-height:1.5;margin-left:36.0pt;'>         Non-devolved taxes: tin00_s = i_tin_rUK_NSND + i_tin_sav + i_tin_div</p>
-        <p style='line-height:1.5;margin-left:48.0pt;'>            Non-devolved non-saving non-dividend taxes: i_tin_rUK_NSND</p>
-        <p style='line-height:1.5;margin-left:48.0pt;'>            Non-devolved saving income taxes: i_tin_sav</p>
-        <p style='line-height:1.5;margin-left:48.0pt;'>            Non-devolved dividend income taxes: i_tin_div</p>
+        <p style='line-height:1.5;margin-left:36.0pt;'>         Non-devolved taxes: tin00_s = tax_nsnd_s + tax_sav_s + tax_div_s</p>
+        <p style='line-height:1.5;margin-left:48.0pt;'>            Non-devolved non-saving non-dividend taxes: tax_nsnd_s</p>
+        <p style='line-height:1.5;margin-left:48.0pt;'>            Non-devolved saving income taxes: tax_sav_s</p>
+        <p style='line-height:1.5;margin-left:48.0pt;'>            Non-devolved dividend income taxes: tax_div_s</p>
         <p style='line-height:1.5;margin-left:24.0pt;'>      Council tax: i_bmu_tmu</p>
         <p style='line-height:1.5;margin-left:12.0pt;'>   All national insurance contributions: ils_sicdy + ils_sicer</p>
         <p style='line-height:1.5;margin-left:24.0pt;'>      National insurance contributions (personal): ils_sicdy = ils_sicee + ils_sicse + ils_sicot</p>
@@ -73,13 +75,14 @@
         <p style='line-height:1.5;margin-left:24.0pt;'>   Value Added Tax: il_tco_tt</p>
         <p style='line-height:1.5;'><b>Credited national insurance contributions</b>: ils_sicct = tscct_s</p>
         <p style='line-height:1.5;'><b>Government expenditure on benefits and tax credits</b>: ils_ben = ils_benmt + ils_bennt + ils_pen</p>
-        <p style='line-height:1.5;margin-left:12.0pt;'>   Means-tested non-pension benefits: ils_benmt = bsauc_s - brduc_s + bunmt_s + bsa_s + bsadi_s + boamt_s + bmu_s + bho_s - brd_s + bwkmt_s + bfamt_s + bmamt_s + bmamt01_s + bmascmt_s + bch_s + bchmt_s + bchmt01_s + bmascmt01_s + bched01_s + bched02_s + bhosc01_s + bsaec_s</p>
+        <p style='line-height:1.5;margin-left:12.0pt;'>   Means-tested non-pension benefits: ils_benmt = bsauc_s - brduc_s + bunmt_s + bsa_s + bsadi_s + boamt_s + boaht_s + bmu_s + bho_s - brd_s + bwkmt_s + bfamt_s + bmamt_s + bmamt01_s + bmascmt_s + bch_s + bchmt_s + bchmt01_s + bmascmt01_s + bched01_s + bched02_s + bhosc01_s + bsaec_s</p>
         <p style='line-height:1.5;margin-left:24.0pt;'>      Universal Credit: bsauc_s</p>
         <p style='line-height:1.5;margin-left:24.0pt;'>      Benefit cap (reducing Universal Credit): brduc_s</p>
         <p style='line-height:1.5;margin-left:24.0pt;'>      Income-based Jobseeker's Allowance: bunmt_s</p>
         <p style='line-height:1.5;margin-left:24.0pt;'>      Income Support not simulated elsewhere: bsa_s</p>
         <p style='line-height:1.5;margin-left:24.0pt;'>      Income-related Employment and Support Allowance: bsadi_s</p>
         <p style='line-height:1.5;margin-left:24.0pt;'>      Pension Credit: boamt_s</p>
+        <p style='line-height:1.5;margin-left:24.0pt;'>      Winter Fuel Allowance: boaht_s</p>
         <p style='line-height:1.5;margin-left:24.0pt;'>      Council Tax Benefit/Reduction: bmu_s</p>
         <p style='line-height:1.5;margin-left:24.0pt;'>      Housing Benefit: bho_s</p>
         <p style='line-height:1.5;margin-left:24.0pt;'>      Benefit cap (reducing Housing Benefit): brd_s</p>
@@ -96,11 +99,10 @@
         <p style='line-height:1.5;margin-left:24.0pt;'>      Discretionary Housing Payments (Scotland, from 2017): bhosc01_s</p>
         <p style='line-height:1.5;margin-left:24.0pt;'>      Cost of Living Payment (selected years): bsaec_s</p>
         <p style='line-height:1.5;margin-left:12.0pt;'>   Non-means-tested non-pension benefits: ils_bennt = simulated non-means-tested non-pension benefits + non-simulated non-means-tested non-pension benefits</p>
-        <p style='line-height:1.5;margin-left:24.0pt;'>      simulated non-means-tested non-pension benefits: bmact_s + bmanc_s + bpact_s + boaht_s + bunct_s + bchht_s + bcrdicm_s + bwkmcee_s + bwkmcse_s</p>
+        <p style='line-height:1.5;margin-left:24.0pt;'>      simulated non-means-tested non-pension benefits: bmact_s + bmanc_s + bpact_s + bunct_s + bchht_s + bcrdicm_s + bwkmcee_s + bwkmcse_s</p>
         <p style='line-height:1.5;margin-left:36.0pt;'>         Statutory Maternity Pay: bmact_s</p>
         <p style='line-height:1.5;margin-left:36.0pt;'>         Maternity Allowance: bmanc_s</p>
         <p style='line-height:1.5;margin-left:36.0pt;'>         Statutory Paternity Pay: bpact_s</p>
-        <p style='line-height:1.5;margin-left:36.0pt;'>         Winter Fuel Allowance: boaht_s</p>
         <p style='line-height:1.5;margin-left:36.0pt;'>         Contribution-based Jobseeker's Allowance: bunct_s</p>
         <p style='line-height:1.5;margin-left:36.0pt;'>         Scottish Child Winter Heating Assistance (from 2020): bchht_s</p>
         <p style='line-height:1.5;margin-left:36.0pt;'>         Scottish Carer's Allowance Supplement (from 2018): bcrdicm_s</p>
@@ -459,16 +461,16 @@
         <ReadVar>tin00_s</ReadVar>
       </OptionalVariable>
       <OptionalVariable>
-        <Name>i_tin_rUK_NSND</Name>
-        <ReadVar>i_tin_rUK_NSND</ReadVar>
+        <Name>tax_nsnd_s</Name>
+        <ReadVar>tax_nsnd_s</ReadVar>
       </OptionalVariable>
       <OptionalVariable>
-        <Name>i_tin_sav</Name>
-        <ReadVar>i_tin_sav</ReadVar>
+        <Name>tax_sav_s</Name>
+        <ReadVar>tax_sav_s</ReadVar>
       </OptionalVariable>
       <OptionalVariable>
-        <Name>i_tin_div</Name>
-        <ReadVar>i_tin_div</ReadVar>
+        <Name>tax_div_s</Name>
+        <ReadVar>tax_div_s</ReadVar>
       </OptionalVariable>
       <OptionalVariable>
         <Name>tin11_s</Name>
@@ -1211,7 +1213,7 @@
       <Action>
         <CalculationType>CreateArithmetic</CalculationType>
         <OutputVar>i_tin_sd</OutputVar>
-        <FormulaString><![CDATA[DATA_VAR[@i_tin_sav] + DATA_VAR[@i_tin_div]]]></FormulaString>
+        <FormulaString><![CDATA[DATA_VAR[@tax_sav_s] + DATA_VAR[@tax_div_s]]]></FormulaString>
       </Action>
       <Action>
         <CalculationType>CreateArithmetic</CalculationType>
@@ -1221,7 +1223,7 @@
       <Action>
         <CalculationType>CreateArithmetic</CalculationType>
         <OutputVar>nmtben_s</OutputVar>
-        <FormulaString><![CDATA[DATA_VAR[@bmact_s] + DATA_VAR[@bmanc_s] + DATA_VAR[@bpact_s] + DATA_VAR[@boaht_s] + DATA_VAR[@bunct_s] + DATA_VAR[@bchht_s] + DATA_VAR[@bcrdicm_s] + DATA_VAR[@bwkmcee_s] + DATA_VAR[@bwkmcse_s]]]></FormulaString>
+        <FormulaString><![CDATA[DATA_VAR[@bmact_s] + DATA_VAR[@bmanc_s] + DATA_VAR[@bpact_s] + DATA_VAR[@bunct_s] + DATA_VAR[@bchht_s] + DATA_VAR[@bcrdicm_s] + DATA_VAR[@bwkmcee_s] + DATA_VAR[@bwkmcse_s]]]></FormulaString>
       </Action>
       <Action>
         <CalculationType>CreateArithmetic</CalculationType>
@@ -1873,7 +1875,7 @@
                 <Parameters>
                   <Parameter>
                     <Name>BasePar</Name>
-                    <VarName>i_tin_rUK_NSND</VarName>
+                    <VarName>tax_nsnd_s</VarName>
                     <Reform>false</Reform>
                   </Parameter>
                 </Parameters>
@@ -1886,7 +1888,7 @@
                 <Parameters>
                   <Parameter>
                     <Name>BasePar</Name>
-                    <VarName>i_tin_sav</VarName>
+                    <VarName>tax_sav_s</VarName>
                     <Reform>false</Reform>
                   </Parameter>
                 </Parameters>
@@ -1899,7 +1901,7 @@
                 <Parameters>
                   <Parameter>
                     <Name>BasePar</Name>
-                    <VarName>i_tin_div</VarName>
+                    <VarName>tax_div_s</VarName>
                     <Reform>false</Reform>
                   </Parameter>
                 </Parameters>
@@ -2167,6 +2169,19 @@
             </Row>
             <Row>
               <BackgroundColour>#D9D9D9</BackgroundColour>
+              <Name>...... winter fuel allowance</Name>
+              <CellAction>
+                <Parameters>
+                  <Parameter>
+                    <Name>BasePar</Name>
+                    <VarName>boaht_s</VarName>
+                    <Reform>false</Reform>
+                  </Parameter>
+                </Parameters>
+              </CellAction>
+            </Row>
+            <Row>
+              <BackgroundColour>#D9D9D9</BackgroundColour>
               <Name>...... council tax benefit/reduction</Name>
               <CellAction>
                 <Parameters>
@@ -2419,19 +2434,6 @@
                   <Parameter>
                     <Name>BasePar</Name>
                     <VarName>bpact_s</VarName>
-                    <Reform>false</Reform>
-                  </Parameter>
-                </Parameters>
-              </CellAction>
-            </Row>
-            <Row>
-              <BackgroundColour>#D9D9D9</BackgroundColour>
-              <Name>......... winter fuel allowance</Name>
-              <CellAction>
-                <Parameters>
-                  <Parameter>
-                    <Name>BasePar</Name>
-                    <VarName>boaht_s</VarName>
                     <Reform>false</Reform>
                   </Parameter>
                 </Parameters>

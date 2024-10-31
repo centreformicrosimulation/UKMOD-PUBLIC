@@ -2112,7 +2112,7 @@
     <FirstSemester>-1</FirstSemester>
     <SecondSemester>-1</SecondSemester>
     <Default>June 30</Default>
-    <ValidFor>uk_2022, uk_2023, uk_2024, uk_2025, uk_2026, uk_2027</ValidFor>
+    <ValidFor>uk_2022, uk_2023, uk_2024, uk_2025, uk_2026, uk_2027, uk_2028, uk_2029</ValidFor>
   </ExchangeRates>
   <ExchangeRates>
     <Country>UK15</Country>
@@ -2715,7 +2715,7 @@
     <FirstSemester>-1</FirstSemester>
     <SecondSemester>-1</SecondSemester>
     <Default>June 30</Default>
-    <ValidFor>en_2027</ValidFor>
+    <ValidFor>en_2027, en_2028, en_2029</ValidFor>
   </ExchangeRates>
   <ExchangeRates>
     <Country>NI</Country>
@@ -2823,7 +2823,7 @@
     <FirstSemester>-1</FirstSemester>
     <SecondSemester>-1</SecondSemester>
     <Default>June 30</Default>
-    <ValidFor>ni_2027</ValidFor>
+    <ValidFor>ni_2027, ni_2028, ni_2029</ValidFor>
   </ExchangeRates>
   <ExchangeRates>
     <Country>NI</Country>
@@ -3138,7 +3138,7 @@
     <FirstSemester>-1</FirstSemester>
     <SecondSemester>-1</SecondSemester>
     <Default>June 30</Default>
-    <ValidFor>sc_2027</ValidFor>
+    <ValidFor>sc_2027, sc_2028, sc_2029</ValidFor>
   </ExchangeRates>
   <ExchangeRates>
     <Country>SC</Country>
@@ -3552,7 +3552,7 @@
     <FirstSemester>-1</FirstSemester>
     <SecondSemester>-1</SecondSemester>
     <Default>June 30</Default>
-    <ValidFor>wl_2027</ValidFor>
+    <ValidFor>wl_2027, wl_2028, wl_2029</ValidFor>
   </ExchangeRates>
   <ExchangeRates>
     <Country>WL</Country>

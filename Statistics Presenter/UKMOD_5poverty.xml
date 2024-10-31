@@ -9,6 +9,7 @@
     </Description>
     <GeneralDescription>
       <![CDATA[
+        <p style='line-height:1.5'><b><span style='color:#0070C0'>Template version: 2024.01 </span></b></p>
         <p style='line-height:1.5'><b><span style='color:#0070C0'>Poverty indicators:</span></b></p>
         <p style='line-height:1.5'>Households are defined as <u>being at risk of poverty (poor)</u> if their equivalised household disposable income is below the considered poverty line (in currency per week).</p>
         <p style='line-height:1.5'>The <u>poverty line</u> considered here is supplied as a parameter for analysis. In contrast, the standard definition of the poverty line is 60% of median equivalised household disposable income. For analysis based on the standard definition of the poverty line, see the "UKMOD Statistics - Default" template.</p>
