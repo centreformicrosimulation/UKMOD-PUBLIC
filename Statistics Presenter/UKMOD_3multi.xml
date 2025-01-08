@@ -12,11 +12,11 @@
     </Description>
     <GeneralDescription>
       <![CDATA[
-        <p style='line-height:1.5'><b><span style='color:#0070C0'>Template version: 2024.01 </span></b></p>
+        <p style='line-height:1.5'><b><span style='color:#0070C0'>Template version: 2024.02 </span></b></p>
         <p style='line-height:1.5'><b><span style='color:#0070C0'>Income concepts: </span></b></p>
         <p style='line-height:1.5'><u>Market/Original incomes</u> are the sum of income from employment and self-employment plus income from other sources. Other sources of market income include income from investment, property, private pensions, private transfers, and income of children younger than 16, minus private transfers paid to other households.</p>
         <p style='line-height:1.5'>All analyses of disposable income are presented on two bases: Before Housing Costs (BHC) and After Housing Costs (AHC).</p>
-        <p style='line-height:1.5'><u>Disposable income BHC</u> is the sum of market incomes and benefits (incl. pensions) minus taxes and national insurance contributions.</p>
+        <p style='line-height:1.5'><u>Disposable income BHC</u> is the sum of market incomes and benefits (incl. pensions) minus direct taxes and national insurance contributions.</p>
         <p style='line-height:1.5'><u>Disposable income AHC</u> equals disposable income BHC minus housing costs, where housing costs are from the Households Below Average Income (HBAI) micro-data. Housing costs include: rent (gross of housing benefit); water rates; community water charges and council water charges; mortgage interest payments; structural insurance premiums.</p>
         <p style='line-height:1.5'><u>Equivalised household (benefit unit) disposable income</u> is the total disposable income of the household (benefit unit) divided by the <u>OECD</u> scale (modified OECD scale), rescaled to a couple without children following the HBAI approach. The benefit unit is the nuclear family - the couple (cohabiting or married) or single adult plus any dependent children. For Before Housing Costs income, the equivalence scale attributes a weight of 0.67 to the head of the household/benefit unit, a weight of 0.33 to any other member aged 14 years or over, and a weight of 0.2 to every child aged under 14 years. For After Housing Costs income, the equivalence scale attributes a weight of 0.58 to the head of the household/benefit unit, 0.42 to any other member aged 14 years or over, and a weight of 0.2 for any child aged under 14 years.</p>
         <p style='line-height:1.5'><u>Decile groups</u> are calculated by ranking individuals according to their <u>equivalised</u> household (benefit unit) disposable income – either BHC or AHC – and dividing them into ten similar-sized groups. Some variation in the size of population deciles can arise due to the condition that all income units with the same equivalised income appear in the same decile group.</p>
@@ -37,6 +37,8 @@
         <p style='line-height:1.5;margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:36.0pt;margin-bottom:.0001pt;text-indent:-18.0pt;'><span style='font-family:Symbol'>·    </span>Someone is <u>in work</u> if he/she has income from employment or self-employment </p>
         <p style='margin-bottom:8.0pt;line-height:105%;'>&nbsp;</p>
         <p style='line-height:1.5'><b><span style='color:#0070C0'>The income concepts used throughout and the corresponding UKMOD variables are as follows</span></b></p>
+        <p style='line-height:1.5;'><b>Disposable income BHC</b>: ils_dispy = ils_origy + ils_ben – ils_tax – ils_sicdy (ils_sicer not reported as income)</p>
+        <p style='line-height:1.5;'><b>Disposable income AHC</b>: il_dispy_ahc = ils_dispy – xhc_hbai</p>
         <p style='line-height:1.5;'><b>Total market income</b>: ils_origy = ils_earns + other sources of market income</p>
         <p style='line-height:1.5;margin-left:12.0pt;'>   Employment and self-employment income: ils_earns = yem + yse</p>
         <p style='line-height:1.5;margin-left:24.0pt;'>      Employment income: yem</p>
@@ -50,7 +52,7 @@
         <p style='line-height:1.5;margin-left:24.0pt;'>      Received maintenance payment: yptmp</p>
         <p style='line-height:1.5;margin-left:24.0pt;'>      Maintenance paid: xmp</p>
         <p style='line-height:1.5;margin-left:24.0pt;'>      Employee private compulsory pension contributions: tpcee_s</p>
-        <p style='line-height:1.5;margin-left:0.0pt;'><b>Government revenue through taxes and national insurance contributions</b>: ils_tax + ils_sicdy + ils_sicer</p>
+        <p style='line-height:1.5;margin-left:0.0pt;'><b>Government revenue through direct taxes and national insurance contributions</b>: ils_tax + ils_sicdy + ils_sicer</p>
         <p style='line-height:1.5;margin-left:12.0pt;'>   Direct taxes: ils_tax = ils_taxsim + i_bmu_tmu</p>
         <p style='line-height:1.5;margin-left:24.0pt;'>      Personal income tax: ils_taxsim = tin_s = tin12_s + tin11_s + tin00_s</p>
         <p style='line-height:1.5;margin-left:36.0pt;'>         Devolved taxes in Scotland: tin12_s</p>
@@ -67,7 +69,12 @@
         <p style='line-height:1.5;margin-left:36.0pt;'>         Other national insurance contributions (non-existent in the UK): ils_sicot</p>
         <p style='line-height:1.5;margin-left:24.0pt;'>      National insurance contributions (employer): ils_sicer = tscer_s</p>
         <p style='line-height:1.5;'><b>Credited national insurance contributions</b>: ils_sicct = tscct_s</p>
+        <p style='line-height:1.5;'><b>Indirect taxes</b>: il_tco_adj_tall = il_tco_adj_tv + il_tco_adj_ta + tco_adj_tt</p>
+        <p style='line-height:1.5;margin-left:24.0pt;'>   Ad valorem excise: il_tco_adj_tv</p>
+        <p style='line-height:1.5;margin-left:24.0pt;'>   Specific excise: il_tco_adj_ta</p>
+        <p style='line-height:1.5;margin-left:24.0pt;'>   Value Added Tax: tco_adj_tt</p>
         <p style='line-height:1.5;'><b>Government expenditure on benefits and tax credits</b>: ils_ben = ils_benmt + ils_bennt + ils_pen</p>
+        <p style='line-height:1.5;margin-left:12.0pt;'>   Note that categorisation between means-tested and non-means-tested benefits described here is relevant for the most recent policy environment. In contrast the aggregates ils_benmt and ils_bennt evolve as individual benefits move from one category to another. This means that the aggregates reported for historical systems for means-tested and non-means-tested benefits may depart from the sum of the components listed here.</p>         
         <p style='line-height:1.5;margin-left:12.0pt;'>   Means-tested non-pension benefits: ils_benmt = bsauc_s - brduc_s + bunmt_s + bsa_s + bsadi_s + boamt_s + boaht_s + bmu_s + bho_s - brd_s + bwkmt_s + bfamt_s + bmamt_s + bmamt01_s + bmascmt_s + bch_s + bchmt_s + bchmt01_s + bmascmt01_s + bched01_s + bched02_s + bhosc01_s + bsaec_s</p>
         <p style='line-height:1.5;margin-left:24.0pt;'>      Universal Credit: bsauc_s</p>
         <p style='line-height:1.5;margin-left:24.0pt;'>      Benefit cap (reducing Universal Credit): brduc_s</p>
@@ -117,13 +124,11 @@
         <p style='line-height:1.5;margin-left:36.0pt;'>         Statutory Sick Pay: bhlwk</p>
         <p style='line-height:1.5;margin-left:36.0pt;'>         Training Allowance: buntr</p>
         <p style='line-height:1.5;margin-left:36.0pt;'>         Other non-means-tested benefits: bot</p>
-        <p style='line-height:1.5;margin-left:12.0pt;'>   Pensions: ils_pen = boact00 + boactcm + boawr + bsuwd</p>
-        <p style='line-height:1.5;margin-left:24.0pt;'>      Base State pension: boact00</p>
+        <p style='line-height:1.5;margin-left:12.0pt;'>   Pensions: ils_pen = boact_s + boactcm + boawr + bsuwd</p>
+        <p style='line-height:1.5;margin-left:24.0pt;'>      Base State pension: boact_s</p>
         <p style='line-height:1.5;margin-left:24.0pt;'>      Second State Pension: boactcm</p>
         <p style='line-height:1.5;margin-left:24.0pt;'>      War pension: boawr</p>
         <p style='line-height:1.5;margin-left:24.0pt;'>      Widow's pension: bsuwd</p>
-        <p style='line-height:1.5;margin-left:0.0pt;'><b>Disposable income BHC</b>: ils_dispy = ils_origy + ils_ben – ils_tax – ils_sicdy (ils_sicer not reported as income)</p>
-        <p style='line-height:1.5;margin-left:0.0pt;'><b>Disposable income AHC</b>: il_dispy_ahc = ils_dispy – xhc_hbai</p>
         <p style='line-height:1.5'><span lang=EN>&nbsp;</span></p>
       ]]>
     </GeneralDescription>
@@ -225,6 +230,156 @@
       </RequiredVariable>
     </RequiredVariables>
     <OptionalVariables>
+      <OptionalVariable>
+        <Name>xtotal00</Name>
+        <ReadVar>xtotal00</ReadVar>
+        <DefaultValue>0</DefaultValue>
+      </OptionalVariable>
+      <OptionalVariable>
+        <Name>idHouseholdHead</Name>
+        <ReadVar>tu_household_uk_HeadID</ReadVar>
+        <DefaultValue>0</DefaultValue>
+      </OptionalVariable>
+      <OptionalVariable>
+        <Name>indirectTaxes</Name>
+        <ReadVar>il_tco_tall</ReadVar>
+        <DefaultValue>0</DefaultValue>
+      </OptionalVariable>
+      <OptionalVariable>
+        <Name>adValoremExcise</Name>
+        <ReadVar>il_tco_tv</ReadVar>
+        <DefaultValue>0</DefaultValue>
+      </OptionalVariable>
+      <OptionalVariable>
+        <Name>specificExcise</Name>
+        <ReadVar>il_tco_ta</ReadVar>
+        <DefaultValue>0</DefaultValue>
+      </OptionalVariable>
+      <OptionalVariable>
+        <Name>valueAddedTax</Name>
+        <ReadVar>il_tco_tt</ReadVar>
+        <DefaultValue>0</DefaultValue>
+      </OptionalVariable>
+      <OptionalVariable>
+        <Name>sExciseSpirits</Name>
+        <ReadVar>tco_ta_02111</ReadVar>
+        <DefaultValue>0</DefaultValue>
+      </OptionalVariable>
+      <OptionalVariable>
+        <Name>sExciseWine</Name>
+        <ReadVar>tco_ta_02121</ReadVar>
+        <DefaultValue>0</DefaultValue>
+      </OptionalVariable>
+      <OptionalVariable>
+        <Name>sExciseSWine</Name>
+        <ReadVar>tco_ta_02122</ReadVar>
+        <DefaultValue>0</DefaultValue>
+      </OptionalVariable>
+      <OptionalVariable>
+        <Name>sExciseBeer</Name>
+        <ReadVar>tco_ta_02131</ReadVar>
+        <DefaultValue>0</DefaultValue>
+      </OptionalVariable>
+      <OptionalVariable>
+        <Name>sExciseCigarettes</Name>
+        <ReadVar>tco_ta_02211</ReadVar>
+        <DefaultValue>0</DefaultValue>
+      </OptionalVariable>
+      <OptionalVariable>
+        <Name>sExciseCigars</Name>
+        <ReadVar>tco_ta_02212</ReadVar>
+        <DefaultValue>0</DefaultValue>
+      </OptionalVariable>
+      <OptionalVariable>
+        <Name>sExciseOTobacco</Name>
+        <ReadVar>tco_ta_02213</ReadVar>
+        <DefaultValue>0</DefaultValue>
+      </OptionalVariable>
+      <OptionalVariable>
+        <Name>vExciseCigarettes</Name>
+        <ReadVar>tco_tv_02211</ReadVar>
+        <DefaultValue>0</DefaultValue>
+      </OptionalVariable>
+      <OptionalVariable>
+        <Name>sExciseLiqFuel</Name>
+        <ReadVar>tco_ta_04531</ReadVar>
+        <DefaultValue>0</DefaultValue>
+      </OptionalVariable>
+      <OptionalVariable>
+        <Name>sExciseTransFuel</Name>
+        <ReadVar>tco_ta_07221</ReadVar>
+        <DefaultValue>0</DefaultValue>
+      </OptionalVariable>
+      <OptionalVariable>
+        <Name>indirectTaxesAdj</Name>
+        <ReadVar>il_tco_adj_tall</ReadVar>
+        <DefaultValue>0</DefaultValue>
+      </OptionalVariable>
+      <OptionalVariable>
+        <Name>adValoremExciseAdj</Name>
+        <ReadVar>il_tco_adj_tv</ReadVar>
+        <DefaultValue>0</DefaultValue>
+      </OptionalVariable>
+      <OptionalVariable>
+        <Name>specificExciseAdj</Name>
+        <ReadVar>il_tco_adj_ta</ReadVar>
+        <DefaultValue>0</DefaultValue>
+      </OptionalVariable>
+      <OptionalVariable>
+        <Name>valueAddedTaxAdj</Name>
+        <ReadVar>tco_adj_tt</ReadVar>
+        <DefaultValue>0</DefaultValue>
+      </OptionalVariable>
+      <OptionalVariable>
+        <Name>sExciseSpiritsAdj</Name>
+        <ReadVar>tco_adj_ta_02111</ReadVar>
+        <DefaultValue>0</DefaultValue>
+      </OptionalVariable>
+      <OptionalVariable>
+        <Name>sExciseWineAdj</Name>
+        <ReadVar>tco_adj_ta_02121</ReadVar>
+        <DefaultValue>0</DefaultValue>
+      </OptionalVariable>
+      <OptionalVariable>
+        <Name>sExciseSWineAdj</Name>
+        <ReadVar>tco_adj_ta_02122</ReadVar>
+        <DefaultValue>0</DefaultValue>
+      </OptionalVariable>
+      <OptionalVariable>
+        <Name>sExciseBeerAdj</Name>
+        <ReadVar>tco_adj_ta_02131</ReadVar>
+        <DefaultValue>0</DefaultValue>
+      </OptionalVariable>
+      <OptionalVariable>
+        <Name>sExciseCigarettesAdj</Name>
+        <ReadVar>tco_adj_ta_02211</ReadVar>
+        <DefaultValue>0</DefaultValue>
+      </OptionalVariable>
+      <OptionalVariable>
+        <Name>sExciseCigarsAdj</Name>
+        <ReadVar>tco_adj_ta_02212</ReadVar>
+        <DefaultValue>0</DefaultValue>
+      </OptionalVariable>
+      <OptionalVariable>
+        <Name>sExciseOTobaccoAdj</Name>
+        <ReadVar>tco_adj_ta_02213</ReadVar>
+        <DefaultValue>0</DefaultValue>
+      </OptionalVariable>
+      <OptionalVariable>
+        <Name>vExciseCigarettesAdj</Name>
+        <ReadVar>tco_adj_tv_02211</ReadVar>
+        <DefaultValue>0</DefaultValue>
+      </OptionalVariable>
+      <OptionalVariable>
+        <Name>sExciseLiqFuelAdj</Name>
+        <ReadVar>tco_adj_ta_04531</ReadVar>
+        <DefaultValue>0</DefaultValue>
+      </OptionalVariable>
+      <OptionalVariable>
+        <Name>sExciseTransFuelAdj</Name>
+        <ReadVar>tco_adj_ta_07221</ReadVar>
+        <DefaultValue>0</DefaultValue>
+      </OptionalVariable>
       <OptionalVariable>
         <Name>ilsSicCt</Name>
         <ReadVar>ils_sicct</ReadVar>
@@ -446,8 +601,8 @@
         <ReadVar>bot</ReadVar>
       </OptionalVariable>
       <OptionalVariable>
-        <Name>boact00</Name>
-        <ReadVar>boact00</ReadVar>
+        <Name>boact_s</Name>
+        <ReadVar>boact_s</ReadVar>
       </OptionalVariable>
       <OptionalVariable>
         <Name>boactcm</Name>
@@ -1230,7 +1385,7 @@
     <Page>
       <Name>FiscalOverview</Name>
       <Title><![CDATA[Market incomes and fiscal overview]]></Title>
-      <Subtitle>Yearly, million, currency as defined in model output</Subtitle>
+      <Subtitle>£ million per year, current prices</Subtitle>
       <Button>Fiscal Overview</Button>
       <Description>
         <![CDATA[
@@ -1437,7 +1592,6 @@
             </Row>
             <Row>
               <Name>... all national insurance contributions (simulated)</Name>
-              <BackgroundColour>#D9D9D9</BackgroundColour>
               <CellAction>
                 <Parameters>
                   <Parameter>
@@ -1522,6 +1676,57 @@
                   <Parameter>
                     <Name>BasePar</Name>
                     <VarName>ilsSicCt</VarName>
+                    <Reform>false</Reform>
+                  </Parameter>
+                </Parameters>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name>Government revenue through indirect taxes</Name>
+              <HasSeparatorBefore>true</HasSeparatorBefore>
+              <Strong>true</Strong>
+              <CellAction>
+                <Parameters>
+                  <Parameter>
+                    <Name>BasePar</Name>
+                    <VarName>indirectTaxesAdj</VarName>
+                    <Reform>false</Reform>
+                  </Parameter>
+                </Parameters>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name>... all ad valorem excise</Name>
+              <HasSeparatorBefore>true</HasSeparatorBefore>
+              <CellAction>
+                <Parameters>
+                  <Parameter>
+                    <Name>BasePar</Name>
+                    <VarName>adValoremExciseAdj</VarName>
+                    <Reform>false</Reform>
+                  </Parameter>
+                </Parameters>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name>... all specific excise</Name>
+              <CellAction>
+                <Parameters>
+                  <Parameter>
+                    <Name>BasePar</Name>
+                    <VarName>specificExciseAdj</VarName>
+                    <Reform>false</Reform>
+                  </Parameter>
+                </Parameters>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name>... all value added tax</Name>
+              <CellAction>
+                <Parameters>
+                  <Parameter>
+                    <Name>BasePar</Name>
+                    <VarName>valueAddedTaxAdj</VarName>
                     <Reform>false</Reform>
                   </Parameter>
                 </Parameters>
@@ -2178,7 +2383,6 @@
               </CellAction>
             </Row>
             <Row>
-              <BackgroundColour>#BFBFBF</BackgroundColour>
               <Name>... pensions (non-simulated)</Name>
               <CellAction>
                 <Parameters>
@@ -2197,7 +2401,7 @@
                 <Parameters>
                   <Parameter>
                     <Name>BasePar</Name>
-                    <VarName>boact00</VarName>
+                    <VarName>boact_s</VarName>
                     <Reform>false</Reform>
                   </Parameter>
                 </Parameters>
@@ -2509,7 +2713,7 @@
           <Rows>
             <Row>
               <Name>Decile</Name>
-              <ForEachValueOf>deciles_eqDispy</ForEachValueOf>
+              <ForEachValueOf>deciles_eqDispyAHC</ForEachValueOf>
             </Row>
             <Row>
               <Name>All</Name>
@@ -3425,16 +3629,17 @@
     </Page>
     <Page>
       <Name>MeanEqIncomeHH</Name>
-      <Title>Mean equivalised household income by decile groups</Title>
+      <Title>Disaggregation of household income</Title>
       <Button>Mean HH income (equ)</Button>
       <Description>
         <![CDATA[
-          <p style='line-height:1.5'><span lang=EN>The table shows the <b><span style='color:#0070C0'>mean equivalised household income of decile groups</span></b>. The <u>last two rows</u> show the mean income of the total population (<u>All</u>) and the population at-risk-of-poverty (<u>Poor</u>). </span></p> <p style='line-height:1.5'><span lang=EN>The calculation of the decile groups and the reported mean incomes are based on equivalised household disposable incomes. The decile group and poverty status are system specific.</span></p>
+          <p style='line-height:1.5'><span lang=EN>The table shows the <b><span style='color:#0070C0'>mean equivalised household income  per week of decile groups</span></b>. The <u>last two rows</u> show the mean income of the total population (<u>All</u>) and the population at-risk-of-poverty (<u>Poor</u>). </span></p> <p style='line-height:1.5'><span lang=EN>The calculation of the decile groups and the reported mean incomes are based on equivalised household disposable incomes. The decile group and poverty status are system specific.</span></p>
         ]]>
       </Description>
       <Tables>
         <Table>
-          <Title>4.1 Income averages by population decile (BHC income)</Title>
+          <Title>4.1 Equivalised income averages by population decile (BHC income)</Title>
+          <Subtitle>Household averages per week</Subtitle>
           <CellAction>
             <CalculationType>CalculateWeightedAverage</CalculationType>
             <FormulaString><![CDATA[DATA_VAR[@AverageVar]*7*12/365]]></FormulaString>
@@ -3481,7 +3686,8 @@
           </Rows>
         </Table>
         <Table>
-          <Title>4.2 Income averages by population decile (AHC income)</Title>
+          <Title>4.2 Equivalised income averages by population decile (AHC income)</Title>
+          <Subtitle>Household averages per week</Subtitle>
           <CellAction>
             <CalculationType>CalculateWeightedAverage</CalculationType>
             <FormulaString><![CDATA[DATA_VAR[@AverageVar]*7*12/365]]></FormulaString>
@@ -3531,16 +3737,17 @@
     </Page>
     <Page>
       <Name>MeanEqIncomeBU</Name>
-      <Title>Mean equivalised benefit unit income by decile groups</Title>
+      <Title>Disaggregation of benefit unit income</Title>
       <Button>Mean BU income (equ)</Button>
       <Description>
         <![CDATA[
-          <p style='line-height:1.5'><span lang=EN>The table shows the <b><span style='color:#0070C0'>mean equivalised benefit unit income of decile groups</span></b>. The <u>last two rows</u> show the mean income of the total population (<u>All</u>) and the population at-risk-of-poverty (<u>Poor</u>). </span></p><p style='line-height:1.5'><span lang=EN>The calculation of the decile groups and the reported mean incomes are based on equivalised benefit unit incomes. The decile group and poverty status are system specific.</span></p>
+          <p style='line-height:1.5'><span lang=EN>The table shows the <b><span style='color:#0070C0'>mean equivalised benefit unit income per week of decile groups</span></b>. The <u>last two rows</u> show the mean income of the total population (<u>All</u>) and the population at-risk-of-poverty (<u>Poor</u>). </span></p><p style='line-height:1.5'><span lang=EN>The calculation of the decile groups and the reported mean incomes are based on equivalised benefit unit incomes. The decile group and poverty status are system specific.</span></p>
         ]]>
       </Description>
       <Tables>
         <Table>
-          <Title>5.1 Income averages by population decile (BHC income)</Title>
+          <Title>5.1 Equivalised income averages by population decile (BHC income)</Title>
+          <Subtitle>Benefit unit averages per week</Subtitle>
           <CellAction>
             <CalculationType>CalculateWeightedAverage</CalculationType>
             <FormulaString><![CDATA[DATA_VAR[@AverageVar]*7*12/365]]></FormulaString>
@@ -3587,7 +3794,8 @@
           </Rows>
         </Table>
         <Table>
-          <Title>5.2 Income averages by population decile (AHC income)</Title>
+          <Title>5.2 Equivalised income averages by population decile (AHC income)</Title>
+          <Subtitle>Benefit unit averages per week</Subtitle>
           <CellAction>
             <CalculationType>CalculateWeightedAverage</CalculationType>
             <FormulaString><![CDATA[DATA_VAR[@AverageVar]*7*12/365]]></FormulaString>
@@ -3630,6 +3838,2164 @@
                   </Parameters>
                 </Filter>
               </CellAction>
+            </Row>
+          </Rows>
+        </Table>
+      </Tables>
+    </Page>
+    <Page>
+      <Name>IndirectTaxes</Name>
+      <Button>Indirect Taxes</Button>
+      <Title>Indirect taxes</Title>
+      <Description>
+        <![CDATA[
+          <p style='line-height:1.5'><span lang=EN><b><span style='color:#0070C0'>UKMOD indirect taxes</span></b>: this template reports summary statistics for three indirect taxes generated by the TCO add-on: ad valorem excise, specific excise, and value added taxes. Ad valorem excise is expressed as a percentage of producer prices, and is traditionally applied to cigarettes in the UK. Specific excise is expressed as a value per physical unit of consumption, and is traditionally applied to alcohol, tobacco, and liquid fuel products in the UK. Value added taxes are expressed as a percentage of consumer prices inclusive of excise, and is applied to a broad range of commodities in the UK. The TCO add-on generates measures of VAT, specific and ad valorem excise distinguished by 4-digit COICOP expenditure category.</span></p>
+          <p style='line-height:1.5'><span lang=EN>The page distinguishes between <b>raw</b> statistics evaluated on imputed measures of consumption, and <b>adjusted</b> statistics that have been rescaled to match aggrergate indirect taxes to values reported by the National Accounts. Adjusted statistics are obtained by multiplying the raw statistics by one of five factors.</span></p>
+          <p style='line-height:1.5'><span lang=EN>The adjustment factors reflect the ratio of National Accounts variables to simulated variables projected for the same system and input data year as the respective National Accounts variables.</span></p>
+          <p style='line-height:1.5'><span lang=EN>The National Accounts variables considered for analysis are NZGF (VAT), GTAM (beer excise), GTAN (wine and spirit excise), GTAO (tobacco excise), and GTAP (hydrocarbons excise).</span></p>
+          <p style='line-height:1.5'><span lang=EN>All indirect taxes (raw) = il_tco_tall = il_tco_tt + il_tco_ta + il_tco_tv.</span></p>
+          <p style='line-height:1.5'><span lang=EN>All VAT (raw) = il_tco_tt.</span></p>
+          <p style='line-height:1.5'><span lang=EN>All specific excise (raw) = il_tco_ta.</span></p>
+          <p style='line-height:1.5'><span lang=EN>All ad valorem excise (raw) = il_tco_tv.</span></p>
+          <p style='line-height:1.5'><span lang=EN>Specific excise on beer (raw) = tco_ta_02122.</span></p>
+          <p style='line-height:1.5'><span lang=EN>Specific excise on wine and spirits (raw) = tco_ta_02111 + tco_ta_02121 + tco_ta_02122.</span></p>
+          <p style='line-height:1.5'><span lang=EN>Excise on tobacco products (raw) = tco_ta_02211 + tco_ta_02212 + tco_ta_02213 + tco_tv_02211.</span></p>
+          <p style='line-height:1.5'><span lang=EN>Specific excise on hydrocarbon (raw) = tco_ta_04531 + tco_ta_07221.</span></p>
+          <p style='line-height:1.5'><span lang=EN>Adjusted variables share the same names as raw variables, with "tco_" extended to "tco_adj_".</span></p>
+        ]]>
+      </Description>
+      <Tables>
+        <Table>
+          <Title>6.1 Indirect tax revenue by source - raw</Title>
+          <Subtitle>Annual population aggregates - currency millions</Subtitle>
+          <Columns>
+            <Column>
+              <StringFormat>#,0.00</StringFormat>
+              <Name>AmountsBaseRaw</Name>
+              <Title>[baseSys]</Title>
+              <CellAction>
+                <CalculationType>CalculateSumWeighted</CalculationType>
+                <FormulaString><![CDATA[DATA_VAR[@BasePar] * 12 / 1000000]]></FormulaString>
+              </CellAction>
+            </Column>
+          </Columns>
+          <Rows>
+            <Row>
+              <Name>Total consumption</Name>
+              <Strong>true</Strong>
+              <CellAction>
+                <Parameters>
+                  <Parameter>
+                    <Name>BasePar</Name>
+                    <VarName>xtotal00</VarName>
+                    <Reform>false</Reform>
+                  </Parameter>
+                  <Parameter>
+                    <Name>RefPar</Name>
+                    <VarName>xtotal00</VarName>
+                  </Parameter>
+                </Parameters>
+                <Filter>
+                  <FormulaString><![CDATA[DATA_VAR[@idperson] == DATA_VAR[@idHouseholdHead]]]></FormulaString>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name>All indirect taxes</Name>
+              <HasSeparatorAfter>true</HasSeparatorAfter>
+              <Strong>true</Strong>
+              <CellAction>
+                <Parameters>
+                  <Parameter>
+                    <Name>BasePar</Name>
+                    <VarName>indirectTaxes</VarName>
+                    <Reform>false</Reform>
+                  </Parameter>
+                  <Parameter>
+                    <Name>RefPar</Name>
+                    <VarName>indirectTaxes</VarName>
+                  </Parameter>
+                </Parameters>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name>... Value Added Tax</Name>
+              <CellAction>
+                <Parameters>
+                  <Parameter>
+                    <Name>BasePar</Name>
+                    <VarName>valueAddedTax</VarName>
+                    <Reform>false</Reform>
+                  </Parameter>
+                  <Parameter>
+                    <Name>RefPar</Name>
+                    <VarName>valueAddedTax</VarName>
+                  </Parameter>
+                </Parameters>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name>... Specific Excise</Name>
+              <CellAction>
+                <Parameters>
+                  <Parameter>
+                    <Name>BasePar</Name>
+                    <VarName>specificExcise</VarName>
+                    <Reform>false</Reform>
+                  </Parameter>
+                  <Parameter>
+                    <Name>RefPar</Name>
+                    <VarName>specificExcise</VarName>
+                  </Parameter>
+                </Parameters>
+              </CellAction>
+            </Row>
+            <Row>
+              <BackgroundColour>#D9D9D9</BackgroundColour>
+              <Name>...... beer</Name>
+              <CellAction>
+                <Parameters>
+                  <Parameter>
+                    <Name>BasePar</Name>
+                    <VarName>sExciseBeer</VarName>
+                    <Reform>false</Reform>
+                  </Parameter>
+                  <Parameter>
+                    <Name>RefPar</Name>
+                    <VarName>sExciseBeer</VarName>
+                  </Parameter>
+                </Parameters>
+              </CellAction>
+            </Row>
+            <Row>
+              <BackgroundColour>#D9D9D9</BackgroundColour>
+              <Name>...... spirits and liqueurs</Name>
+              <CellAction>
+                <Parameters>
+                  <Parameter>
+                    <Name>BasePar</Name>
+                    <VarName>sExciseSpirits</VarName>
+                    <Reform>false</Reform>
+                  </Parameter>
+                  <Parameter>
+                    <Name>RefPar</Name>
+                    <VarName>sExciseSpirits</VarName>
+                  </Parameter>
+                </Parameters>
+              </CellAction>
+            </Row>
+            <Row>
+              <BackgroundColour>#D9D9D9</BackgroundColour>
+              <Name>...... still wine</Name>
+              <CellAction>
+                <Parameters>
+                  <Parameter>
+                    <Name>BasePar</Name>
+                    <VarName>sExciseWine</VarName>
+                    <Reform>false</Reform>
+                  </Parameter>
+                  <Parameter>
+                    <Name>RefPar</Name>
+                    <VarName>sExciseWine</VarName>
+                  </Parameter>
+                </Parameters>
+              </CellAction>
+            </Row>
+            <Row>
+              <BackgroundColour>#D9D9D9</BackgroundColour>
+              <Name>...... sparkling wine</Name>
+              <CellAction>
+                <Parameters>
+                  <Parameter>
+                    <Name>BasePar</Name>
+                    <VarName>sExciseSWine</VarName>
+                    <Reform>false</Reform>
+                  </Parameter>
+                  <Parameter>
+                    <Name>RefPar</Name>
+                    <VarName>sExciseSWine</VarName>
+                  </Parameter>
+                </Parameters>
+              </CellAction>
+            </Row>
+            <Row>
+              <BackgroundColour>#D9D9D9</BackgroundColour>
+              <Name>...... cigarettes</Name>
+              <CellAction>
+                <Parameters>
+                  <Parameter>
+                    <Name>BasePar</Name>
+                    <VarName>sExciseCigarettes</VarName>
+                    <Reform>false</Reform>
+                  </Parameter>
+                  <Parameter>
+                    <Name>RefPar</Name>
+                    <VarName>sExciseCigarettes</VarName>
+                  </Parameter>
+                </Parameters>
+              </CellAction>
+            </Row>
+            <Row>
+              <BackgroundColour>#D9D9D9</BackgroundColour>
+              <Name>...... cigars</Name>
+              <CellAction>
+                <Parameters>
+                  <Parameter>
+                    <Name>BasePar</Name>
+                    <VarName>sExciseCigars</VarName>
+                    <Reform>false</Reform>
+                  </Parameter>
+                  <Parameter>
+                    <Name>RefPar</Name>
+                    <VarName>sExciseCigars</VarName>
+                  </Parameter>
+                </Parameters>
+              </CellAction>
+            </Row>
+            <Row>
+              <BackgroundColour>#D9D9D9</BackgroundColour>
+              <Name>...... other tobacco</Name>
+              <CellAction>
+                <Parameters>
+                  <Parameter>
+                    <Name>BasePar</Name>
+                    <VarName>sExciseOTobacco</VarName>
+                    <Reform>false</Reform>
+                  </Parameter>
+                  <Parameter>
+                    <Name>RefPar</Name>
+                    <VarName>sExciseOTobacco</VarName>
+                  </Parameter>
+                </Parameters>
+              </CellAction>
+            </Row>
+            <Row>
+              <BackgroundColour>#D9D9D9</BackgroundColour>
+              <Name>...... liquid fuel (domestic)</Name>
+              <CellAction>
+                <Parameters>
+                  <Parameter>
+                    <Name>BasePar</Name>
+                    <VarName>sExciseLiqFuel</VarName>
+                    <Reform>false</Reform>
+                  </Parameter>
+                  <Parameter>
+                    <Name>RefPar</Name>
+                    <VarName>sExciseLiqFuel</VarName>
+                  </Parameter>
+                </Parameters>
+              </CellAction>
+            </Row>
+            <Row>
+              <BackgroundColour>#D9D9D9</BackgroundColour>
+              <Name>...... fuel (transport)</Name>
+              <CellAction>
+                <Parameters>
+                  <Parameter>
+                    <Name>BasePar</Name>
+                    <VarName>sExciseTransFuel</VarName>
+                    <Reform>false</Reform>
+                  </Parameter>
+                  <Parameter>
+                    <Name>RefPar</Name>
+                    <VarName>sExciseTransFuel</VarName>
+                  </Parameter>
+                </Parameters>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name>... Ad Valorem Excise</Name>
+              <CellAction>
+                <Parameters>
+                  <Parameter>
+                    <Name>BasePar</Name>
+                    <VarName>adValoremExcise</VarName>
+                    <Reform>false</Reform>
+                  </Parameter>
+                  <Parameter>
+                    <Name>RefPar</Name>
+                    <VarName>adValoremExcise</VarName>
+                  </Parameter>
+                </Parameters>
+              </CellAction>
+            </Row>
+            <Row>
+              <BackgroundColour>#D9D9D9</BackgroundColour>
+              <Name>...... cigarettes (ad valorem)</Name>
+              <CellAction>
+                <Parameters>
+                  <Parameter>
+                    <Name>BasePar</Name>
+                    <VarName>vExciseCigarettes</VarName>
+                    <Reform>false</Reform>
+                  </Parameter>
+                  <Parameter>
+                    <Name>RefPar</Name>
+                    <VarName>vExciseCigarettes</VarName>
+                  </Parameter>
+                </Parameters>
+              </CellAction>
+            </Row>
+          </Rows>
+        </Table>
+        <Table>
+          <Title>6.2 Indirect tax revenue by source - adjusted</Title>
+          <Subtitle>Annual population aggregates - currency millions</Subtitle>
+          <Columns>
+            <Column>
+              <StringFormat>#,0.00</StringFormat>
+              <Name>AmountsBaseRaw</Name>
+              <Title>[baseSys]</Title>
+              <CellAction>
+                <CalculationType>CalculateSumWeighted</CalculationType>
+                <FormulaString><![CDATA[DATA_VAR[@BasePar] * 12 / 1000000]]></FormulaString>
+              </CellAction>
+            </Column>
+          </Columns>
+          <Rows>
+            <Row>
+              <Name>All indirect taxes</Name>
+              <HasSeparatorAfter>true</HasSeparatorAfter>
+              <Strong>true</Strong>
+              <CellAction>
+                <Parameters>
+                  <Parameter>
+                    <Name>BasePar</Name>
+                    <VarName>indirectTaxesAdj</VarName>
+                    <Reform>false</Reform>
+                  </Parameter>
+                  <Parameter>
+                    <Name>RefPar</Name>
+                    <VarName>indirectTaxesAdj</VarName>
+                  </Parameter>
+                </Parameters>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name>... Value Added Tax</Name>
+              <CellAction>
+                <Parameters>
+                  <Parameter>
+                    <Name>BasePar</Name>
+                    <VarName>valueAddedTaxAdj</VarName>
+                    <Reform>false</Reform>
+                  </Parameter>
+                  <Parameter>
+                    <Name>RefPar</Name>
+                    <VarName>valueAddedTaxAdj</VarName>
+                  </Parameter>
+                </Parameters>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name>... Specific Excise</Name>
+              <CellAction>
+                <Parameters>
+                  <Parameter>
+                    <Name>BasePar</Name>
+                    <VarName>specificExciseAdj</VarName>
+                    <Reform>false</Reform>
+                  </Parameter>
+                  <Parameter>
+                    <Name>RefPar</Name>
+                    <VarName>specificExciseAdj</VarName>
+                  </Parameter>
+                </Parameters>
+              </CellAction>
+            </Row>
+            <Row>
+              <BackgroundColour>#D9D9D9</BackgroundColour>
+              <Name>...... beer</Name>
+              <CellAction>
+                <Parameters>
+                  <Parameter>
+                    <Name>BasePar</Name>
+                    <VarName>sExciseBeerAdj</VarName>
+                    <Reform>false</Reform>
+                  </Parameter>
+                  <Parameter>
+                    <Name>RefPar</Name>
+                    <VarName>sExciseBeerAdj</VarName>
+                  </Parameter>
+                </Parameters>
+              </CellAction>
+            </Row>
+            <Row>
+              <BackgroundColour>#D9D9D9</BackgroundColour>
+              <Name>...... spirits and liqueurs</Name>
+              <CellAction>
+                <Parameters>
+                  <Parameter>
+                    <Name>BasePar</Name>
+                    <VarName>sExciseSpiritsAdj</VarName>
+                    <Reform>false</Reform>
+                  </Parameter>
+                  <Parameter>
+                    <Name>RefPar</Name>
+                    <VarName>sExciseSpiritsAdj</VarName>
+                  </Parameter>
+                </Parameters>
+              </CellAction>
+            </Row>
+            <Row>
+              <BackgroundColour>#D9D9D9</BackgroundColour>
+              <Name>...... still wine</Name>
+              <CellAction>
+                <Parameters>
+                  <Parameter>
+                    <Name>BasePar</Name>
+                    <VarName>sExciseWineAdj</VarName>
+                    <Reform>false</Reform>
+                  </Parameter>
+                  <Parameter>
+                    <Name>RefPar</Name>
+                    <VarName>sExciseWineAdj</VarName>
+                  </Parameter>
+                </Parameters>
+              </CellAction>
+            </Row>
+            <Row>
+              <BackgroundColour>#D9D9D9</BackgroundColour>
+              <Name>...... sparkling wine</Name>
+              <CellAction>
+                <Parameters>
+                  <Parameter>
+                    <Name>BasePar</Name>
+                    <VarName>sExciseSWineAdj</VarName>
+                    <Reform>false</Reform>
+                  </Parameter>
+                  <Parameter>
+                    <Name>RefPar</Name>
+                    <VarName>sExciseSWineAdj</VarName>
+                  </Parameter>
+                </Parameters>
+              </CellAction>
+            </Row>
+            <Row>
+              <BackgroundColour>#D9D9D9</BackgroundColour>
+              <Name>...... cigarettes</Name>
+              <CellAction>
+                <Parameters>
+                  <Parameter>
+                    <Name>BasePar</Name>
+                    <VarName>sExciseCigarettesAdj</VarName>
+                    <Reform>false</Reform>
+                  </Parameter>
+                  <Parameter>
+                    <Name>RefPar</Name>
+                    <VarName>sExciseCigarettesAdj</VarName>
+                  </Parameter>
+                </Parameters>
+              </CellAction>
+            </Row>
+            <Row>
+              <BackgroundColour>#D9D9D9</BackgroundColour>
+              <Name>...... cigars</Name>
+              <CellAction>
+                <Parameters>
+                  <Parameter>
+                    <Name>BasePar</Name>
+                    <VarName>sExciseCigarsAdj</VarName>
+                    <Reform>false</Reform>
+                  </Parameter>
+                  <Parameter>
+                    <Name>RefPar</Name>
+                    <VarName>sExciseCigarsAdj</VarName>
+                  </Parameter>
+                </Parameters>
+              </CellAction>
+            </Row>
+            <Row>
+              <BackgroundColour>#D9D9D9</BackgroundColour>
+              <Name>...... other tobacco</Name>
+              <CellAction>
+                <Parameters>
+                  <Parameter>
+                    <Name>BasePar</Name>
+                    <VarName>sExciseOTobaccoAdj</VarName>
+                    <Reform>false</Reform>
+                  </Parameter>
+                  <Parameter>
+                    <Name>RefPar</Name>
+                    <VarName>sExciseOTobaccoAdj</VarName>
+                  </Parameter>
+                </Parameters>
+              </CellAction>
+            </Row>
+            <Row>
+              <BackgroundColour>#D9D9D9</BackgroundColour>
+              <Name>...... liquid fuel (domestic)</Name>
+              <CellAction>
+                <Parameters>
+                  <Parameter>
+                    <Name>BasePar</Name>
+                    <VarName>sExciseLiqFuelAdj</VarName>
+                    <Reform>false</Reform>
+                  </Parameter>
+                  <Parameter>
+                    <Name>RefPar</Name>
+                    <VarName>sExciseLiqFuelAdj</VarName>
+                  </Parameter>
+                </Parameters>
+              </CellAction>
+            </Row>
+            <Row>
+              <BackgroundColour>#D9D9D9</BackgroundColour>
+              <Name>...... fuel (transport)</Name>
+              <CellAction>
+                <Parameters>
+                  <Parameter>
+                    <Name>BasePar</Name>
+                    <VarName>sExciseTransFuelAdj</VarName>
+                    <Reform>false</Reform>
+                  </Parameter>
+                  <Parameter>
+                    <Name>RefPar</Name>
+                    <VarName>sExciseTransFuelAdj</VarName>
+                  </Parameter>
+                </Parameters>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name>... Ad Valorem Excise</Name>
+              <CellAction>
+                <Parameters>
+                  <Parameter>
+                    <Name>BasePar</Name>
+                    <VarName>adValoremExciseAdj</VarName>
+                    <Reform>false</Reform>
+                  </Parameter>
+                  <Parameter>
+                    <Name>RefPar</Name>
+                    <VarName>adValoremExciseAdj</VarName>
+                  </Parameter>
+                </Parameters>
+              </CellAction>
+            </Row>
+            <Row>
+              <BackgroundColour>#D9D9D9</BackgroundColour>
+              <Name>...... cigarettes (ad valorem)</Name>
+              <CellAction>
+                <Parameters>
+                  <Parameter>
+                    <Name>BasePar</Name>
+                    <VarName>vExciseCigarettesAdj</VarName>
+                    <Reform>false</Reform>
+                  </Parameter>
+                  <Parameter>
+                    <Name>RefPar</Name>
+                    <VarName>vExciseCigarettesAdj</VarName>
+                  </Parameter>
+                </Parameters>
+              </CellAction>
+            </Row>
+          </Rows>
+        </Table>
+        <Table>
+          <Title>6.3 Average ad valorem excise by population decile - raw</Title>
+          <Subtitle>Household averages per annum per household member</Subtitle>
+          <CellAction>
+            <CalculationType>CalculateWeightedAverage</CalculationType>
+            <FormulaString><![CDATA[DATA_VAR[@AverageVar]*12]]></FormulaString>
+          </CellAction>
+          <StringFormat>#,0.00</StringFormat>
+          <Columns>
+            <Column>
+              <Name>baseSysAVD</Name>
+              <Title>[baseSys]</Title>
+              <CellAction>
+                <Parameters>
+                  <Parameter>
+                    <Name>AverageVar</Name>
+                    <VarName>adValoremExcise</VarName>
+                  </Parameter>
+                </Parameters>
+              </CellAction>
+            </Column>
+          </Columns>
+          <Rows>
+            <Row>
+              <Name>Decile</Name>
+              <Tooltip>Equivalised disposable household income before housing costs.</Tooltip>
+              <ForEachValueOf>deciles_eqDispy</ForEachValueOf>
+            </Row>
+            <Row>
+              <Name>All</Name>
+              <HasSeparatorBefore>true</HasSeparatorBefore>
+              <Strong>true</Strong>
+            </Row>
+            <Row>
+              <Name>Poor</Name>
+              <Tooltip>Equivalised disposable household income lower than 60% of the country specific median income.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <FormulaString><![CDATA[DATA_VAR[@IsPoor] > 0]]></FormulaString>
+                </Filter>
+              </CellAction>
+            </Row>
+          </Rows>
+        </Table>
+        <Table>
+          <Title>6.4 Average ad valorem excise by population decile - adjusted</Title>
+          <Subtitle>Household averages per annum per household member</Subtitle>
+          <CellAction>
+            <CalculationType>CalculateWeightedAverage</CalculationType>
+            <FormulaString><![CDATA[DATA_VAR[@AverageVar]*12]]></FormulaString>
+          </CellAction>
+          <StringFormat>#,0.00</StringFormat>
+          <Columns>
+            <Column>
+              <Name>baseSysAVD</Name>
+              <Title>[baseSys]</Title>
+              <CellAction>
+                <Parameters>
+                  <Parameter>
+                    <Name>AverageVar</Name>
+                    <VarName>adValoremExciseAdj</VarName>
+                  </Parameter>
+                </Parameters>
+              </CellAction>
+            </Column>
+          </Columns>
+          <Rows>
+            <Row>
+              <Name>Decile</Name>
+              <Tooltip>Equivalised disposable household income before housing costs.</Tooltip>
+              <ForEachValueOf>deciles_eqDispy</ForEachValueOf>
+            </Row>
+            <Row>
+              <Name>All</Name>
+              <HasSeparatorBefore>true</HasSeparatorBefore>
+              <Strong>true</Strong>
+            </Row>
+            <Row>
+              <Name>Poor</Name>
+              <Tooltip>Equivalised disposable household income lower than 60% of the country specific median income.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <FormulaString><![CDATA[DATA_VAR[@IsPoor] > 0]]></FormulaString>
+                </Filter>
+              </CellAction>
+            </Row>
+          </Rows>
+        </Table>
+        <Table>
+          <Title>6.5 Average specific excise by population decile - raw</Title>
+          <Subtitle>Household averages per annum per household member</Subtitle>
+          <CellAction>
+            <CalculationType>CalculateWeightedAverage</CalculationType>
+            <FormulaString><![CDATA[DATA_VAR[@AverageVar]*12]]></FormulaString>
+          </CellAction>
+          <StringFormat>#,0.00</StringFormat>
+          <Columns>
+            <Column>
+              <Name>baseSysSED</Name>
+              <Title>[baseSys]</Title>
+              <CellAction>
+                <Parameters>
+                  <Parameter>
+                    <Name>AverageVar</Name>
+                    <VarName>specificExcise</VarName>
+                  </Parameter>
+                </Parameters>
+              </CellAction>
+            </Column>
+          </Columns>
+          <Rows>
+            <Row>
+              <Name>Decile</Name>
+              <Tooltip>Equivalised disposable household income before housing costs.</Tooltip>
+              <ForEachValueOf>deciles_eqDispy</ForEachValueOf>
+            </Row>
+            <Row>
+              <Name>All</Name>
+              <HasSeparatorBefore>true</HasSeparatorBefore>
+              <Strong>true</Strong>
+            </Row>
+            <Row>
+              <Name>Poor</Name>
+              <Tooltip>Equivalised disposable household income lower than 60% of the country specific median income.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <FormulaString><![CDATA[DATA_VAR[@IsPoor] > 0]]></FormulaString>
+                </Filter>
+              </CellAction>
+            </Row>
+          </Rows>
+        </Table>
+        <Table>
+          <Title>6.6 Average specific excise by population decile - adjusted</Title>
+          <Subtitle>Household averages per annum per household member</Subtitle>
+          <CellAction>
+            <CalculationType>CalculateWeightedAverage</CalculationType>
+            <FormulaString><![CDATA[DATA_VAR[@AverageVar]*12]]></FormulaString>
+          </CellAction>
+          <StringFormat>#,0.00</StringFormat>
+          <Columns>
+            <Column>
+              <Name>baseSysSED</Name>
+              <Title>[baseSys]</Title>
+              <CellAction>
+                <Parameters>
+                  <Parameter>
+                    <Name>AverageVar</Name>
+                    <VarName>specificExciseAdj</VarName>
+                  </Parameter>
+                </Parameters>
+              </CellAction>
+            </Column>
+          </Columns>
+          <Rows>
+            <Row>
+              <Name>Decile</Name>
+              <Tooltip>Equivalised disposable household income before housing costs.</Tooltip>
+              <ForEachValueOf>deciles_eqDispy</ForEachValueOf>
+            </Row>
+            <Row>
+              <Name>All</Name>
+              <HasSeparatorBefore>true</HasSeparatorBefore>
+              <Strong>true</Strong>
+            </Row>
+            <Row>
+              <Name>Poor</Name>
+              <Tooltip>Equivalised disposable household income lower than 60% of the country specific median income.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <FormulaString><![CDATA[DATA_VAR[@IsPoor] > 0]]></FormulaString>
+                </Filter>
+              </CellAction>
+            </Row>
+          </Rows>
+        </Table>
+        <Table>
+          <Title>6.7 Average value added tax by population decile - raw</Title>
+          <Subtitle>Household averages per annum per household member</Subtitle>
+          <CellAction>
+            <CalculationType>CalculateWeightedAverage</CalculationType>
+            <FormulaString><![CDATA[DATA_VAR[@AverageVar]*12]]></FormulaString>
+          </CellAction>
+          <StringFormat>#,0.00</StringFormat>
+          <Columns>
+            <Column>
+              <Name>baseSysVATD</Name>
+              <Title>[baseSys]</Title>
+              <CellAction>
+                <Parameters>
+                  <Parameter>
+                    <Name>AverageVar</Name>
+                    <VarName>valueAddedTax</VarName>
+                  </Parameter>
+                </Parameters>
+              </CellAction>
+            </Column>
+          </Columns>
+          <Rows>
+            <Row>
+              <Name>Decile</Name>
+              <Tooltip>Equivalised disposable household income before housing costs.</Tooltip>
+              <ForEachValueOf>deciles_eqDispy</ForEachValueOf>
+            </Row>
+            <Row>
+              <Name>All</Name>
+              <HasSeparatorBefore>true</HasSeparatorBefore>
+              <Strong>true</Strong>
+            </Row>
+            <Row>
+              <Name>Poor</Name>
+              <Tooltip>Equivalised disposable household income lower than 60% of the country specific median income.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <FormulaString><![CDATA[DATA_VAR[@IsPoor] > 0]]></FormulaString>
+                </Filter>
+              </CellAction>
+            </Row>
+          </Rows>
+        </Table>
+        <Table>
+          <Title>6.8 Average value added tax by population decile - adjusted</Title>
+          <Subtitle>Household averages per annum per household member</Subtitle>
+          <CellAction>
+            <CalculationType>CalculateWeightedAverage</CalculationType>
+            <FormulaString><![CDATA[DATA_VAR[@AverageVar]*12]]></FormulaString>
+          </CellAction>
+          <StringFormat>#,0.00</StringFormat>
+          <Columns>
+            <Column>
+              <Name>baseSysVATD</Name>
+              <Title>[baseSys]</Title>
+              <CellAction>
+                <Parameters>
+                  <Parameter>
+                    <Name>AverageVar</Name>
+                    <VarName>valueAddedTaxAdj</VarName>
+                  </Parameter>
+                </Parameters>
+              </CellAction>
+            </Column>
+          </Columns>
+          <Rows>
+            <Row>
+              <Name>Decile</Name>
+              <Tooltip>Equivalised disposable household income before housing costs.</Tooltip>
+              <ForEachValueOf>deciles_eqDispy</ForEachValueOf>
+            </Row>
+            <Row>
+              <Name>All</Name>
+              <HasSeparatorBefore>true</HasSeparatorBefore>
+              <Strong>true</Strong>
+            </Row>
+            <Row>
+              <Name>Poor</Name>
+              <Tooltip>Equivalised disposable household income lower than 60% of the country specific median income.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <FormulaString><![CDATA[DATA_VAR[@IsPoor] > 0]]></FormulaString>
+                </Filter>
+              </CellAction>
+            </Row>
+          </Rows>
+        </Table>
+        <Table>
+          <Title>6.9 Average indirect tax by population decile - raw</Title>
+          <Subtitle>Household averages per annum per household member</Subtitle>
+          <CellAction>
+            <CalculationType>CalculateWeightedAverage</CalculationType>
+            <FormulaString><![CDATA[DATA_VAR[@AverageVar]*12]]></FormulaString>
+          </CellAction>
+          <StringFormat>#,0.00</StringFormat>
+          <Columns>
+            <Column>
+              <Name>baseSysITD</Name>
+              <Title>[baseSys]</Title>
+              <CellAction>
+                <Parameters>
+                  <Parameter>
+                    <Name>AverageVar</Name>
+                    <VarName>indirectTaxes</VarName>
+                  </Parameter>
+                </Parameters>
+              </CellAction>
+            </Column>
+          </Columns>
+          <Rows>
+            <Row>
+              <Name>Decile</Name>
+              <Tooltip>Equivalised disposable household income before housing costs.</Tooltip>
+              <ForEachValueOf>deciles_eqDispy</ForEachValueOf>
+            </Row>
+            <Row>
+              <Name>All</Name>
+              <HasSeparatorBefore>true</HasSeparatorBefore>
+              <Strong>true</Strong>
+            </Row>
+            <Row>
+              <Name>Poor</Name>
+              <Tooltip>Equivalised disposable household income lower than 60% of the country specific median income.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <FormulaString><![CDATA[DATA_VAR[@IsPoor] > 0]]></FormulaString>
+                </Filter>
+              </CellAction>
+            </Row>
+          </Rows>
+        </Table>
+        <Table>
+          <Title>6.10 Average indirect tax by population decile - adjusted</Title>
+          <Subtitle>Household averages per annum per household member</Subtitle>
+          <CellAction>
+            <CalculationType>CalculateWeightedAverage</CalculationType>
+            <FormulaString><![CDATA[DATA_VAR[@AverageVar]*12]]></FormulaString>
+          </CellAction>
+          <StringFormat>#,0.00</StringFormat>
+          <Columns>
+            <Column>
+              <Name>baseSysITD</Name>
+              <Title>[baseSys]</Title>
+              <CellAction>
+                <Parameters>
+                  <Parameter>
+                    <Name>AverageVar</Name>
+                    <VarName>indirectTaxesAdj</VarName>
+                  </Parameter>
+                </Parameters>
+              </CellAction>
+            </Column>
+          </Columns>
+          <Rows>
+            <Row>
+              <Name>Decile</Name>
+              <Tooltip>Equivalised disposable household income before housing costs.</Tooltip>
+              <ForEachValueOf>deciles_eqDispy</ForEachValueOf>
+            </Row>
+            <Row>
+              <Name>All</Name>
+              <HasSeparatorBefore>true</HasSeparatorBefore>
+              <Strong>true</Strong>
+            </Row>
+            <Row>
+              <Name>Poor</Name>
+              <Tooltip>Equivalised disposable household income lower than 60% of the country specific median income.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <FormulaString><![CDATA[DATA_VAR[@IsPoor] > 0]]></FormulaString>
+                </Filter>
+              </CellAction>
+            </Row>
+          </Rows>
+        </Table>
+        <Table>
+          <Title>6.11 Average ad valorem excise by household type - raw</Title>
+          <Subtitle>Household averages per annum per household member</Subtitle>
+          <CellAction>
+            <CalculationType>CalculateWeightedAverage</CalculationType>
+            <FormulaString><![CDATA[DATA_VAR[@AverageVar]*12]]></FormulaString>
+          </CellAction>
+          <StringFormat>#,0.00</StringFormat>
+          <Columns>
+            <Column>
+              <Name>baseSysAVT</Name>
+              <Title>[baseSys]</Title>
+              <CellAction>
+                <Parameters>
+                  <Parameter>
+                    <Name>AverageVar</Name>
+                    <VarName>adValoremExcise</VarName>
+                  </Parameter>
+                </Parameters>
+              </CellAction>
+            </Column>
+          </Columns>
+          <Rows>
+            <Row>
+              <Name><![CDATA[	  No Earners]]></Name>
+              <CellAction>
+                <Filter>
+                  <Name>FilterHH_NoEarners</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  One Earner]]></Name>
+              <CellAction>
+                <Filter>
+                  <Name>FilterHH_OneEarner</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Two+ Earners]]></Name>
+              <CellAction>
+                <Filter>
+                  <Name>FilterHH_TwoPlusEarners</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  With Children]]></Name>
+              <CellAction>
+                <Filter>
+                  <Name>FilterHH_HasChildren</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Three+ Children]]></Name>
+              <CellAction>
+                <Filter>
+                  <Name>FilterHH_ThreePlusChildren</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Single no children]]></Name>
+              <Tooltip>Households comprised of a single adult under state pension age.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterSingleNoKids</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Lone Parent]]></Name>
+              <CellAction>
+                <Filter>
+                  <Name>FilterHH_LoneParent</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Young mother]]></Name>
+              <Tooltip>Women under age 25 with a dependent child.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterHH_YoungMother</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Couple one income no children]]></Name>
+              <Tooltip>Households comprised of two adults and no children, where one adult works and both are under state pension age.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterCoupleSingleIncomeNoKids</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Couple dual income no children]]></Name>
+              <CellAction>
+                <Filter>
+                  <Name>FilterCoupleDualIncomeNoKids</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Couple one income with children]]></Name>
+              <Tooltip>Households comprised of two adults and at least one child, where one adult works and both adults are under state pension age.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterCoupleSingleIncomeParents</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Couple dual income with children]]></Name>
+              <Tooltip>Households comprised of two adults and at least one child, where both adults work and are under state pension age.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterCoupleDualIncomeParents</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Single pensioners]]></Name>
+              <Tooltip>Households comprised of single adult over state pension age.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterSinglePensioners</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Couple pensioners]]></Name>
+              <Tooltip>Households comprised of two adults over state pension age.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterCouplePensioners</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Disabled]]></Name>
+              <CellAction>
+                <Filter>
+                  <Name>FilterHH_Disabled</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name>All</Name>
+              <HasSeparatorBefore>True</HasSeparatorBefore>
+              <Strong>true</Strong>
+            </Row>
+          </Rows>
+        </Table>
+        <Table>
+          <Title>6.12 Average ad valorem excise by household type - adjusted</Title>
+          <Subtitle>Household averages per annum per household member</Subtitle>
+          <CellAction>
+            <CalculationType>CalculateWeightedAverage</CalculationType>
+            <FormulaString><![CDATA[DATA_VAR[@AverageVar]*12]]></FormulaString>
+          </CellAction>
+          <StringFormat>#,0.00</StringFormat>
+          <Columns>
+            <Column>
+              <Name>baseSysAVT</Name>
+              <Title>[baseSys]</Title>
+              <CellAction>
+                <Parameters>
+                  <Parameter>
+                    <Name>AverageVar</Name>
+                    <VarName>adValoremExciseAdj</VarName>
+                  </Parameter>
+                </Parameters>
+              </CellAction>
+            </Column>
+          </Columns>
+          <Rows>
+            <Row>
+              <Name><![CDATA[	  No Earners]]></Name>
+              <CellAction>
+                <Filter>
+                  <Name>FilterHH_NoEarners</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  One Earner]]></Name>
+              <CellAction>
+                <Filter>
+                  <Name>FilterHH_OneEarner</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Two+ Earners]]></Name>
+              <CellAction>
+                <Filter>
+                  <Name>FilterHH_TwoPlusEarners</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  With Children]]></Name>
+              <CellAction>
+                <Filter>
+                  <Name>FilterHH_HasChildren</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Three+ Children]]></Name>
+              <CellAction>
+                <Filter>
+                  <Name>FilterHH_ThreePlusChildren</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Single no children]]></Name>
+              <Tooltip>Households comprised of a single adult under state pension age.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterSingleNoKids</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Lone Parent]]></Name>
+              <CellAction>
+                <Filter>
+                  <Name>FilterHH_LoneParent</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Young mother]]></Name>
+              <Tooltip>Women under age 25 with a dependent child.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterHH_YoungMother</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Couple one income no children]]></Name>
+              <Tooltip>Households comprised of two adults and no children, where one adult works and both are under state pension age.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterCoupleSingleIncomeNoKids</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Couple dual income no children]]></Name>
+              <CellAction>
+                <Filter>
+                  <Name>FilterCoupleDualIncomeNoKids</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Couple one income with children]]></Name>
+              <Tooltip>Households comprised of two adults and at least one child, where one adult works and both adults are under state pension age.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterCoupleSingleIncomeParents</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Couple dual income with children]]></Name>
+              <Tooltip>Households comprised of two adults and at least one child, where both adults work and are under state pension age.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterCoupleDualIncomeParents</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Single pensioners]]></Name>
+              <Tooltip>Households comprised of single adult over state pension age.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterSinglePensioners</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Couple pensioners]]></Name>
+              <Tooltip>Households comprised of two adults over state pension age.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterCouplePensioners</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Disabled]]></Name>
+              <CellAction>
+                <Filter>
+                  <Name>FilterHH_Disabled</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name>All</Name>
+              <HasSeparatorBefore>True</HasSeparatorBefore>
+              <Strong>true</Strong>
+            </Row>
+          </Rows>
+        </Table>
+        <Table>
+          <Title>6.13 Average specific excise by household type - raw</Title>
+          <Subtitle>Household averages per annum per household member</Subtitle>
+          <CellAction>
+            <CalculationType>CalculateWeightedAverage</CalculationType>
+            <FormulaString><![CDATA[DATA_VAR[@AverageVar]*12]]></FormulaString>
+          </CellAction>
+          <StringFormat>#,0.00</StringFormat>
+          <Columns>
+            <Column>
+              <Name>baseSysSET</Name>
+              <Title>[baseSys]</Title>
+              <CellAction>
+                <Parameters>
+                  <Parameter>
+                    <Name>AverageVar</Name>
+                    <VarName>specificExcise</VarName>
+                  </Parameter>
+                </Parameters>
+              </CellAction>
+            </Column>
+          </Columns>
+          <Rows>
+            <Row>
+              <Name><![CDATA[	  No Earners]]></Name>
+              <CellAction>
+                <Filter>
+                  <Name>FilterHH_NoEarners</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  One Earner]]></Name>
+              <CellAction>
+                <Filter>
+                  <Name>FilterHH_OneEarner</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Two+ Earners]]></Name>
+              <CellAction>
+                <Filter>
+                  <Name>FilterHH_TwoPlusEarners</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  With Children]]></Name>
+              <CellAction>
+                <Filter>
+                  <Name>FilterHH_HasChildren</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Three+ Children]]></Name>
+              <CellAction>
+                <Filter>
+                  <Name>FilterHH_ThreePlusChildren</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Single no children]]></Name>
+              <Tooltip>Households comprised of a single adult under state pension age.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterSingleNoKids</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Lone Parent]]></Name>
+              <CellAction>
+                <Filter>
+                  <Name>FilterHH_LoneParent</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Young mother]]></Name>
+              <Tooltip>Women under age 25 with a dependent child.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterHH_YoungMother</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Couple one income no children]]></Name>
+              <Tooltip>Households comprised of two adults and no children, where one adult works and both are under state pension age.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterCoupleSingleIncomeNoKids</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Couple dual income no children]]></Name>
+              <CellAction>
+                <Filter>
+                  <Name>FilterCoupleDualIncomeNoKids</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Couple one income with children]]></Name>
+              <Tooltip>Households comprised of two adults and at least one child, where one adult works and both adults are under state pension age.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterCoupleSingleIncomeParents</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Couple dual income with children]]></Name>
+              <Tooltip>Households comprised of two adults and at least one child, where both adults work and are under state pension age.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterCoupleDualIncomeParents</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Single pensioners]]></Name>
+              <Tooltip>Households comprised of single adult over state pension age.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterSinglePensioners</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Couple pensioners]]></Name>
+              <Tooltip>Households comprised of two adults over state pension age.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterCouplePensioners</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Disabled]]></Name>
+              <CellAction>
+                <Filter>
+                  <Name>FilterHH_Disabled</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name>All</Name>
+              <HasSeparatorBefore>True</HasSeparatorBefore>
+              <Strong>true</Strong>
+            </Row>
+          </Rows>
+        </Table>
+        <Table>
+          <Title>6.14 Average specific excise by household type - adjusted</Title>
+          <Subtitle>Household averages per annum per household member</Subtitle>
+          <CellAction>
+            <CalculationType>CalculateWeightedAverage</CalculationType>
+            <FormulaString><![CDATA[DATA_VAR[@AverageVar]*12]]></FormulaString>
+          </CellAction>
+          <StringFormat>#,0.00</StringFormat>
+          <Columns>
+            <Column>
+              <Name>baseSysSET</Name>
+              <Title>[baseSys]</Title>
+              <CellAction>
+                <Parameters>
+                  <Parameter>
+                    <Name>AverageVar</Name>
+                    <VarName>specificExciseAdj</VarName>
+                  </Parameter>
+                </Parameters>
+              </CellAction>
+            </Column>
+          </Columns>
+          <Rows>
+            <Row>
+              <Name><![CDATA[	  No Earners]]></Name>
+              <CellAction>
+                <Filter>
+                  <Name>FilterHH_NoEarners</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  One Earner]]></Name>
+              <CellAction>
+                <Filter>
+                  <Name>FilterHH_OneEarner</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Two+ Earners]]></Name>
+              <CellAction>
+                <Filter>
+                  <Name>FilterHH_TwoPlusEarners</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  With Children]]></Name>
+              <CellAction>
+                <Filter>
+                  <Name>FilterHH_HasChildren</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Three+ Children]]></Name>
+              <CellAction>
+                <Filter>
+                  <Name>FilterHH_ThreePlusChildren</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Single no children]]></Name>
+              <Tooltip>Households comprised of a single adult under state pension age.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterSingleNoKids</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Lone Parent]]></Name>
+              <CellAction>
+                <Filter>
+                  <Name>FilterHH_LoneParent</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Young mother]]></Name>
+              <Tooltip>Women under age 25 with a dependent child.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterHH_YoungMother</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Couple one income no children]]></Name>
+              <Tooltip>Households comprised of two adults and no children, where one adult works and both are under state pension age.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterCoupleSingleIncomeNoKids</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Couple dual income no children]]></Name>
+              <CellAction>
+                <Filter>
+                  <Name>FilterCoupleDualIncomeNoKids</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Couple one income with children]]></Name>
+              <Tooltip>Households comprised of two adults and at least one child, where one adult works and both adults are under state pension age.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterCoupleSingleIncomeParents</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Couple dual income with children]]></Name>
+              <Tooltip>Households comprised of two adults and at least one child, where both adults work and are under state pension age.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterCoupleDualIncomeParents</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Single pensioners]]></Name>
+              <Tooltip>Households comprised of single adult over state pension age.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterSinglePensioners</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Couple pensioners]]></Name>
+              <Tooltip>Households comprised of two adults over state pension age.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterCouplePensioners</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Disabled]]></Name>
+              <CellAction>
+                <Filter>
+                  <Name>FilterHH_Disabled</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name>All</Name>
+              <HasSeparatorBefore>True</HasSeparatorBefore>
+              <Strong>true</Strong>
+            </Row>
+          </Rows>
+        </Table>
+        <Table>
+          <Title>6.15 Average value added tax by household type - raw</Title>
+          <Subtitle>Household averages per annum per household member</Subtitle>
+          <CellAction>
+            <CalculationType>CalculateWeightedAverage</CalculationType>
+            <FormulaString><![CDATA[DATA_VAR[@AverageVar]*12]]></FormulaString>
+          </CellAction>
+          <StringFormat>#,0.00</StringFormat>
+          <Columns>
+            <Column>
+              <Name>baseSysVATT</Name>
+              <Title>[baseSys]</Title>
+              <CellAction>
+                <Parameters>
+                  <Parameter>
+                    <Name>AverageVar</Name>
+                    <VarName>valueAddedTax</VarName>
+                  </Parameter>
+                </Parameters>
+              </CellAction>
+            </Column>
+          </Columns>
+          <Rows>
+            <Row>
+              <Name><![CDATA[	  No Earners]]></Name>
+              <CellAction>
+                <Filter>
+                  <Name>FilterHH_NoEarners</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  One Earner]]></Name>
+              <CellAction>
+                <Filter>
+                  <Name>FilterHH_OneEarner</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Two+ Earners]]></Name>
+              <CellAction>
+                <Filter>
+                  <Name>FilterHH_TwoPlusEarners</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  With Children]]></Name>
+              <CellAction>
+                <Filter>
+                  <Name>FilterHH_HasChildren</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Three+ Children]]></Name>
+              <CellAction>
+                <Filter>
+                  <Name>FilterHH_ThreePlusChildren</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Single no children]]></Name>
+              <Tooltip>Households comprised of a single adult under state pension age.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterSingleNoKids</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Lone Parent]]></Name>
+              <CellAction>
+                <Filter>
+                  <Name>FilterHH_LoneParent</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Young mother]]></Name>
+              <Tooltip>Women under age 25 with a dependent child.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterHH_YoungMother</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Couple one income no children]]></Name>
+              <Tooltip>Households comprised of two adults and no children, where one adult works and both are under state pension age.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterCoupleSingleIncomeNoKids</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Couple dual income no children]]></Name>
+              <CellAction>
+                <Filter>
+                  <Name>FilterCoupleDualIncomeNoKids</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Couple one income with children]]></Name>
+              <Tooltip>Households comprised of two adults and at least one child, where one adult works and both adults are under state pension age.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterCoupleSingleIncomeParents</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Couple dual income with children]]></Name>
+              <Tooltip>Households comprised of two adults and at least one child, where both adults work and are under state pension age.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterCoupleDualIncomeParents</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Single pensioners]]></Name>
+              <Tooltip>Households comprised of single adult over state pension age.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterSinglePensioners</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Couple pensioners]]></Name>
+              <Tooltip>Households comprised of two adults over state pension age.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterCouplePensioners</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Disabled]]></Name>
+              <CellAction>
+                <Filter>
+                  <Name>FilterHH_Disabled</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name>All</Name>
+              <HasSeparatorBefore>True</HasSeparatorBefore>
+              <Strong>true</Strong>
+            </Row>
+          </Rows>
+        </Table>
+        <Table>
+          <Title>6.16 Average value added tax by household type - adjusted</Title>
+          <Subtitle>Household averages per annum per household member</Subtitle>
+          <CellAction>
+            <CalculationType>CalculateWeightedAverage</CalculationType>
+            <FormulaString><![CDATA[DATA_VAR[@AverageVar]*12]]></FormulaString>
+          </CellAction>
+          <StringFormat>#,0.00</StringFormat>
+          <Columns>
+            <Column>
+              <Name>baseSysVATT</Name>
+              <Title>[baseSys]</Title>
+              <CellAction>
+                <Parameters>
+                  <Parameter>
+                    <Name>AverageVar</Name>
+                    <VarName>valueAddedTaxAdj</VarName>
+                  </Parameter>
+                </Parameters>
+              </CellAction>
+            </Column>
+          </Columns>
+          <Rows>
+            <Row>
+              <Name><![CDATA[	  No Earners]]></Name>
+              <CellAction>
+                <Filter>
+                  <Name>FilterHH_NoEarners</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  One Earner]]></Name>
+              <CellAction>
+                <Filter>
+                  <Name>FilterHH_OneEarner</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Two+ Earners]]></Name>
+              <CellAction>
+                <Filter>
+                  <Name>FilterHH_TwoPlusEarners</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  With Children]]></Name>
+              <CellAction>
+                <Filter>
+                  <Name>FilterHH_HasChildren</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Three+ Children]]></Name>
+              <CellAction>
+                <Filter>
+                  <Name>FilterHH_ThreePlusChildren</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Single no children]]></Name>
+              <Tooltip>Households comprised of a single adult under state pension age.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterSingleNoKids</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Lone Parent]]></Name>
+              <CellAction>
+                <Filter>
+                  <Name>FilterHH_LoneParent</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Young mother]]></Name>
+              <Tooltip>Women under age 25 with a dependent child.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterHH_YoungMother</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Couple one income no children]]></Name>
+              <Tooltip>Households comprised of two adults and no children, where one adult works and both are under state pension age.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterCoupleSingleIncomeNoKids</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Couple dual income no children]]></Name>
+              <CellAction>
+                <Filter>
+                  <Name>FilterCoupleDualIncomeNoKids</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Couple one income with children]]></Name>
+              <Tooltip>Households comprised of two adults and at least one child, where one adult works and both adults are under state pension age.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterCoupleSingleIncomeParents</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Couple dual income with children]]></Name>
+              <Tooltip>Households comprised of two adults and at least one child, where both adults work and are under state pension age.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterCoupleDualIncomeParents</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Single pensioners]]></Name>
+              <Tooltip>Households comprised of single adult over state pension age.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterSinglePensioners</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Couple pensioners]]></Name>
+              <Tooltip>Households comprised of two adults over state pension age.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterCouplePensioners</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Disabled]]></Name>
+              <CellAction>
+                <Filter>
+                  <Name>FilterHH_Disabled</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name>All</Name>
+              <HasSeparatorBefore>True</HasSeparatorBefore>
+              <Strong>true</Strong>
+            </Row>
+          </Rows>
+        </Table>
+        <Table>
+          <Title>6.17 Average indirect tax by household type - raw</Title>
+          <Subtitle>Household averages per annum per household member</Subtitle>
+          <CellAction>
+            <CalculationType>CalculateWeightedAverage</CalculationType>
+            <FormulaString><![CDATA[DATA_VAR[@AverageVar]*12]]></FormulaString>
+          </CellAction>
+          <StringFormat>#,0.00</StringFormat>
+          <Columns>
+            <Column>
+              <Name>baseSysITT</Name>
+              <Title>[baseSys]</Title>
+              <CellAction>
+                <Parameters>
+                  <Parameter>
+                    <Name>AverageVar</Name>
+                    <VarName>indirectTaxes</VarName>
+                  </Parameter>
+                </Parameters>
+              </CellAction>
+            </Column>
+          </Columns>
+          <Rows>
+            <Row>
+              <Name><![CDATA[	  No Earners]]></Name>
+              <CellAction>
+                <Filter>
+                  <Name>FilterHH_NoEarners</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  One Earner]]></Name>
+              <CellAction>
+                <Filter>
+                  <Name>FilterHH_OneEarner</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Two+ Earners]]></Name>
+              <CellAction>
+                <Filter>
+                  <Name>FilterHH_TwoPlusEarners</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  With Children]]></Name>
+              <CellAction>
+                <Filter>
+                  <Name>FilterHH_HasChildren</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Three+ Children]]></Name>
+              <CellAction>
+                <Filter>
+                  <Name>FilterHH_ThreePlusChildren</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Single no children]]></Name>
+              <Tooltip>Households comprised of a single adult under state pension age.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterSingleNoKids</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Lone Parent]]></Name>
+              <CellAction>
+                <Filter>
+                  <Name>FilterHH_LoneParent</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Young mother]]></Name>
+              <Tooltip>Women under age 25 with a dependent child.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterHH_YoungMother</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Couple one income no children]]></Name>
+              <Tooltip>Households comprised of two adults and no children, where one adult works and both are under state pension age.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterCoupleSingleIncomeNoKids</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Couple dual income no children]]></Name>
+              <CellAction>
+                <Filter>
+                  <Name>FilterCoupleDualIncomeNoKids</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Couple one income with children]]></Name>
+              <Tooltip>Households comprised of two adults and at least one child, where one adult works and both adults are under state pension age.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterCoupleSingleIncomeParents</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Couple dual income with children]]></Name>
+              <Tooltip>Households comprised of two adults and at least one child, where both adults work and are under state pension age.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterCoupleDualIncomeParents</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Single pensioners]]></Name>
+              <Tooltip>Households comprised of single adult over state pension age.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterSinglePensioners</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Couple pensioners]]></Name>
+              <Tooltip>Households comprised of two adults over state pension age.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterCouplePensioners</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Disabled]]></Name>
+              <CellAction>
+                <Filter>
+                  <Name>FilterHH_Disabled</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name>All</Name>
+			        <HasSeparatorBefore>True</HasSeparatorBefore>
+              <Strong>true</Strong>
+            </Row>
+          </Rows>
+        </Table>
+        <Table>
+          <Title>6.18 Average indirect tax by household type - adjusted</Title>
+          <Subtitle>Household averages per annum per household member</Subtitle>
+          <CellAction>
+            <CalculationType>CalculateWeightedAverage</CalculationType>
+            <FormulaString><![CDATA[DATA_VAR[@AverageVar]*12]]></FormulaString>
+          </CellAction>
+          <StringFormat>#,0.00</StringFormat>
+          <Columns>
+            <Column>
+              <Name>baseSysITT</Name>
+              <Title>[baseSys]</Title>
+              <CellAction>
+                <Parameters>
+                  <Parameter>
+                    <Name>AverageVar</Name>
+                    <VarName>indirectTaxesAdj</VarName>
+                  </Parameter>
+                </Parameters>
+              </CellAction>
+            </Column>
+          </Columns>
+          <Rows>
+            <Row>
+              <Name><![CDATA[	  No Earners]]></Name>
+              <CellAction>
+                <Filter>
+                  <Name>FilterHH_NoEarners</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  One Earner]]></Name>
+              <CellAction>
+                <Filter>
+                  <Name>FilterHH_OneEarner</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Two+ Earners]]></Name>
+              <CellAction>
+                <Filter>
+                  <Name>FilterHH_TwoPlusEarners</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  With Children]]></Name>
+              <CellAction>
+                <Filter>
+                  <Name>FilterHH_HasChildren</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Three+ Children]]></Name>
+              <CellAction>
+                <Filter>
+                  <Name>FilterHH_ThreePlusChildren</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Single no children]]></Name>
+              <Tooltip>Households comprised of a single adult under state pension age.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterSingleNoKids</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Lone Parent]]></Name>
+              <CellAction>
+                <Filter>
+                  <Name>FilterHH_LoneParent</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Young mother]]></Name>
+              <Tooltip>Women under age 25 with a dependent child.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterHH_YoungMother</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Couple one income no children]]></Name>
+              <Tooltip>Households comprised of two adults and no children, where one adult works and both are under state pension age.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterCoupleSingleIncomeNoKids</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Couple dual income no children]]></Name>
+              <CellAction>
+                <Filter>
+                  <Name>FilterCoupleDualIncomeNoKids</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Couple one income with children]]></Name>
+              <Tooltip>Households comprised of two adults and at least one child, where one adult works and both adults are under state pension age.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterCoupleSingleIncomeParents</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Couple dual income with children]]></Name>
+              <Tooltip>Households comprised of two adults and at least one child, where both adults work and are under state pension age.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterCoupleDualIncomeParents</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Single pensioners]]></Name>
+              <Tooltip>Households comprised of single adult over state pension age.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterSinglePensioners</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Couple pensioners]]></Name>
+              <Tooltip>Households comprised of two adults over state pension age.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterCouplePensioners</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name><![CDATA[	  Disabled]]></Name>
+              <CellAction>
+                <Filter>
+                  <Name>FilterHH_Disabled</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name>All</Name>
+			        <HasSeparatorBefore>True</HasSeparatorBefore>
+              <Strong>true</Strong>
             </Row>
           </Rows>
         </Table>

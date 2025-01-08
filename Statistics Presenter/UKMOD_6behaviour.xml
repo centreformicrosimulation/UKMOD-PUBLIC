@@ -73,6 +73,7 @@
         <p style='line-height:1.5;margin-left:24.0pt;'>      National insurance contributions (employer): ils_sicer = tscer_s</p>
         <p style='line-height:1.5;'><b>Credited national insurance contributions</b>: ils_sicct = tscct_s</p>
         <p style='line-height:1.5;'><b>Government expenditure on benefits and tax credits</b>: ils_ben = ils_benmt + ils_bennt + ils_pen</p>
+        <p style='line-height:1.5;margin-left:12.0pt;'>   Note that categorisation between means-tested and non-means-tested benefits described here is relevant for the most recent policy environment. In contrast the aggregates ils_benmt and ils_bennt evolve as individual benefits move from one category to another. This means that the aggregates reported for historical systems for means-tested and non-means-tested benefits may depart from the sum of the components listed here.</p>         
         <p style='line-height:1.5;margin-left:12.0pt;'>   Means-tested non-pension benefits: ils_benmt = bsauc_s - brduc_s + bunmt_s + bsa_s + bsadi_s + boamt_s + boaht_s + bmu_s + bho_s - brd_s + bwkmt_s + bfamt_s + bmamt_s + bmamt01_s + bmascmt_s + bch_s + bchmt_s + bchmt01_s + bmascmt01_s + bched01_s + bched02_s + bhosc01_s + bsaec_s</p>
         <p style='line-height:1.5;margin-left:24.0pt;'>      Universal Credit: bsauc_s</p>
         <p style='line-height:1.5;margin-left:24.0pt;'>      Benefit cap (reducing Universal Credit): brduc_s</p>
@@ -122,8 +123,8 @@
         <p style='line-height:1.5;margin-left:36.0pt;'>         Statutory Sick Pay: bhlwk</p>
         <p style='line-height:1.5;margin-left:36.0pt;'>         Training Allowance: buntr</p>
         <p style='line-height:1.5;margin-left:36.0pt;'>         Other non-means-tested benefits: bot</p>
-        <p style='line-height:1.5;margin-left:12.0pt;'>   Pensions: ils_pen = boact00 + boactcm + boawr + bsuwd</p>
-        <p style='line-height:1.5;margin-left:24.0pt;'>      Base State pension: boact00</p>
+        <p style='line-height:1.5;margin-left:12.0pt;'>   Pensions: ils_pen = boact_s + boactcm + boawr + bsuwd</p>
+        <p style='line-height:1.5;margin-left:24.0pt;'>      Base State pension: boact_s</p>
         <p style='line-height:1.5;margin-left:24.0pt;'>      Second State Pension: boactcm</p>
         <p style='line-height:1.5;margin-left:24.0pt;'>      War pension: boawr</p>
         <p style='line-height:1.5;margin-left:24.0pt;'>      Widow's pension: bsuwd</p>
@@ -487,8 +488,8 @@
         <ReadVar>bot_prim1</ReadVar>
       </OptionalVariable>
       <OptionalVariable>
-        <Name>boact00Prim</Name>
-        <ReadVar>boact00_prim1</ReadVar>
+        <Name>boact_sPrim</Name>
+        <ReadVar>boact_s_prim1</ReadVar>
       </OptionalVariable>
       <OptionalVariable>
         <Name>boactcmPrim</Name>
@@ -781,8 +782,8 @@
         <ReadVar>bot</ReadVar>
       </OptionalVariable>
       <OptionalVariable>
-        <Name>boact00</Name>
-        <ReadVar>boact00</ReadVar>
+        <Name>boact_s</Name>
+        <ReadVar>boact_s</ReadVar>
       </OptionalVariable>
       <OptionalVariable>
         <Name>boactcm</Name>
@@ -3451,16 +3452,16 @@
                 <Parameters>
                   <Parameter>
                     <Name>BasePar</Name>
-                    <VarName>boact00</VarName>
+                    <VarName>boact_s</VarName>
                     <Reform>false</Reform>
                   </Parameter>
                   <Parameter>
                     <Name>RefParS</Name>
-                    <VarName>boact00Prim</VarName>
+                    <VarName>boact_sPrim</VarName>
                   </Parameter>
                   <Parameter>
                     <Name>RefParD</Name>
-                    <VarName>boact00</VarName>
+                    <VarName>boact_s</VarName>
                   </Parameter>
                 </Parameters>
               </CellAction>
