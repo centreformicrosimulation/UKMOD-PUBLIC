@@ -26097,9 +26097,9 @@
             <ID>b6fcc94f-0328-4462-a26f-820ed3f645dc</ID>
             <FunctionID>1c33762c-609a-4ed9-a9e4-1a670984e2a5</FunctionID>
             <Name>$tco_adj_vat</Name>
-            <Comment><![CDATA[]]></Comment>
+            <Comment><![CDATA[adjusted to match year specific ONS variable QYRC]]></Comment>
             <PrivateComment />
-            <Value><![CDATA[2.112601099]]></Value>
+            <Value><![CDATA[3.399590207]]></Value>
             <Order>1</Order>
             <ValueType>formula</ValueType>
             <Group />
@@ -26110,9 +26110,9 @@
             <ID>079c8b51-48f0-48ae-b355-54cf07ce3aca</ID>
             <FunctionID>1c33762c-609a-4ed9-a9e4-1a670984e2a5</FunctionID>
             <Name>$tco_adj_beer</Name>
-            <Comment><![CDATA[]]></Comment>
+            <Comment><![CDATA[GTAM]]></Comment>
             <PrivateComment />
-            <Value><![CDATA[5.270019701]]></Value>
+            <Value><![CDATA[8.481371699]]></Value>
             <Order>2</Order>
             <ValueType>formula</ValueType>
             <Group />
@@ -26123,9 +26123,9 @@
             <ID>19220522-8f9f-452e-87e4-51003fca5eca</ID>
             <FunctionID>1c33762c-609a-4ed9-a9e4-1a670984e2a5</FunctionID>
             <Name>$tco_adj_wine</Name>
-            <Comment><![CDATA[]]></Comment>
+            <Comment><![CDATA[GTAN]]></Comment>
             <PrivateComment />
-            <Value><![CDATA[1.223840501]]></Value>
+            <Value><![CDATA[1.96942064]]></Value>
             <Order>3</Order>
             <ValueType>formula</ValueType>
             <Group />
@@ -26136,9 +26136,9 @@
             <ID>664499af-22ee-4fa7-9542-a0a800afe665</ID>
             <FunctionID>1c33762c-609a-4ed9-a9e4-1a670984e2a5</FunctionID>
             <Name>$tco_adj_hydrocarbon</Name>
-            <Comment><![CDATA[]]></Comment>
+            <Comment><![CDATA[GTAP]]></Comment>
             <PrivateComment />
-            <Value><![CDATA[1.093220342]]></Value>
+            <Value><![CDATA[1.759281251]]></Value>
             <Order>5</Order>
             <ValueType>formula</ValueType>
             <Group />
@@ -26149,9 +26149,9 @@
             <ID>5ab188b2-e372-4a1e-9568-083c230703d4</ID>
             <FunctionID>1c33762c-609a-4ed9-a9e4-1a670984e2a5</FunctionID>
             <Name>$tco_adj_tobacco</Name>
-            <Comment><![CDATA[]]></Comment>
+            <Comment><![CDATA[GTAO]]></Comment>
             <PrivateComment />
-            <Value><![CDATA[1.595897888]]></Value>
+            <Value><![CDATA[2.56808639]]></Value>
             <Order>4</Order>
             <ValueType>formula</ValueType>
             <Group />
@@ -26173,9 +26173,9 @@
             <ID>d00b7683-e611-46b8-abbd-b2d42976f815</ID>
             <FunctionID>9ba04019-464b-403b-a32d-aa22c980ec57</FunctionID>
             <Name>$tco_adj_vat</Name>
-            <Comment><![CDATA[]]></Comment>
+            <Comment><![CDATA[adjusted to match year specific ONS variable QYRC]]></Comment>
             <PrivateComment />
-            <Value><![CDATA[2.092758342]]></Value>
+            <Value><![CDATA[3.359038429]]></Value>
             <Order>2</Order>
             <ValueType>formula</ValueType>
             <Group />
@@ -26186,9 +26186,9 @@
             <ID>aea0fb25-a857-4b8c-bc8d-3e13ae5d130e</ID>
             <FunctionID>9ba04019-464b-403b-a32d-aa22c980ec57</FunctionID>
             <Name>$tco_adj_beer</Name>
-            <Comment><![CDATA[]]></Comment>
+            <Comment><![CDATA[GTAM]]></Comment>
             <PrivateComment />
-            <Value><![CDATA[5.343165888]]></Value>
+            <Value><![CDATA[8.568166212]]></Value>
             <Order>3</Order>
             <ValueType>formula</ValueType>
             <Group />
@@ -26199,9 +26199,9 @@
             <ID>dde19215-e0da-43c9-8e11-216aa5c8bd0e</ID>
             <FunctionID>9ba04019-464b-403b-a32d-aa22c980ec57</FunctionID>
             <Name>$tco_adj_wine</Name>
-            <Comment><![CDATA[]]></Comment>
+            <Comment><![CDATA[GTAN]]></Comment>
             <PrivateComment />
-            <Value><![CDATA[1.228784684]]></Value>
+            <Value><![CDATA[1.97113908]]></Value>
             <Order>4</Order>
             <ValueType>formula</ValueType>
             <Group />
@@ -26212,9 +26212,9 @@
             <ID>8cb76e11-d66e-421b-acf7-2c92dc33bb74</ID>
             <FunctionID>9ba04019-464b-403b-a32d-aa22c980ec57</FunctionID>
             <Name>$tco_adj_hydrocarbon</Name>
-            <Comment><![CDATA[]]></Comment>
+            <Comment><![CDATA[GTAP]]></Comment>
             <PrivateComment />
-            <Value><![CDATA[1.086170291]]></Value>
+            <Value><![CDATA[1.744448488]]></Value>
             <Order>6</Order>
             <ValueType>formula</ValueType>
             <Group />
@@ -26225,9 +26225,9 @@
             <ID>3842d4f9-004c-42a5-89d0-9a91dba41d2e</ID>
             <FunctionID>9ba04019-464b-403b-a32d-aa22c980ec57</FunctionID>
             <Name>$tco_adj_tobacco</Name>
-            <Comment><![CDATA[]]></Comment>
+            <Comment><![CDATA[GTAO]]></Comment>
             <PrivateComment />
-            <Value><![CDATA[1.993550408]]></Value>
+            <Value><![CDATA[3.20099959]]></Value>
             <Order>5</Order>
             <ValueType>formula</ValueType>
             <Group />
@@ -26275,9 +26275,9 @@
             <ID>b3f38b6d-3e4c-4729-bb4c-693c62f6b647</ID>
             <FunctionID>341c39b0-9536-4820-94e6-16126f32e0ba</FunctionID>
             <Name>$tco_adj_vat</Name>
-            <Comment><![CDATA[]]></Comment>
+            <Comment><![CDATA[adjusted to match year specific ONS variable QYRC]]></Comment>
             <PrivateComment />
-            <Value><![CDATA[2.829266418]]></Value>
+            <Value><![CDATA[4.546716248]]></Value>
             <Order>2</Order>
             <ValueType>formula</ValueType>
             <Group />
@@ -26288,9 +26288,9 @@
             <ID>934a5347-a696-44ca-a6bf-9f97fe1f0df9</ID>
             <FunctionID>341c39b0-9536-4820-94e6-16126f32e0ba</FunctionID>
             <Name>$tco_adj_beer</Name>
-            <Comment><![CDATA[]]></Comment>
+            <Comment><![CDATA[GTAM]]></Comment>
             <PrivateComment />
-            <Value><![CDATA[3.188221697]]></Value>
+            <Value><![CDATA[5.123700394]]></Value>
             <Order>3</Order>
             <ValueType>formula</ValueType>
             <Group />
@@ -26301,9 +26301,9 @@
             <ID>6f90975f-ea2b-41d4-a698-7b3c71a94a62</ID>
             <FunctionID>341c39b0-9536-4820-94e6-16126f32e0ba</FunctionID>
             <Name>$tco_adj_wine</Name>
-            <Comment><![CDATA[]]></Comment>
+            <Comment><![CDATA[GTAN]]></Comment>
             <PrivateComment />
-            <Value><![CDATA[1.120155273]]></Value>
+            <Value><![CDATA[1.799608697]]></Value>
             <Order>4</Order>
             <ValueType>formula</ValueType>
             <Group />
@@ -26314,9 +26314,9 @@
             <ID>da9b0781-ff0a-462a-889f-936103f8c356</ID>
             <FunctionID>341c39b0-9536-4820-94e6-16126f32e0ba</FunctionID>
             <Name>$tco_adj_hydrocarbon</Name>
-            <Comment><![CDATA[]]></Comment>
+            <Comment><![CDATA[GTAP]]></Comment>
             <PrivateComment />
-            <Value><![CDATA[1.521961487]]></Value>
+            <Value><![CDATA[2.445229741]]></Value>
             <Order>6</Order>
             <ValueType>formula</ValueType>
             <Group />
@@ -26327,9 +26327,9 @@
             <ID>70a28c40-f517-4e71-ae25-b29d73f9e4cb</ID>
             <FunctionID>341c39b0-9536-4820-94e6-16126f32e0ba</FunctionID>
             <Name>$tco_adj_tobacco</Name>
-            <Comment><![CDATA[]]></Comment>
+            <Comment><![CDATA[GTAO]]></Comment>
             <PrivateComment />
-            <Value><![CDATA[2.677687397]]></Value>
+            <Value><![CDATA[4.307579824]]></Value>
             <Order>5</Order>
             <ValueType>formula</ValueType>
             <Group />
@@ -26377,9 +26377,9 @@
             <ID>aea07885-d853-49e9-924c-19e78770f8ac</ID>
             <FunctionID>92f81539-7744-458f-86aa-f24667451d01</FunctionID>
             <Name>$tco_adj_vat</Name>
-            <Comment><![CDATA[]]></Comment>
+            <Comment><![CDATA[adjusted to match year specific ONS variable QYRC]]></Comment>
             <PrivateComment />
-            <Value><![CDATA[2.525480245]]></Value>
+            <Value><![CDATA[4.055441653]]></Value>
             <Order>2</Order>
             <ValueType>formula</ValueType>
             <Group />
@@ -26390,9 +26390,9 @@
             <ID>71feb365-32b0-4e4d-a1c6-e298ec60d796</ID>
             <FunctionID>92f81539-7744-458f-86aa-f24667451d01</FunctionID>
             <Name>$tco_adj_beer</Name>
-            <Comment><![CDATA[]]></Comment>
+            <Comment><![CDATA[GTAM]]></Comment>
             <PrivateComment />
-            <Value><![CDATA[4.496202532]]></Value>
+            <Value><![CDATA[7.226123968]]></Value>
             <Order>3</Order>
             <ValueType>formula</ValueType>
             <Group />
@@ -26403,9 +26403,9 @@
             <ID>b200009d-66e9-4281-ac5c-9027bff93958</ID>
             <FunctionID>92f81539-7744-458f-86aa-f24667451d01</FunctionID>
             <Name>$tco_adj_wine</Name>
-            <Comment><![CDATA[]]></Comment>
+            <Comment><![CDATA[GTAN]]></Comment>
             <PrivateComment />
-            <Value><![CDATA[1.359987178]]></Value>
+            <Value><![CDATA[2.184054279]]></Value>
             <Order>4</Order>
             <ValueType>formula</ValueType>
             <Group />
@@ -26416,9 +26416,9 @@
             <ID>7e2cc1dd-8247-4f0b-9b10-c841a9b53875</ID>
             <FunctionID>92f81539-7744-458f-86aa-f24667451d01</FunctionID>
             <Name>$tco_adj_hydrocarbon</Name>
-            <Comment><![CDATA[]]></Comment>
+            <Comment><![CDATA[GTAP]]></Comment>
             <PrivateComment />
-            <Value><![CDATA[1.27733593]]></Value>
+            <Value><![CDATA[2.051483929]]></Value>
             <Order>6</Order>
             <ValueType>formula</ValueType>
             <Group />
@@ -26429,9 +26429,9 @@
             <ID>64afcd4e-df7a-4574-8490-0a5cab921674</ID>
             <FunctionID>92f81539-7744-458f-86aa-f24667451d01</FunctionID>
             <Name>$tco_adj_tobacco</Name>
-            <Comment><![CDATA[]]></Comment>
+            <Comment><![CDATA[GTAO]]></Comment>
             <PrivateComment />
-            <Value><![CDATA[2.539866542]]></Value>
+            <Value><![CDATA[4.081793729]]></Value>
             <Order>5</Order>
             <ValueType>formula</ValueType>
             <Group />

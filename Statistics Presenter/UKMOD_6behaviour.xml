@@ -598,6 +598,7 @@
       <OptionalVariable>
         <Name>spl_bhc</Name>
         <ReadVar>spl_bhc</ReadVar>
+        <DefaultValue>-999</DefaultValue>
       </OptionalVariable>
       <OptionalVariable>
         <Name>tin00_s</Name>
@@ -614,6 +615,7 @@
       <OptionalVariable>
         <Name>spl_ahc</Name>
         <ReadVar>spl_ahc</ReadVar>
+        <DefaultValue>-999</DefaultValue>
       </OptionalVariable>
       <OptionalVariable>
         <Name>ilsSicCt</Name>
@@ -1511,13 +1513,23 @@
         </Parameters>
       </Action>
       <Action>
-        <CalculationType>CalculateArithmetic</CalculationType>
-	    <FormulaString><![CDATA[iif(DATA_VAR[@spl_bhc]>0,DATA_VAR[@spl_bhc],SAVED_VAR[@deciles_eqDispy~dec~5] * 0.6)]]></FormulaString>
-        <OutputVar>povLine</OutputVar>
+        <CalculationType>CalculateWeightedAverage</CalculationType>
+        <FormulaString><![CDATA[DATA_VAR[@spl_bhc]]]></FormulaString>
+        <OutputVar>savedPovLine</OutputVar>
       </Action>
       <Action>
         <CalculationType>CalculateArithmetic</CalculationType>
-	    <FormulaString><![CDATA[iif(DATA_VAR[@spl_ahc]>0,DATA_VAR[@spl_ahc],SAVED_VAR[@deciles_eqDispyAHC~dec~5] * 0.6)]]></FormulaString>
+        <FormulaString><![CDATA[iif(SAVED_VAR[@savedPovLine]>0,SAVED_VAR[@savedPovLine],SAVED_VAR[@deciles_eqDispy~dec~5] * 0.6)]]></FormulaString>
+        <OutputVar>povLine</OutputVar>
+      </Action>
+      <Action>
+        <CalculationType>CalculateWeightedAverage</CalculationType>
+        <FormulaString><![CDATA[DATA_VAR[@spl_ahc]]]></FormulaString>
+        <OutputVar>savedPovLineAHC</OutputVar>
+      </Action>
+      <Action>
+        <CalculationType>CalculateArithmetic</CalculationType>
+        <FormulaString><![CDATA[iif(SAVED_VAR[@savedPovLineAHC]>0,SAVED_VAR[@savedPovLineAHC],SAVED_VAR[@deciles_eqDispyAHC~dec~5] * 0.6)]]></FormulaString>
         <OutputVar>povLineAHC</OutputVar>
       </Action>
       <Action>
