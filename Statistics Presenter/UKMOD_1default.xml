@@ -240,15 +240,16 @@
         <ReadVar>drgn1</ReadVar>
       </RequiredVariable>
       <RequiredVariable>
-        <Name>dot</Name>
-        <ReadVar>dot</ReadVar>
-      </RequiredVariable>
-      <RequiredVariable>
         <Name>amrtn</Name>
         <ReadVar>amrtn</ReadVar>
       </RequiredVariable>
     </RequiredVariables>
     <OptionalVariables>
+      <OptionalVariable>
+        <Name>dot</Name>
+        <ReadVar>dot</ReadVar>
+        <DefaultValue>1</DefaultValue>
+      </OptionalVariable>
       <OptionalVariable>
         <Name>ilsDispyAIT</Name>
         <ReadVar>il_dispyahcit_adj</ReadVar>
