@@ -807,7 +807,6 @@
   	    <Name>FilterSingleWomanNoKidsWorking</Name>
         <FormulaString><![CDATA[(DATA_VAR[@dgn]==0) & (DATA_VAR[@hh_num_children]==0) & (DATA_VAR[@hh_num_adults]==1) & (DATA_VAR[@hh_num_pensioners]==0) & (DATA_VAR[@hh_num_earners]>0)]]></FormulaString>
       </Filter>
-
       <Filter>
         <Reform>false</Reform>
   	    <Name>FilterSingleParents</Name>
@@ -4102,9 +4101,13 @@
       <Title>Basic poverty indices</Title>
       <Description>
         <![CDATA[
-          <p style='line-height:1.5'><span lang=EN>These tables show <b><span style='color:#0070C0'>the poverty headcount </span></b><u>of the total population and selected sub-population groups</u> as well as the <u>poverty gap</u> and the <u>poverty line</u> (in currency per week). Tables toward the lower half of this sheet report BHC poverty indices based on a poverty line evaluated for the entire UK population. These tables are designed to facilitate regional analysis, in conjunction with policy "ukpovertyline" of the policy spine.  The policy "ukpovertyline" is turned off by default. This policy should be turned on, along with the respective regional limitation, if the associated tables are of interest.</span></p>
+          <p style='line-height:1.5'><span lang=EN>These tables show <b><span style='color:#0070C0'>the poverty headcount </span></b><u>of the total population and selected sub-population groups</u> as well as the <u>poverty gap</u> and the <u>poverty line</u> (in currency per week).</p>
+          <p style='line-height:1.5'>Households are defined as <u>being at risk of poverty (poor)</u> if their equivalised household disposable income is below the poverty line. <u>The poverty line</u> is defined as 60% of the country specific median equivalised household disposable income in currency per week. The <u>poverty gap</u> is the difference between the poverty line and the median income of people at-risk-of poverty divided by the poverty line. The median income of people at-risk-of poverty is based on equivalised household disposable income per week.</p>
+          <p style='line-height:1.5'>NOTE: negative equivalised household disposable incomes are recoded to 0 for all poverty related results.</p>
           <p style='line-height:1.5'><u>Disposable income BHC</u> is the sum of market incomes and benefits (incl. pensions) minus direct taxes and national insurance contributions.</p>
           <p style='line-height:1.5'><u>Disposable income AHC</u> equals disposable income BHC minus housing costs, where housing costs are from the Households Below Average Income (HBAI) micro-data. Housing costs include: rent (gross of housing benefit); water rates; community water charges and council water charges; mortgage interest payments; structural insurance premiums.</p>
+          <p style='line-height:1.5'><u>Equivalised disposable income</u> is the total disposable income of the household (benefit unit) divided by the <u>OECD</u> scale (modified OECD scale), rescaled to a couple without children following the HBAI approach. The benefit unit is the nuclear family - the couple (cohabiting or married) or single adult plus any dependent children. For Before Housing Costs income, the equivalence scale attributes a weight of 0.67 to the head of the household/benefit unit, a weight of 0.33 to any other member aged 14 years or over, and a weight of 0.2 to every child aged under 14 years. For After Housing Costs income, the equivalence scale attributes a weight of 0.58 to the head of the household/benefit unit, 0.42 to any other member aged 14 years or over, and a weight of 0.2 for any child aged under 14 years.</p>
+          <p style='line-height:1.5'>Tables toward the lower half of this sheet report BHC poverty indices based on a poverty line evaluated for the entire UK population. These tables are designed to facilitate regional analysis, in conjunction with policy "ukpovertyline" of the policy spine.  The policy "ukpovertyline" is turned off by default. This policy should be turned on, along with the respective regional limitation, if the associated tables are of interest.</span></p>
         ]]>
       </Description>
       <Tables>
@@ -4474,7 +4477,181 @@
           </Rows>
         </Table>
         <Table>
-          <Title>2.5 Poverty indicators of single adult households, by family type and employment status</Title>
+          <Title>2.5 Poverty indicators by household type</Title>
+          <CellAction>
+            <CalculationType>CalculatePopulationCount</CalculationType>
+            <FormulaString><![CDATA[DATA_VAR[@BaseVar]]]></FormulaString>
+          </CellAction>
+          <Columns>
+            <Column>
+              <HasSeparatorBefore>True</HasSeparatorBefore>
+              <Name>RatesBHC</Name>
+              <Title>Rates (BHC)</Title>
+              <StringFormat>P2</StringFormat>
+              <CellAction>
+                <Parameters>
+                  <Parameter>
+                    <Name>BaseVar</Name>
+                    <VarName>IsPoor</VarName>
+                  </Parameter>
+                </Parameters>
+              </CellAction>
+            </Column>
+            <Column>
+              <Name>CountBHC</Name>
+              <Title>Count (BHC)</Title>
+              <StringFormat>#,0</StringFormat>
+              <CellAction>
+                <Parameters>
+                  <Parameter>
+                    <Name>BaseVar</Name>
+                    <VarName>IsPoor</VarName>
+                  </Parameter>
+                  <Parameter>
+                    <Name>GiveTotals</Name>
+                    <BoolValue>true</BoolValue>
+                  </Parameter>
+                </Parameters>
+              </CellAction>
+            </Column>
+            <Column>
+              <HasSeparatorBefore>True</HasSeparatorBefore>
+              <Name>RatesAHC</Name>
+              <Title>Rates (AHC)</Title>
+              <StringFormat>P2</StringFormat>
+              <CellAction>
+                <Parameters>
+                  <Parameter>
+                    <Name>BaseVar</Name>
+                    <VarName>IsPoorAHC</VarName>
+                  </Parameter>
+                </Parameters>
+              </CellAction>
+            </Column>
+            <Column>
+              <Name>CountAHC</Name>
+              <Title>Count (AHC)</Title>
+              <StringFormat>#,0</StringFormat>
+              <CellAction>
+                <Parameters>
+                  <Parameter>
+                    <Name>BaseVar</Name>
+                    <VarName>IsPoorAHC</VarName>
+                  </Parameter>
+                  <Parameter>
+                    <Name>GiveTotals</Name>
+                    <BoolValue>true</BoolValue>
+                  </Parameter>
+                </Parameters>
+              </CellAction>
+            </Column>
+          </Columns>
+          <Rows>
+            <Row>
+              <Name>Single no children</Name>
+              <Tooltip>Households comprised of a single adult under state pension age.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterSingleNoKids</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name>Single parent</Name>
+              <CellAction>
+                <Filter>
+                  <Name>FilterSingleParents</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name>Couple one income no children</Name>
+              <Tooltip>Households comprised of two adults and no children, where one adult works and both are under state pension age.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterCoupleNoKidsSingleIncome</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name>Couple dual income no children</Name>
+              <Tooltip>Households comprised of two adults and no children, where both adults work and are under state pension age.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterCoupleNoKidsDualIncome</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name>Couple one income with children</Name>
+              <Tooltip>Households comprised of two adults and at least one child, where one adult works and both adults are under state pension age.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterCoupleSingleIncomeParents</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name>Couple dual income with children</Name>
+              <Tooltip>Households comprised of two adults and at least one child, where both adults work and are under state pension age.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterCoupleDualIncomeParents</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name>Single pensioners</Name>
+              <Tooltip>Households comprised of single adult over state pension age.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterSinglePensioners</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name>Couple pensioners</Name>
+              <Tooltip>Households comprised of two adults over state pension age.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterCouplePensioners</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name>Households with no earners</Name>
+              <CellAction>
+                <Filter>
+                  <Name>FilterHH_NoEarners</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name>Households with disabled</Name>
+              <CellAction>
+                <Filter>
+                  <Name>FilterHH_Disabled</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name>All</Name>
+              <HasSeparatorBefore>true</HasSeparatorBefore>
+              <Strong>true</Strong>
+            </Row>
+            <Row>
+              <Name>Poor</Name>
+              <Tooltip>Equivalised disposable household income lower than 60% of the country specific median income.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <FormulaString><![CDATA[DATA_VAR[@IsPoorAHC] > 0]]></FormulaString>
+                </Filter>
+              </CellAction>
+            </Row>
+          </Rows>
+        </Table>
+        <Table>
+          <Title>2.6 Poverty indicators of single adult households, by family type and employment status</Title>
           <CellAction>
             <CalculationType>CalculatePopulationCount</CalculationType>
             <FormulaString><![CDATA[DATA_VAR[@BaseVar]]]></FormulaString>
@@ -4719,7 +4896,7 @@
           </Rows>
         </Table>
         <Table>
-          <Title>2.6 Poverty indicators of adult couple households, by family type and employment status</Title>
+          <Title>2.7 Poverty indicators of adult couple households, by family type and employment status</Title>
           <CellAction>
             <CalculationType>CalculatePopulationCount</CalculationType>
             <FormulaString><![CDATA[DATA_VAR[@BaseVar]]]></FormulaString>
@@ -5067,7 +5244,7 @@
           </Rows>
         </Table>
         <Table>
-          <Title>2.7 Poverty indicators by age band and gender</Title>
+          <Title>2.8 Poverty indicators by age band and gender</Title>
           <CellAction>
             <CalculationType>CalculatePopulationCount</CalculationType>
             <FormulaString><![CDATA[DATA_VAR[@BaseVar]]]></FormulaString>
@@ -5396,7 +5573,7 @@
           </Rows>
         </Table>
         <Table>
-          <Title>2.8 Poverty indicators by region and age band</Title>
+          <Title>2.9 Poverty indicators by region and age band</Title>
           <CellAction>
             <CalculationType>CalculatePopulationCount</CalculationType>
             <FormulaString><![CDATA[DATA_VAR[@BaseVar]]]></FormulaString>
@@ -5949,7 +6126,7 @@
           </Rows>
         </Table>
         <Table>
-          <Title>2.9 Poverty indicators by ethnicity of adult population</Title>
+          <Title>2.10 Poverty indicators by ethnicity of adult population</Title>
           <CellAction>
             <CalculationType>CalculatePopulationCount</CalculationType>
             <FormulaString><![CDATA[DATA_VAR[@BaseVar]]]></FormulaString>
@@ -6166,7 +6343,7 @@
           </Rows>
         </Table>
         <Table>
-          <Title>2.10 Poverty indicators by accommodation and family type</Title>
+          <Title>2.11 Poverty indicators by accommodation and family type</Title>
           <CellAction>
             <CalculationType>CalculatePopulationCount</CalculationType>
             <FormulaString><![CDATA[DATA_VAR[@BaseVar]]]></FormulaString>
@@ -7396,7 +7573,241 @@
           </Rows>
         </Table>
         <Table>
-          <Title>4.4 Income components of single adult households, by family type and employment status</Title>
+          <Title>4.4 Income components by household type</Title>
+          <Subtitle>Household averages per week</Subtitle>
+          <CellAction>
+            <CalculationType>CalculateWeightedAverage</CalculationType>
+            <FormulaString><![CDATA[DATA_VAR[@AverageVar]*7*12/365]]></FormulaString>
+          </CellAction>
+          <StringFormat>#,0.00</StringFormat>
+          <Columns>
+            <Column>
+              <Title><![CDATA[Original</br>income]]></Title>
+              <Tooltip>ils_origy: Earnings from employment and self-employment plus other market incomes (from investment, property, private pensions, private transfers, children younger than 16) less private transfers paid to other households.</Tooltip>
+              <CellAction>
+                <Parameters>
+                  <Parameter>
+                    <Name>AverageVar</Name>
+                    <VarName>eqOrigy2</VarName>
+                  </Parameter>
+                </Parameters>
+              </CellAction>
+            </Column>
+            <Column>
+              <Name>Earnings</Name>
+              <Tooltip>ils_earns: Employee and self-employment earnings.</Tooltip>
+              <CellAction>
+                <Parameters>
+                  <Parameter>
+                    <Name>AverageVar</Name>
+                    <VarName>eqEarns</VarName>
+                  </Parameter>
+                </Parameters>
+              </CellAction>
+            </Column>
+            <Column>
+              <Name>Benefits</Name>
+              <Tooltip>ils_ben: All state welfare benefits including state pensions.</Tooltip>
+              <CellAction>
+                <Parameters>
+                  <Parameter>
+                    <Name>AverageVar</Name>
+                    <VarName>eqBen</VarName>
+                  </Parameter>
+                </Parameters>
+              </CellAction>
+            </Column>
+            <Column>
+              <Title><![CDATA[Direct</br>taxes]]></Title>
+              <Tooltip>ils_tax: All direct taxes including devolved income taxes and council taxes.</Tooltip>
+              <CellAction>
+                <Parameters>
+                  <Parameter>
+                    <Name>AverageVar</Name>
+                    <VarName>eqTax</VarName>
+                  </Parameter>
+                </Parameters>
+              </CellAction>
+            </Column>
+            <Column>
+              <Name>NICs</Name>
+              <Tooltip>ils_sicdy: Employee, self-employed, and other National Insurance Contributions.</Tooltip>
+              <CellAction>
+                <Parameters>
+                  <Parameter>
+                    <Name>AverageVar</Name>
+                    <VarName>eqSic</VarName>
+                  </Parameter>
+                </Parameters>
+              </CellAction>
+            </Column>
+            <Column>
+              <Title><![CDATA[Disposable</br>Income (BHC)]]></Title>
+              <Tooltip>il_dispy: Original income + Benefits (including state pensions) – Direct Taxes – National Insurance Contributions.</Tooltip>
+              <CellAction>
+                <Parameters>
+                  <Parameter>
+                    <Name>AverageVar</Name>
+                    <VarName>eqDispy2</VarName>
+                  </Parameter>
+                </Parameters>
+              </CellAction>
+            </Column>
+            <Column>
+              <Title><![CDATA[Housing</br>costs]]></Title>
+              <Tooltip>xhc_hbai</Tooltip>
+              <CellAction>
+                <Parameters>
+                  <Parameter>
+                    <Name>AverageVar</Name>
+                    <VarName>eqxhc</VarName>
+                  </Parameter>
+                </Parameters>
+              </CellAction>
+            </Column>
+            <Column>
+              <Title><![CDATA[Disposable</br>Income (AHC)]]></Title>
+              <Tooltip>il_dispy: Original income + Benefits (including state pensions) – Direct Taxes – National Insurance Contributions - housing costs.</Tooltip>
+              <CellAction>
+                <Parameters>
+                  <Parameter>
+                    <Name>AverageVar</Name>
+                    <VarName>eqDispyAHC</VarName>
+                  </Parameter>
+                </Parameters>
+              </CellAction>
+            </Column>
+            <Column>
+              <Title><![CDATA[Indirect</br>taxes]]></Title>
+              <Tooltip>VAT, specific excise and ad valorem excise</Tooltip>
+              <CellAction>
+                <Parameters>
+                  <Parameter>
+                    <Name>AverageVar</Name>
+                    <VarName>eqITax</VarName>
+                  </Parameter>
+                </Parameters>
+              </CellAction>
+            </Column>
+            <Column>
+              <Title><![CDATA[Disposable</br>Income (AIT)]]></Title>
+              <Tooltip>il_dispy: Original income + Benefits (including state pensions) – Direct Taxes – National Insurance Contributions - housing costs - indirect taxes.</Tooltip>
+              <CellAction>
+                <Parameters>
+                  <Parameter>
+                    <Name>AverageVar</Name>
+                    <VarName>eqDispyAIT</VarName>
+                  </Parameter>
+                </Parameters>
+              </CellAction>
+            </Column>
+          </Columns>
+          <Rows>
+            <Row>
+              <Name>Single no children</Name>
+              <Tooltip>Households comprised of a single adult under state pension age.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterSingleNoKids</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name>Single parent</Name>
+              <CellAction>
+                <Filter>
+                  <Name>FilterSingleParents</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name>Couple one income no children</Name>
+              <Tooltip>Households comprised of two adults and no children, where one adult works and both are under state pension age.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterCoupleNoKidsSingleIncome</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name>Couple dual income no children</Name>
+              <Tooltip>Households comprised of two adults and no children, where both adults work and are under state pension age.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterCoupleNoKidsDualIncome</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name>Couple one income with children</Name>
+              <Tooltip>Households comprised of two adults and at least one child, where one adult works and both adults are under state pension age.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterCoupleSingleIncomeParents</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name>Couple dual income with children</Name>
+              <Tooltip>Households comprised of two adults and at least one child, where both adults work and are under state pension age.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterCoupleDualIncomeParents</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name>Single pensioners</Name>
+              <Tooltip>Households comprised of single adult over state pension age.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterSinglePensioners</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name>Couple pensioners</Name>
+              <Tooltip>Households comprised of two adults over state pension age.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterCouplePensioners</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name>Households with no earners</Name>
+              <CellAction>
+                <Filter>
+                  <Name>FilterHH_NoEarners</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name>Households with disabled</Name>
+              <CellAction>
+                <Filter>
+                  <Name>FilterHH_Disabled</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name>All</Name>
+              <HasSeparatorBefore>true</HasSeparatorBefore>
+              <Strong>true</Strong>
+            </Row>
+            <Row>
+              <Name>Poor</Name>
+              <Tooltip>Equivalised disposable household income lower than 60% of the country specific median income.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <FormulaString><![CDATA[DATA_VAR[@IsPoorAHC] > 0]]></FormulaString>
+                </Filter>
+              </CellAction>
+            </Row>
+          </Rows>
+        </Table>
+        <Table>
+          <Title>4.5 Income components of single adult households, by family type and employment status</Title>
           <Subtitle>Household averages per week</Subtitle>
           <CellAction>
             <CalculationType>CalculateWeightedAverage</CalculationType>
@@ -7701,7 +8112,7 @@
           </Rows>
         </Table>
         <Table>
-          <Title>4.5 Income components of adult couple households, by family type and employment status</Title>
+          <Title>4.6 Income components of adult couple households, by family type and employment status</Title>
           <Subtitle>Household averages per week</Subtitle>
           <CellAction>
             <CalculationType>CalculateWeightedAverage</CalculationType>
@@ -8109,7 +8520,7 @@
           </Rows>
         </Table>
         <Table>
-          <Title>4.6 Household income components by age band and gender</Title>
+          <Title>4.7 Household income components by age band and gender</Title>
           <Subtitle>Household averages per week</Subtitle>
           <CellAction>
             <CalculationType>CalculateWeightedAverage</CalculationType>
@@ -8498,7 +8909,7 @@
           </Rows>
         </Table>
         <Table>
-          <Title>4.7 Household income components by region and age band</Title>
+          <Title>4.8 Household income components by region and age band</Title>
           <Subtitle>Household averages per week</Subtitle>
           <CellAction>
             <CalculationType>CalculateWeightedAverage</CalculationType>
@@ -9111,7 +9522,7 @@
           </Rows>
         </Table>
         <Table>
-          <Title>4.8 Household income components by ethnicity</Title>
+          <Title>4.9 Household income components by ethnicity</Title>
           <Subtitle>Household averages per week</Subtitle>
           <CellAction>
             <CalculationType>CalculateWeightedAverage</CalculationType>
@@ -9388,7 +9799,7 @@
           </Rows>
         </Table>
         <Table>
-          <Title>4.9 Household income components by accommodation and family type</Title>
+          <Title>4.10 Household income components by accommodation and family type</Title>
           <Subtitle>Household averages per week</Subtitle>
           <CellAction>
             <CalculationType>CalculateWeightedAverage</CalculationType>
@@ -10392,7 +10803,241 @@
           </Rows>
         </Table>
         <Table>
-          <Title>5.4 Income components of single adult benefit units, by family type and employment status</Title>
+          <Title>5.4 Income components by household type</Title>
+          <Subtitle>Benefit unit averages per week</Subtitle>
+          <CellAction>
+            <CalculationType>CalculateWeightedAverage</CalculationType>
+            <FormulaString><![CDATA[DATA_VAR[@AverageVar]*7*12/365]]></FormulaString>
+          </CellAction>
+          <StringFormat>#,0.00</StringFormat>
+          <Columns>
+            <Column>
+              <Title><![CDATA[Original</br>income]]></Title>
+              <Tooltip>ils_origy: Earnings from employment and self-employment plus other market incomes (from investment, property, private pensions, private transfers, children younger than 16) less private transfers paid to other households.</Tooltip>
+              <CellAction>
+                <Parameters>
+                  <Parameter>
+                    <Name>AverageVar</Name>
+                    <VarName>eqOrigy2Fam</VarName>
+                  </Parameter>
+                </Parameters>
+              </CellAction>
+            </Column>
+            <Column>
+              <Name>Earnings</Name>
+              <Tooltip>ils_earns: Employee and self-employment earnings.</Tooltip>
+              <CellAction>
+                <Parameters>
+                  <Parameter>
+                    <Name>AverageVar</Name>
+                    <VarName>eqEarnsFam</VarName>
+                  </Parameter>
+                </Parameters>
+              </CellAction>
+            </Column>
+            <Column>
+              <Name>Benefits</Name>
+              <Tooltip>ils_ben: All state welfare benefits including state pensions.</Tooltip>
+              <CellAction>
+                <Parameters>
+                  <Parameter>
+                    <Name>AverageVar</Name>
+                    <VarName>eqBenFam</VarName>
+                  </Parameter>
+                </Parameters>
+              </CellAction>
+            </Column>
+            <Column>
+              <Title><![CDATA[Direct</br>taxes]]></Title>
+              <Tooltip>ils_tax: All direct taxes including devolved income taxes and council taxes.</Tooltip>
+              <CellAction>
+                <Parameters>
+                  <Parameter>
+                    <Name>AverageVar</Name>
+                    <VarName>eqTaxFam</VarName>
+                  </Parameter>
+                </Parameters>
+              </CellAction>
+            </Column>
+            <Column>
+              <Name>NICs</Name>
+              <Tooltip>ils_sicdy: Employee, self-employed, and other National Insurance Contributions.</Tooltip>
+              <CellAction>
+                <Parameters>
+                  <Parameter>
+                    <Name>AverageVar</Name>
+                    <VarName>eqSicFam</VarName>
+                  </Parameter>
+                </Parameters>
+              </CellAction>
+            </Column>
+            <Column>
+              <Title><![CDATA[Disposable</br>Income (BHC)]]></Title>
+              <Tooltip>il_dispy: Original income + Benefits (including state pensions) – Direct Taxes – National Insurance Contributions.</Tooltip>
+              <CellAction>
+                <Parameters>
+                  <Parameter>
+                    <Name>AverageVar</Name>
+                    <VarName>eqDispy2Fam</VarName>
+                  </Parameter>
+                </Parameters>
+              </CellAction>
+            </Column>
+            <Column>
+              <Title><![CDATA[Housing</br>costs]]></Title>
+              <Tooltip>xhc_hbai</Tooltip>
+              <CellAction>
+                <Parameters>
+                  <Parameter>
+                    <Name>AverageVar</Name>
+                    <VarName>eqxhcFam</VarName>
+                  </Parameter>
+                </Parameters>
+              </CellAction>
+            </Column>
+            <Column>
+              <Title><![CDATA[Disposable</br>Income (AHC)]]></Title>
+              <Tooltip>il_dispy: Original income + Benefits (including state pensions) – Direct Taxes – National Insurance Contributions - housing costs.</Tooltip>
+              <CellAction>
+                <Parameters>
+                  <Parameter>
+                    <Name>AverageVar</Name>
+                    <VarName>eqDispyAHCFam</VarName>
+                  </Parameter>
+                </Parameters>
+              </CellAction>
+            </Column>
+            <Column>
+              <Title><![CDATA[Indirect</br>taxes]]></Title>
+              <Tooltip>VAT, specific excise and ad valorem excise</Tooltip>
+              <CellAction>
+                <Parameters>
+                  <Parameter>
+                    <Name>AverageVar</Name>
+                    <VarName>eqITaxFam</VarName>
+                  </Parameter>
+                </Parameters>
+              </CellAction>
+            </Column>
+            <Column>
+              <Title><![CDATA[Disposable</br>Income (AIT)]]></Title>
+              <Tooltip>il_dispy: Original income + Benefits (including state pensions) – Direct Taxes – National Insurance Contributions - housing costs - indirect taxes.</Tooltip>
+              <CellAction>
+                <Parameters>
+                  <Parameter>
+                    <Name>AverageVar</Name>
+                    <VarName>eqDispyAITFam</VarName>
+                  </Parameter>
+                </Parameters>
+              </CellAction>
+            </Column>
+          </Columns>
+          <Rows>
+            <Row>
+              <Name>Single no children</Name>
+              <Tooltip>Households comprised of a single adult under state pension age.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterSingleNoKids</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name>Single parent</Name>
+              <CellAction>
+                <Filter>
+                  <Name>FilterSingleParents</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name>Couple one income no children</Name>
+              <Tooltip>Households comprised of two adults and no children, where one adult works and both are under state pension age.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterCoupleNoKidsSingleIncome</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name>Couple dual income no children</Name>
+              <Tooltip>Households comprised of two adults and no children, where both adults work and are under state pension age.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterCoupleNoKidsDualIncome</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name>Couple one income with children</Name>
+              <Tooltip>Households comprised of two adults and at least one child, where one adult works and both adults are under state pension age.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterCoupleSingleIncomeParents</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name>Couple dual income with children</Name>
+              <Tooltip>Households comprised of two adults and at least one child, where both adults work and are under state pension age.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterCoupleDualIncomeParents</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name>Single pensioners</Name>
+              <Tooltip>Households comprised of single adult over state pension age.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterSinglePensioners</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name>Couple pensioners</Name>
+              <Tooltip>Households comprised of two adults over state pension age.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterCouplePensioners</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name>Households with no earners</Name>
+              <CellAction>
+                <Filter>
+                  <Name>FilterHH_NoEarners</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name>Households with disabled</Name>
+              <CellAction>
+                <Filter>
+                  <Name>FilterHH_Disabled</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Name>All</Name>
+              <HasSeparatorBefore>true</HasSeparatorBefore>
+              <Strong>true</Strong>
+            </Row>
+            <Row>
+              <Name>Poor</Name>
+              <Tooltip>Equivalised disposable household income lower than 60% of the country specific median income.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <FormulaString><![CDATA[DATA_VAR[@IsPoorAHC] > 0]]></FormulaString>
+                </Filter>
+              </CellAction>
+            </Row>
+          </Rows>
+        </Table>
+        <Table>
+          <Title>5.5 Income components of single adult benefit units, by family type and employment status</Title>
           <Subtitle>Benefit unit averages per week</Subtitle>
           <CellAction>
             <CalculationType>CalculateWeightedAverage</CalculationType>
@@ -10697,7 +11342,7 @@
           </Rows>
         </Table>
         <Table>
-          <Title>5.5 Income components of adult couple Benefit units, by family type and employment status</Title>
+          <Title>5.6 Income components of adult couple Benefit units, by family type and employment status</Title>
           <Subtitle>Benefit unit averages per week</Subtitle>
           <CellAction>
             <CalculationType>CalculateWeightedAverage</CalculationType>
@@ -11105,7 +11750,7 @@
           </Rows>
         </Table>
         <Table>
-          <Title>5.6 Benefit unit income components by age band and gender</Title>
+          <Title>5.7 Benefit unit income components by age band and gender</Title>
           <Subtitle>Benefit unit averages per week</Subtitle>
           <CellAction>
             <CalculationType>CalculateWeightedAverage</CalculationType>
@@ -11494,7 +12139,7 @@
           </Rows>
         </Table>
         <Table>
-          <Title>5.7 Benefit unit income components by region and age band</Title>
+          <Title>5.8 Benefit unit income components by region and age band</Title>
           <Subtitle>Benefit unit averages per week</Subtitle>
           <CellAction>
             <CalculationType>CalculateWeightedAverage</CalculationType>
@@ -12107,7 +12752,7 @@
           </Rows>
         </Table>
         <Table>
-          <Title>5.8 Benefit unit income components by ethnicity</Title>
+          <Title>5.9 Benefit unit income components by ethnicity</Title>
           <Subtitle>Benefit unit averages per week</Subtitle>
           <CellAction>
             <CalculationType>CalculateWeightedAverage</CalculationType>
@@ -12384,7 +13029,7 @@
           </Rows>
         </Table>
         <Table>
-          <Title>5.9 Benefit unit income components by accommodation and family type</Title>
+          <Title>5.10 Benefit unit income components by accommodation and family type</Title>
           <Subtitle>Benefit unit averages per week</Subtitle>
           <CellAction>
             <CalculationType>CalculateWeightedAverage</CalculationType>
