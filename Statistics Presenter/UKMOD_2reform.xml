@@ -1338,6 +1338,27 @@
 
       <Filter>
         <Reform>false</Reform>
+        <Name>FilterEN</Name>
+        <FormulaString><![CDATA[DATA_VAR[@drgn1]<10.5]]></FormulaString>
+      </Filter>
+      <Filter>
+        <Reform>false</Reform>
+        <Name>FilterENKid</Name>
+        <FormulaString><![CDATA[(DATA_VAR[@drgn1]<10.5 & (DATA_VAR[@age]<16 | ((DATA_VAR[@age]<20 & DATA_VAR[@dec]>0 & DATA_VAR[@dec] < 6) & DATA_VAR[@dms]!=2)))]]></FormulaString>
+      </Filter>
+      <Filter>
+        <Reform>false</Reform>
+        <Name>FilterENElderly</Name>
+        <FormulaString><![CDATA[(DATA_VAR[@drgn1]<10.5 & ((DATA_VAR[@age] >= DATA_VAR[@PensionAgeMale] && DATA_VAR[@dgn] == 1) || (DATA_VAR[@age] >= DATA_VAR[@PensionAgeFemale] && DATA_VAR[@dgn] == 0)))]]></FormulaString>
+      </Filter>
+      <Filter>
+        <Reform>false</Reform>
+        <Name>FilterENAdults</Name>
+        <FormulaString><![CDATA[(DATA_VAR[@drgn1]<10.5 & !(DATA_VAR[@age]<16 | ((DATA_VAR[@age]<20 & DATA_VAR[@dec]>0 & DATA_VAR[@dec] < 6) & DATA_VAR[@dms]!=2)) && !((DATA_VAR[@age] >= DATA_VAR[@PensionAgeMale] && DATA_VAR[@dgn] == 1) || (DATA_VAR[@age] >= DATA_VAR[@PensionAgeFemale] && DATA_VAR[@dgn] == 0)))]]></FormulaString>
+      </Filter>
+
+      <Filter>
+        <Reform>false</Reform>
         <Name>FilterWA</Name>
         <FormulaString><![CDATA[DATA_VAR[@drgn1]==11]]></FormulaString>
       </Filter>
@@ -4196,7 +4217,7 @@
           <p style='line-height:1.5'>Households are defined as <u>being at risk of poverty (poor)</u> if their equivalised household disposable income is below the poverty line. <u>The poverty line</u> is defined as 60% of the country specific median equivalised household disposable income in currency per week. The <u>poverty gap</u> is the difference between the poverty line and the median income of people at-risk-of poverty divided by the poverty line. The median income of people at-risk-of poverty is based on equivalised household disposable income per week.</p>
           <p style='line-height:1.5'>NOTE: negative equivalised household disposable incomes are recoded to 0 for all poverty related results.</p>
           <p style='line-height:1.5'><span lang=EN>The poverty line (but not the poverty status) is based on the base scenario for the baseline and reform results.</span></p>
-          <p style='line-height:1.5'>All statistics evaluated with respect to disposable income AHC, equal to the the sum of market incomes and benefits (incl. pensions) minus direct taxes and national insurance contributions less housing costs. Housing costs are from the Households Below Average Income (HBAI) micro-data. Housing costs include: rent (gross of housing benefit); water rates; community water charges and council water charges; mortgage interest payments; structural insurance premiums.</p>
+          <p style='line-height:1.5'>All statistics evaluated with respect to disposable income AHC, equal to the sum of market incomes and benefits (incl. pensions) minus direct taxes and national insurance contributions less housing costs. Housing costs are from the Households Below Average Income (HBAI) micro-data. Housing costs include: rent (gross of housing benefit); water rates; community water charges and council water charges; mortgage interest payments; structural insurance premiums.</p>
           <p style='line-height:1.5'><u>Equivalised disposable income</u> is the total disposable income of the household (benefit unit) divided by the <u>OECD</u> scale (modified OECD scale), rescaled to a couple without children following the HBAI approach. The benefit unit is the nuclear family - the couple (cohabiting or married) or single adult plus any dependent children. For After Housing Costs income, the equivalence scale attributes a weight of 0.58 to the head of the household/benefit unit, 0.42 to any other member aged 14 years or over, and a weight of 0.2 for any child aged under 14 years.</p>
           <p style='line-height:1.5'>Tables toward the lower half of this sheet report BHC poverty indices based on a poverty line evaluated for the entire UK population. These tables are designed to facilitate regional analysis, in conjunction with policy "ukpovertyline" of the policy spine.  The policy "ukpovertyline" is turned off by default. This policy should be turned on, along with the respective regional limitation, if the associated tables are of interest.</span></p>
         ]]>
@@ -6296,6 +6317,43 @@
             </Row>
 
             <Row>
+              <Title><![CDATA[   England]]></Title>
+              <Tooltip>All people resident in England.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterEN</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Title><![CDATA[   ...children]]></Title>
+              <Tooltip>Dependent children resident in England.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterENKid</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Title><![CDATA[   ...adults]]></Title>
+              <Tooltip>Adults under state pension age resident in England.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterENAdults</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Title><![CDATA[   ...elderly]]></Title>
+              <Tooltip>Adults from state pension age resident in England.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterENElderly</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+
+            <Row>
               <Title><![CDATA[   Wales]]></Title>
               <Tooltip>All people resident in Wales.</Tooltip>
               <CellAction>
@@ -7158,7 +7216,7 @@
           <p style='line-height:1.5'>Households are defined as <u>being at risk of poverty (poor)</u> if their equivalised household disposable income is below the poverty line. <u>The poverty line</u> is defined as 60% of the country specific median equivalised household disposable income in currency per week. The <u>poverty gap</u> is the difference between the poverty line and the median income of people at-risk-of poverty divided by the poverty line. The median income of people at-risk-of poverty is based on equivalised household disposable income per week.</p>
           <p style='line-height:1.5'>NOTE: negative equivalised household disposable incomes are recoded to 0 for all poverty related results.</p>
           <p style='line-height:1.5'><span lang=EN>The poverty line is based on the income distribution in the respective scenario (i.e. baseline or reform).</span></p>
-          <p style='line-height:1.5'>All statistics evaluated with respect to disposable income AHC, equal to the the sum of market incomes and benefits (incl. pensions) minus direct taxes and national insurance contributions less housing costs. Housing costs are from the Households Below Average Income (HBAI) micro-data. Housing costs include: rent (gross of housing benefit); water rates; community water charges and council water charges; mortgage interest payments; structural insurance premiums.</p>
+          <p style='line-height:1.5'>All statistics evaluated with respect to disposable income AHC, equal to the sum of market incomes and benefits (incl. pensions) minus direct taxes and national insurance contributions less housing costs. Housing costs are from the Households Below Average Income (HBAI) micro-data. Housing costs include: rent (gross of housing benefit); water rates; community water charges and council water charges; mortgage interest payments; structural insurance premiums.</p>
           <p style='line-height:1.5'><u>Equivalised disposable income</u> is the total disposable income of the household (benefit unit) divided by the <u>OECD</u> scale (modified OECD scale), rescaled to a couple without children following the HBAI approach. The benefit unit is the nuclear family - the couple (cohabiting or married) or single adult plus any dependent children. For After Housing Costs income, the equivalence scale attributes a weight of 0.58 to the head of the household/benefit unit, 0.42 to any other member aged 14 years or over, and a weight of 0.2 for any child aged under 14 years.</p>
           <p style='line-height:1.5'>Tables toward the lower half of this sheet report BHC poverty indices based on a poverty line evaluated for the entire UK population. These tables are designed to facilitate regional analysis, in conjunction with policy "ukpovertyline" of the policy spine.  The policy "ukpovertyline" is turned off by default. This policy should be turned on, along with the respective regional limitation, if the associated tables are of interest.</span></p>
         ]]>
@@ -9247,6 +9305,43 @@
               <CellAction>
                 <Filter>
                   <Name>FilterSWElderly</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+
+            <Row>
+              <Title><![CDATA[   England]]></Title>
+              <Tooltip>All people resident in England.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterEN</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Title><![CDATA[   ...children]]></Title>
+              <Tooltip>Dependent children resident in England.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterENKid</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Title><![CDATA[   ...adults]]></Title>
+              <Tooltip>Adults under state pension age resident in England.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterENAdults</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Title><![CDATA[   ...elderly]]></Title>
+              <Tooltip>Adults from state pension age resident in England.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterENElderly</Name>
                 </Filter>
               </CellAction>
             </Row>
@@ -12646,6 +12741,43 @@
             </Row>
 
             <Row>
+              <Title><![CDATA[   England]]></Title>
+              <Tooltip>All people resident in England.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterEN</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Title><![CDATA[   ...children]]></Title>
+              <Tooltip>Dependent children resident in England.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterENKid</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Title><![CDATA[   ...adults]]></Title>
+              <Tooltip>Adults under state pension age resident in England.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterENAdults</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Title><![CDATA[   ...elderly]]></Title>
+              <Tooltip>Adults from state pension age resident in England.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterENElderly</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+
+            <Row>
               <Title><![CDATA[   Wales]]></Title>
               <Tooltip>All people resident in Wales.</Tooltip>
               <CellAction>
@@ -14603,6 +14735,15 @@
               </CellAction>
             </Row>
             <Row>
+              <Title><![CDATA[   England]]></Title>
+              <Tooltip>All people resident in England.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterEN</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
               <Title><![CDATA[   Wales]]></Title>
               <Tooltip>All people resident in Wales.</Tooltip>
               <CellAction>
@@ -14849,6 +14990,15 @@
               <CellAction>
                 <Filter>
                   <Name>FilterSW</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Title><![CDATA[   England]]></Title>
+              <Tooltip>All people resident in England.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterEN</Name>
                 </Filter>
               </CellAction>
             </Row>
@@ -15575,7 +15725,7 @@
       <Description>
         <![CDATA[
           <p style='line-height:1.5'><span lang=EN>The table shows the share of individuals (as % of the population) who are gainers/losers based on changes in their equivalised household disposable income, by household type. Not all household types are mutually exclusive. The elderly are defined as being aged 65 and over. Children are defined as being under 16 or under 20 years old and in full-time non-advanced education and not married. An earner is defined as having positive employment or self-employment income. A lone parent is defined as a parent of resident dependent children, not cohabiting with a partner (whether or not any other resident is the parent of the child is irrelevant). A young mother is defined as being under 25 years old and with a dependent child.</span></p>
-          <p style='line-height:1.5'>All statistics evaluated with respect to disposable income AHC, equal to the the sum of market incomes and benefits (incl. pensions) minus direct taxes and national insurance contributions less housing costs. Housing costs are from the Households Below Average Income (HBAI) micro-data. Housing costs include: rent (gross of housing benefit); water rates; community water charges and council water charges; mortgage interest payments; structural insurance premiums.</p>
+          <p style='line-height:1.5'>All statistics evaluated with respect to disposable income AHC, equal to the sum of market incomes and benefits (incl. pensions) minus direct taxes and national insurance contributions less housing costs. Housing costs are from the Households Below Average Income (HBAI) micro-data. Housing costs include: rent (gross of housing benefit); water rates; community water charges and council water charges; mortgage interest payments; structural insurance premiums.</p>
         ]]>
       </Description>
       <Tables>
@@ -17502,6 +17652,15 @@
               <CellAction>
                 <Filter>
                   <Name>FilterSW</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Title><![CDATA[   England]]></Title>
+              <Tooltip>All people resident in England.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterEN</Name>
                 </Filter>
               </CellAction>
             </Row>

@@ -1356,6 +1356,27 @@
 
       <Filter>
         <Reform>false</Reform>
+        <Name>FilterEN</Name>
+        <FormulaString><![CDATA[DATA_VAR[@drgn1]<10.5]]></FormulaString>
+      </Filter>
+      <Filter>
+        <Reform>false</Reform>
+        <Name>FilterENKid</Name>
+        <FormulaString><![CDATA[(DATA_VAR[@drgn1]<10.5 & (DATA_VAR[@age]<16 | ((DATA_VAR[@age]<20 & DATA_VAR[@dec]>0 & DATA_VAR[@dec] < 6) & DATA_VAR[@dms]!=2)))]]></FormulaString>
+      </Filter>
+      <Filter>
+        <Reform>false</Reform>
+        <Name>FilterENElderly</Name>
+        <FormulaString><![CDATA[(DATA_VAR[@drgn1]<10.5 & ((DATA_VAR[@age] >= DATA_VAR[@PensionAgeMale] && DATA_VAR[@dgn] == 1) || (DATA_VAR[@age] >= DATA_VAR[@PensionAgeFemale] && DATA_VAR[@dgn] == 0)))]]></FormulaString>
+      </Filter>
+      <Filter>
+        <Reform>false</Reform>
+        <Name>FilterENAdults</Name>
+        <FormulaString><![CDATA[(DATA_VAR[@drgn1]<10.5 & !(DATA_VAR[@age]<16 | ((DATA_VAR[@age]<20 & DATA_VAR[@dec]>0 & DATA_VAR[@dec] < 6) & DATA_VAR[@dms]!=2)) && !((DATA_VAR[@age] >= DATA_VAR[@PensionAgeMale] && DATA_VAR[@dgn] == 1) || (DATA_VAR[@age] >= DATA_VAR[@PensionAgeFemale] && DATA_VAR[@dgn] == 0)))]]></FormulaString>
+      </Filter>
+
+      <Filter>
+        <Reform>false</Reform>
         <Name>FilterWA</Name>
         <FormulaString><![CDATA[DATA_VAR[@drgn1]==11]]></FormulaString>
       </Filter>
@@ -6112,6 +6133,43 @@
             </Row>
 
             <Row>
+              <Title><![CDATA[   England]]></Title>
+              <Tooltip>All people resident in England.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterEN</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Title><![CDATA[   ...children]]></Title>
+              <Tooltip>Dependent children resident in England.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterENKid</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Title><![CDATA[   ...adults]]></Title>
+              <Tooltip>Adults under state pension age resident in England.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterENAdults</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Title><![CDATA[   ...elderly]]></Title>
+              <Tooltip>Adults from state pension age resident in England.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterENElderly</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+
+            <Row>
               <Title><![CDATA[   Wales]]></Title>
               <Tooltip>All people resident in Wales.</Tooltip>
               <CellAction>
@@ -9380,6 +9438,43 @@
             </Row>
 
             <Row>
+              <Title><![CDATA[   England]]></Title>
+              <Tooltip>All people resident in England.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterEN</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Title><![CDATA[   ...children]]></Title>
+              <Tooltip>Dependent children resident in England.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterENKid</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Title><![CDATA[   ...adults]]></Title>
+              <Tooltip>Adults under state pension age resident in England.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterENAdults</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Title><![CDATA[   ...elderly]]></Title>
+              <Tooltip>Adults from state pension age resident in England.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterENElderly</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+
+            <Row>
               <Title><![CDATA[   Wales]]></Title>
               <Tooltip>All people resident in Wales.</Tooltip>
               <CellAction>
@@ -12377,6 +12472,43 @@
             </Row>
 
             <Row>
+              <Title><![CDATA[   England]]></Title>
+              <Tooltip>All people resident in England.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterEN</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Title><![CDATA[   ...children]]></Title>
+              <Tooltip>Dependent children resident in England.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterENKid</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Title><![CDATA[   ...adults]]></Title>
+              <Tooltip>Adults under state pension age resident in England.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterENAdults</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Title><![CDATA[   ...elderly]]></Title>
+              <Tooltip>Adults from state pension age resident in England.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterENElderly</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+
+            <Row>
               <Title><![CDATA[   Wales]]></Title>
               <Tooltip>All people resident in Wales.</Tooltip>
               <CellAction>
@@ -14474,6 +14606,15 @@
               <CellAction>
                 <Filter>
                   <Name>FilterSW</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Title><![CDATA[   England]]></Title>
+              <Tooltip>All people resident in England.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterEN</Name>
                 </Filter>
               </CellAction>
             </Row>
@@ -16835,6 +16976,15 @@
               <CellAction>
                 <Filter>
                   <Name>FilterSW</Name>
+                </Filter>
+              </CellAction>
+            </Row>
+            <Row>
+              <Title><![CDATA[   England]]></Title>
+              <Tooltip>All people resident in England.</Tooltip>
+              <CellAction>
+                <Filter>
+                  <Name>FilterEN</Name>
                 </Filter>
               </CellAction>
             </Row>

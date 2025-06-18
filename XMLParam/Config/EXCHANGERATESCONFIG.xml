@@ -1575,195 +1575,6 @@
     <ValidFor>uk_2015</ValidFor>
   </ExchangeRates>
   <ExchangeRates>
-    <Country>EN</Country>
-    <June30>0.6031</June30>
-    <YearAverage>0.622153577</YearAverage>
-    <FirstSemester>-1</FirstSemester>
-    <SecondSemester>-1</SecondSemester>
-    <Default>June 30</Default>
-    <ValidFor>uk_2001</ValidFor>
-  </ExchangeRates>
-  <ExchangeRates>
-    <Country>EN</Country>
-    <June30>0.6742</June30>
-    <YearAverage>0.684247325</YearAverage>
-    <FirstSemester>-1</FirstSemester>
-    <SecondSemester>-1</SecondSemester>
-    <Default>June 30</Default>
-    <ValidFor>uk_2005</ValidFor>
-  </ExchangeRates>
-  <ExchangeRates>
-    <Country>EN</Country>
-    <June30>0.6921</June30>
-    <YearAverage>0.682401407</YearAverage>
-    <FirstSemester>-1</FirstSemester>
-    <SecondSemester>-1</SecondSemester>
-    <Default>June 30</Default>
-    <ValidFor>uk_2006</ValidFor>
-  </ExchangeRates>
-  <ExchangeRates>
-    <Country>EN</Country>
-    <June30>0.674</June30>
-    <YearAverage>0.684926926</YearAverage>
-    <FirstSemester>-1</FirstSemester>
-    <SecondSemester>-1</SecondSemester>
-    <Default>June 30</Default>
-    <ValidFor>uk_2007</ValidFor>
-  </ExchangeRates>
-  <ExchangeRates>
-    <Country>EN</Country>
-    <June30>0.79225</June30>
-    <YearAverage>0.800040593</YearAverage>
-    <FirstSemester>-1</FirstSemester>
-    <SecondSemester>-1</SecondSemester>
-    <Default>June 30</Default>
-    <ValidFor>uk_2008</ValidFor>
-  </ExchangeRates>
-  <ExchangeRates>
-    <Country>EN</Country>
-    <June30>0.8521</June30>
-    <YearAverage>0.895336965</YearAverage>
-    <FirstSemester>-1</FirstSemester>
-    <SecondSemester>-1</SecondSemester>
-    <Default>June 30</Default>
-    <ValidFor>uk_2009</ValidFor>
-  </ExchangeRates>
-  <ExchangeRates>
-    <Country>EN</Country>
-    <June30>0.81745</June30>
-    <YearAverage>0.857975975</YearAverage>
-    <FirstSemester>-1</FirstSemester>
-    <SecondSemester>-1</SecondSemester>
-    <Default>June 30</Default>
-    <ValidFor>uk_2010</ValidFor>
-  </ExchangeRates>
-  <ExchangeRates>
-    <Country>EN</Country>
-    <June30>0.90255</June30>
-    <YearAverage>0.868776221</YearAverage>
-    <FirstSemester>-1</FirstSemester>
-    <SecondSemester>-1</SecondSemester>
-    <Default>June 30</Default>
-    <ValidFor>uk_2011</ValidFor>
-  </ExchangeRates>
-  <ExchangeRates>
-    <Country>EN</Country>
-    <June30>0.8068</June30>
-    <YearAverage>0.81333174</YearAverage>
-    <FirstSemester>-1</FirstSemester>
-    <SecondSemester>-1</SecondSemester>
-    <Default>June 30</Default>
-    <ValidFor>uk_2012</ValidFor>
-  </ExchangeRates>
-  <ExchangeRates>
-    <Country>EN</Country>
-    <June30>0.8572</June30>
-    <YearAverage>0.849545452</YearAverage>
-    <FirstSemester>-1</FirstSemester>
-    <SecondSemester>-1</SecondSemester>
-    <Default>June 30</Default>
-    <ValidFor>uk_2013</ValidFor>
-  </ExchangeRates>
-  <ExchangeRates>
-    <Country>EN</Country>
-    <June30>0.8015</June30>
-    <YearAverage>0.807369993</YearAverage>
-    <FirstSemester>-1</FirstSemester>
-    <SecondSemester>-1</SecondSemester>
-    <Default>June 30</Default>
-    <ValidFor>uk_2014</ValidFor>
-  </ExchangeRates>
-  <ExchangeRates>
-    <Country>EN</Country>
-    <June30>0.7114</June30>
-    <YearAverage>0.725030537</YearAverage>
-    <FirstSemester>-1</FirstSemester>
-    <SecondSemester>-1</SecondSemester>
-    <Default>June 30</Default>
-    <ValidFor>uk_2015</ValidFor>
-  </ExchangeRates>
-  <ExchangeRates>
-    <Country>EN</Country>
-    <June30>0.8265</June30>
-    <YearAverage>0.819040522</YearAverage>
-    <FirstSemester>-1</FirstSemester>
-    <SecondSemester>-1</SecondSemester>
-    <Default>June 30</Default>
-    <ValidFor>en_2016</ValidFor>
-  </ExchangeRates>
-  <ExchangeRates>
-    <Country>EN</Country>
-    <June30>0.87933</June30>
-    <YearAverage>0.875877998</YearAverage>
-    <FirstSemester>-1</FirstSemester>
-    <SecondSemester>-1</SecondSemester>
-    <Default>June 30</Default>
-    <ValidFor>en_2017</ValidFor>
-  </ExchangeRates>
-  <ExchangeRates>
-    <Country>EN</Country>
-    <June30>0.8865</June30>
-    <YearAverage>0.885087818</YearAverage>
-    <FirstSemester>-1</FirstSemester>
-    <SecondSemester>-1</SecondSemester>
-    <Default>June 30</Default>
-    <ValidFor>en_2018</ValidFor>
-  </ExchangeRates>
-  <ExchangeRates>
-    <Country>EN</Country>
-    <June30>0.89718</June30>
-    <YearAverage>0.877665556</YearAverage>
-    <FirstSemester>-1</FirstSemester>
-    <SecondSemester>-1</SecondSemester>
-    <Default>June 30</Default>
-    <ValidFor>en_2019</ValidFor>
-  </ExchangeRates>
-  <ExchangeRates>
-    <Country>EN</Country>
-    <June30>0.91243</June30>
-    <YearAverage>0.889002436</YearAverage>
-    <FirstSemester>-1</FirstSemester>
-    <SecondSemester>-1</SecondSemester>
-    <Default>June 30</Default>
-    <ValidFor>en_2020, uk_2020precovid19, uk_2020postcovid19</ValidFor>
-  </ExchangeRates>
-  <ExchangeRates>
-    <Country>EN</Country>
-    <June30>0.8571</June30>
-    <YearAverage>0.860195051</YearAverage>
-    <FirstSemester>-1</FirstSemester>
-    <SecondSemester>-1</SecondSemester>
-    <Default>June 30</Default>
-    <ValidFor>en_2021, uk_2021precovid19, uk_2021postcovid19</ValidFor>
-  </ExchangeRates>
-  <ExchangeRates>
-    <Country>EN</Country>
-    <June30>0.860935207</June30>
-    <YearAverage>0.853062987</YearAverage>
-    <FirstSemester>-1</FirstSemester>
-    <SecondSemester>-1</SecondSemester>
-    <Default>June 30</Default>
-    <ValidFor>en_2022</ValidFor>
-  </ExchangeRates>
-  <ExchangeRates>
-    <Country>EN</Country>
-    <June30>0.858619485</June30>
-    <YearAverage>0.870317613</YearAverage>
-    <FirstSemester>-1</FirstSemester>
-    <SecondSemester>-1</SecondSemester>
-    <Default>June 30</Default>
-    <ValidFor>en_2023</ValidFor>
-  </ExchangeRates>
-  <ExchangeRates>
-    <Country>EN</Country>
-    <June30>0.847250898</June30>
-    <YearAverage>0.84686188</YearAverage>
-    <FirstSemester>-1</FirstSemester>
-    <SecondSemester>-1</SecondSemester>
-    <Default>June 30</Default>
-    <ValidFor>en_2024, en_2025, en_2026, en_2027, en_2028, en_2029</ValidFor>
-  </ExchangeRates>
-  <ExchangeRates>
     <Country>NI</Country>
     <June30>0.6031</June30>
     <YearAverage>0.622153577</YearAverage>
@@ -1951,6 +1762,195 @@
     <SecondSemester>-1</SecondSemester>
     <Default>June 30</Default>
     <ValidFor>ni_2024, ni_2025, ni_2026, ni_2027, ni_2028, ni_2029</ValidFor>
+  </ExchangeRates>
+  <ExchangeRates>
+    <Country>EN</Country>
+    <June30>0.6031</June30>
+    <YearAverage>0.622153577</YearAverage>
+    <FirstSemester>-1</FirstSemester>
+    <SecondSemester>-1</SecondSemester>
+    <Default>June 30</Default>
+    <ValidFor>uk_2001</ValidFor>
+  </ExchangeRates>
+  <ExchangeRates>
+    <Country>EN</Country>
+    <June30>0.6742</June30>
+    <YearAverage>0.684247325</YearAverage>
+    <FirstSemester>-1</FirstSemester>
+    <SecondSemester>-1</SecondSemester>
+    <Default>June 30</Default>
+    <ValidFor>uk_2005</ValidFor>
+  </ExchangeRates>
+  <ExchangeRates>
+    <Country>EN</Country>
+    <June30>0.6921</June30>
+    <YearAverage>0.682401407</YearAverage>
+    <FirstSemester>-1</FirstSemester>
+    <SecondSemester>-1</SecondSemester>
+    <Default>June 30</Default>
+    <ValidFor>uk_2006</ValidFor>
+  </ExchangeRates>
+  <ExchangeRates>
+    <Country>EN</Country>
+    <June30>0.674</June30>
+    <YearAverage>0.684926926</YearAverage>
+    <FirstSemester>-1</FirstSemester>
+    <SecondSemester>-1</SecondSemester>
+    <Default>June 30</Default>
+    <ValidFor>uk_2007</ValidFor>
+  </ExchangeRates>
+  <ExchangeRates>
+    <Country>EN</Country>
+    <June30>0.79225</June30>
+    <YearAverage>0.800040593</YearAverage>
+    <FirstSemester>-1</FirstSemester>
+    <SecondSemester>-1</SecondSemester>
+    <Default>June 30</Default>
+    <ValidFor>uk_2008</ValidFor>
+  </ExchangeRates>
+  <ExchangeRates>
+    <Country>EN</Country>
+    <June30>0.8521</June30>
+    <YearAverage>0.895336965</YearAverage>
+    <FirstSemester>-1</FirstSemester>
+    <SecondSemester>-1</SecondSemester>
+    <Default>June 30</Default>
+    <ValidFor>uk_2009</ValidFor>
+  </ExchangeRates>
+  <ExchangeRates>
+    <Country>EN</Country>
+    <June30>0.81745</June30>
+    <YearAverage>0.857975975</YearAverage>
+    <FirstSemester>-1</FirstSemester>
+    <SecondSemester>-1</SecondSemester>
+    <Default>June 30</Default>
+    <ValidFor>uk_2010</ValidFor>
+  </ExchangeRates>
+  <ExchangeRates>
+    <Country>EN</Country>
+    <June30>0.90255</June30>
+    <YearAverage>0.868776221</YearAverage>
+    <FirstSemester>-1</FirstSemester>
+    <SecondSemester>-1</SecondSemester>
+    <Default>June 30</Default>
+    <ValidFor>uk_2011</ValidFor>
+  </ExchangeRates>
+  <ExchangeRates>
+    <Country>EN</Country>
+    <June30>0.8068</June30>
+    <YearAverage>0.81333174</YearAverage>
+    <FirstSemester>-1</FirstSemester>
+    <SecondSemester>-1</SecondSemester>
+    <Default>June 30</Default>
+    <ValidFor>uk_2012</ValidFor>
+  </ExchangeRates>
+  <ExchangeRates>
+    <Country>EN</Country>
+    <June30>0.8572</June30>
+    <YearAverage>0.849545452</YearAverage>
+    <FirstSemester>-1</FirstSemester>
+    <SecondSemester>-1</SecondSemester>
+    <Default>June 30</Default>
+    <ValidFor>uk_2013</ValidFor>
+  </ExchangeRates>
+  <ExchangeRates>
+    <Country>EN</Country>
+    <June30>0.8015</June30>
+    <YearAverage>0.807369993</YearAverage>
+    <FirstSemester>-1</FirstSemester>
+    <SecondSemester>-1</SecondSemester>
+    <Default>June 30</Default>
+    <ValidFor>uk_2014</ValidFor>
+  </ExchangeRates>
+  <ExchangeRates>
+    <Country>EN</Country>
+    <June30>0.7114</June30>
+    <YearAverage>0.725030537</YearAverage>
+    <FirstSemester>-1</FirstSemester>
+    <SecondSemester>-1</SecondSemester>
+    <Default>June 30</Default>
+    <ValidFor>uk_2015</ValidFor>
+  </ExchangeRates>
+  <ExchangeRates>
+    <Country>EN</Country>
+    <June30>0.8265</June30>
+    <YearAverage>0.819040522</YearAverage>
+    <FirstSemester>-1</FirstSemester>
+    <SecondSemester>-1</SecondSemester>
+    <Default>June 30</Default>
+    <ValidFor>en_2016</ValidFor>
+  </ExchangeRates>
+  <ExchangeRates>
+    <Country>EN</Country>
+    <June30>0.87933</June30>
+    <YearAverage>0.875877998</YearAverage>
+    <FirstSemester>-1</FirstSemester>
+    <SecondSemester>-1</SecondSemester>
+    <Default>June 30</Default>
+    <ValidFor>en_2017</ValidFor>
+  </ExchangeRates>
+  <ExchangeRates>
+    <Country>EN</Country>
+    <June30>0.8865</June30>
+    <YearAverage>0.885087818</YearAverage>
+    <FirstSemester>-1</FirstSemester>
+    <SecondSemester>-1</SecondSemester>
+    <Default>June 30</Default>
+    <ValidFor>en_2018</ValidFor>
+  </ExchangeRates>
+  <ExchangeRates>
+    <Country>EN</Country>
+    <June30>0.89718</June30>
+    <YearAverage>0.877665556</YearAverage>
+    <FirstSemester>-1</FirstSemester>
+    <SecondSemester>-1</SecondSemester>
+    <Default>June 30</Default>
+    <ValidFor>en_2019</ValidFor>
+  </ExchangeRates>
+  <ExchangeRates>
+    <Country>EN</Country>
+    <June30>0.91243</June30>
+    <YearAverage>0.889002436</YearAverage>
+    <FirstSemester>-1</FirstSemester>
+    <SecondSemester>-1</SecondSemester>
+    <Default>June 30</Default>
+    <ValidFor>en_2020, uk_2020precovid19, uk_2020postcovid19</ValidFor>
+  </ExchangeRates>
+  <ExchangeRates>
+    <Country>EN</Country>
+    <June30>0.8571</June30>
+    <YearAverage>0.860195051</YearAverage>
+    <FirstSemester>-1</FirstSemester>
+    <SecondSemester>-1</SecondSemester>
+    <Default>June 30</Default>
+    <ValidFor>en_2021, uk_2021precovid19, uk_2021postcovid19</ValidFor>
+  </ExchangeRates>
+  <ExchangeRates>
+    <Country>EN</Country>
+    <June30>0.860935207</June30>
+    <YearAverage>0.853062987</YearAverage>
+    <FirstSemester>-1</FirstSemester>
+    <SecondSemester>-1</SecondSemester>
+    <Default>June 30</Default>
+    <ValidFor>en_2022</ValidFor>
+  </ExchangeRates>
+  <ExchangeRates>
+    <Country>EN</Country>
+    <June30>0.858619485</June30>
+    <YearAverage>0.870317613</YearAverage>
+    <FirstSemester>-1</FirstSemester>
+    <SecondSemester>-1</SecondSemester>
+    <Default>June 30</Default>
+    <ValidFor>en_2023</ValidFor>
+  </ExchangeRates>
+  <ExchangeRates>
+    <Country>EN</Country>
+    <June30>0.847250898</June30>
+    <YearAverage>0.84686188</YearAverage>
+    <FirstSemester>-1</FirstSemester>
+    <SecondSemester>-1</SecondSemester>
+    <Default>June 30</Default>
+    <ValidFor>en_2024, en_2025, en_2026, en_2027, en_2028, en_2029</ValidFor>
   </ExchangeRates>
   <ExchangeRates>
     <Country>SC</Country>
@@ -2143,87 +2143,6 @@
   </ExchangeRates>
   <ExchangeRates>
     <Country>WL</Country>
-    <June30>0.8265</June30>
-    <YearAverage>0.819040522</YearAverage>
-    <FirstSemester>-1</FirstSemester>
-    <SecondSemester>-1</SecondSemester>
-    <Default>June 30</Default>
-    <ValidFor>wl_2016</ValidFor>
-  </ExchangeRates>
-  <ExchangeRates>
-    <Country>WL</Country>
-    <June30>0.87933</June30>
-    <YearAverage>0.875877998</YearAverage>
-    <FirstSemester>-1</FirstSemester>
-    <SecondSemester>-1</SecondSemester>
-    <Default>June 30</Default>
-    <ValidFor>wl_2017</ValidFor>
-  </ExchangeRates>
-  <ExchangeRates>
-    <Country>WL</Country>
-    <June30>0.8865</June30>
-    <YearAverage>0.885087818</YearAverage>
-    <FirstSemester>-1</FirstSemester>
-    <SecondSemester>-1</SecondSemester>
-    <Default>June 30</Default>
-    <ValidFor>wl_2018</ValidFor>
-  </ExchangeRates>
-  <ExchangeRates>
-    <Country>WL</Country>
-    <June30>0.89718</June30>
-    <YearAverage>0.877665556</YearAverage>
-    <FirstSemester>-1</FirstSemester>
-    <SecondSemester>-1</SecondSemester>
-    <Default>June 30</Default>
-    <ValidFor>wl_2019</ValidFor>
-  </ExchangeRates>
-  <ExchangeRates>
-    <Country>WL</Country>
-    <June30>0.91243</June30>
-    <YearAverage>0.889002436</YearAverage>
-    <FirstSemester>-1</FirstSemester>
-    <SecondSemester>-1</SecondSemester>
-    <Default>June 30</Default>
-    <ValidFor>wl_2020, uk_2020precovid19, uk_2020postcovid19</ValidFor>
-  </ExchangeRates>
-  <ExchangeRates>
-    <Country>WL</Country>
-    <June30>0.8571</June30>
-    <YearAverage>0.860195051</YearAverage>
-    <FirstSemester>-1</FirstSemester>
-    <SecondSemester>-1</SecondSemester>
-    <Default>June 30</Default>
-    <ValidFor>wl_2021, uk_2021precovid19, uk_2021postcovid19</ValidFor>
-  </ExchangeRates>
-  <ExchangeRates>
-    <Country>WL</Country>
-    <June30>0.860935207</June30>
-    <YearAverage>0.853062987</YearAverage>
-    <FirstSemester>-1</FirstSemester>
-    <SecondSemester>-1</SecondSemester>
-    <Default>June 30</Default>
-    <ValidFor>wl_2022</ValidFor>
-  </ExchangeRates>
-  <ExchangeRates>
-    <Country>WL</Country>
-    <June30>0.858619485</June30>
-    <YearAverage>0.870317613</YearAverage>
-    <FirstSemester>-1</FirstSemester>
-    <SecondSemester>-1</SecondSemester>
-    <Default>June 30</Default>
-    <ValidFor>wl_2023</ValidFor>
-  </ExchangeRates>
-  <ExchangeRates>
-    <Country>WL</Country>
-    <June30>0.847250898</June30>
-    <YearAverage>0.84686188</YearAverage>
-    <FirstSemester>-1</FirstSemester>
-    <SecondSemester>-1</SecondSemester>
-    <Default>June 30</Default>
-    <ValidFor>wl_2024, wl_2025, wl_2026, wl_2027, wl_2028, wl_2029</ValidFor>
-  </ExchangeRates>
-  <ExchangeRates>
-    <Country>WL</Country>
     <June30>0.6031</June30>
     <YearAverage>0.622153577</YearAverage>
     <FirstSemester>-1</FirstSemester>
@@ -2329,5 +2248,86 @@
     <SecondSemester>-1</SecondSemester>
     <Default>June 30</Default>
     <ValidFor>uk_2015</ValidFor>
+  </ExchangeRates>
+  <ExchangeRates>
+    <Country>WL</Country>
+    <June30>0.8265</June30>
+    <YearAverage>0.819040522</YearAverage>
+    <FirstSemester>-1</FirstSemester>
+    <SecondSemester>-1</SecondSemester>
+    <Default>June 30</Default>
+    <ValidFor>wl_2016</ValidFor>
+  </ExchangeRates>
+  <ExchangeRates>
+    <Country>WL</Country>
+    <June30>0.87933</June30>
+    <YearAverage>0.875877998</YearAverage>
+    <FirstSemester>-1</FirstSemester>
+    <SecondSemester>-1</SecondSemester>
+    <Default>June 30</Default>
+    <ValidFor>wl_2017</ValidFor>
+  </ExchangeRates>
+  <ExchangeRates>
+    <Country>WL</Country>
+    <June30>0.8865</June30>
+    <YearAverage>0.885087818</YearAverage>
+    <FirstSemester>-1</FirstSemester>
+    <SecondSemester>-1</SecondSemester>
+    <Default>June 30</Default>
+    <ValidFor>wl_2018</ValidFor>
+  </ExchangeRates>
+  <ExchangeRates>
+    <Country>WL</Country>
+    <June30>0.89718</June30>
+    <YearAverage>0.877665556</YearAverage>
+    <FirstSemester>-1</FirstSemester>
+    <SecondSemester>-1</SecondSemester>
+    <Default>June 30</Default>
+    <ValidFor>wl_2019</ValidFor>
+  </ExchangeRates>
+  <ExchangeRates>
+    <Country>WL</Country>
+    <June30>0.91243</June30>
+    <YearAverage>0.889002436</YearAverage>
+    <FirstSemester>-1</FirstSemester>
+    <SecondSemester>-1</SecondSemester>
+    <Default>June 30</Default>
+    <ValidFor>wl_2020, uk_2020precovid19, uk_2020postcovid19</ValidFor>
+  </ExchangeRates>
+  <ExchangeRates>
+    <Country>WL</Country>
+    <June30>0.8571</June30>
+    <YearAverage>0.860195051</YearAverage>
+    <FirstSemester>-1</FirstSemester>
+    <SecondSemester>-1</SecondSemester>
+    <Default>June 30</Default>
+    <ValidFor>wl_2021, uk_2021precovid19, uk_2021postcovid19</ValidFor>
+  </ExchangeRates>
+  <ExchangeRates>
+    <Country>WL</Country>
+    <June30>0.860935207</June30>
+    <YearAverage>0.853062987</YearAverage>
+    <FirstSemester>-1</FirstSemester>
+    <SecondSemester>-1</SecondSemester>
+    <Default>June 30</Default>
+    <ValidFor>wl_2022</ValidFor>
+  </ExchangeRates>
+  <ExchangeRates>
+    <Country>WL</Country>
+    <June30>0.858619485</June30>
+    <YearAverage>0.870317613</YearAverage>
+    <FirstSemester>-1</FirstSemester>
+    <SecondSemester>-1</SecondSemester>
+    <Default>June 30</Default>
+    <ValidFor>wl_2023</ValidFor>
+  </ExchangeRates>
+  <ExchangeRates>
+    <Country>WL</Country>
+    <June30>0.847250898</June30>
+    <YearAverage>0.84686188</YearAverage>
+    <FirstSemester>-1</FirstSemester>
+    <SecondSemester>-1</SecondSemester>
+    <Default>June 30</Default>
+    <ValidFor>wl_2024, wl_2025, wl_2026, wl_2027, wl_2028, wl_2029</ValidFor>
   </ExchangeRates>
 </ExchangeRatesConfig>
