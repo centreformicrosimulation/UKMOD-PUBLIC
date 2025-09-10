@@ -18,7 +18,7 @@
 *						- lcr01			  Caring for dependent person (for Income Support purposes): 1 yes, 0 no
 *						- lcr02	  		  Caring for dependent person (for Income Support purposes): 1 child, 2 adult, 3 elderly 
 *						- lle			  On leave (under unpaid Maternity, Paternity or Parental leave: for IS eligibility conditions)
-* LAST UPDATE:          21/06/2024
+* LAST UPDATE:          09/06/2025
 ***************************************************************************************
 cap log close 
 log using "${log}/06_LabourMarketInformation.log", replace
@@ -195,10 +195,9 @@ replace lindi = 21 if sic>=99 & sic!=.
 
 * currjobm -- Months since started current job                         
 ****************************************************************
-gen lcwnm = -1 if (les==0 | les> 3) | currjobm<0    /*not applicable or missing*/
-replace lcwnm = currjobm  if (les==2|les==3) & currjobm>=0
+gen lcwnm = -1 if (les==0 | les> 3) | currjobm==.     /*not applicable or missing*/
+replace lcwnm = currjobm  if (les==2|les==3) & currjobm>=0 & currjobm<. 
 
-	
 *************************************
 *  loc - Occupation (ISCO 1-Digit)
 *  1: Managers, Directors and Senior Officials

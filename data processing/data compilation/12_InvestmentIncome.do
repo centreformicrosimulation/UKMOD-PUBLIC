@@ -10,7 +10,7 @@
 *                       - yiynt	          Income - non-taxable investment income
 *                       - yittx           Income - taxable interest income 
 *                       - ydvtx           Income - taxable dividend income 
-* LAST UPDATE:          26/06/2024
+* LAST UPDATE:          09/06/2025
 ***************************************************************************************
 cap log close 
 log using "${log}/12_InvestmentIncome.log", replace

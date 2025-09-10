@@ -55,7 +55,7 @@
 *                       - bwkmcee         Percentage of earnings received through CJRS 
 *                       - lmcse           Flag: Whether on SEISS
 *                       - bwkmcse         Total amount of SEISS received - changed to monthly in 17_UKDatabase.do
-* LAST UPDATE:          21/06/2024
+* LAST UPDATE:          09/06/2025
 ***************************************************************************************
 cap log close 
 log using "${log}/07_Income.log", replace
@@ -157,7 +157,7 @@ save income, replace
 
 
 ***************************
-* yds - disaposable income
+* yds - disposable income
 
 * nindinc - Adult - Net Income
 * chincdv - Child - Total income
@@ -192,7 +192,11 @@ save income, replace
 *************************************************************
 use sernum person benefit benamt pres using $data/benefits,clear
 	keep if (benefit==31|benefit==32|benefit==33|benefit==34|benefit==35) & pres==1
+	//isid sernum person
+	duplicates tag sernum person, generate(dup_tag) //one person getting two types of benefits so need to collapse the data to merge correctly 
+    collapse (sum) benamt, by(sernum person)
 	isid sernum person
+
 	if ${use_assert} assert benamt>0 & benamt!=.
 	ta benamt
 minclude
@@ -253,7 +257,6 @@ save income, replace
 sort sernum person
 save income, replace 
 
-
 *******************************
 *  tmu01 tmu02 tmu03 tmu04 - Council Tax
 
@@ -297,17 +300,17 @@ save income, replace
 *	13	Northern Ireland
 * ctamtbnd -- Annual council tax payment bands for band D at local authority level   
 *       0                                                
-*       1  Under �300 a year                            
-*       2  �300 and less than �600                      
-*       3  �600 and less than �900                       
-*       4  �900 and less than �1200                    
-*       5  �1200 and less than �1500                    
-*       6  �1500 and less than �1800                    
-*       7  �1800 and less than �2100                  
-*       8  �2100 and less than �2400                   
-*       9  �2400 and less than �2700                   
-*       10 �2700 and less than �3000                  
-*       11 Above �3000                                 
+*       1  Under 300 a year                            
+*       2  300 and less than 600                      
+*       3  600 and less than 900                       
+*       4  900 and less than 1200                    
+*       5  1200 and less than 1500                    
+*       6  1500 and less than 1800                    
+*       7  1800 and less than 2100                  
+*       8  2100 and less than 2400                   
+*       9  2400 and less than 2700                   
+*       10 2700 and less than 3000                  
+*       11 Above 3000                                 
 *       12 Household not valued separately or in NI    
                                                  
 
@@ -331,49 +334,53 @@ gen singlehh=(hhsize==1)
 	replace type=0 if ctband==-1 | ctband ==10 | ctband==. 	/*n.i. or not separately valued*/
 	by type, sort: egen av_cta=mean(ctannual)
 	list type ctband gvtregn singlehh if type!=0 &  av_cta==.
-			
+/*
+	type	ctband	gvtregn	singlehh	
+					
+118	Band F	East Midland	1	==> 117 0 - to add discount 
+134	Band G	North East	    1   ==> 133 0 - to add discount
+156	Band H	North West	    0   ==> 135 0 
+157	Band H	Yorks and th	0	==> 137 0 
+158	Band H	Yorks and th	1	==> 138 1 
+159	Band H	East Midland	0	==> 139 0 
+161	Band H	West Midland	1	==> 160 0 - to add discount 
+162	Band H	East of Engl	0	==> 143 0 
+166	Band H	South East	    1	==> 165 0 - to add discount 
+168	Band H	Scotland	    0	==> 151 0 
+169	Band H	Scotland	    1	==> 152 1 
+171	Band H	Wales	        1	==> 170 0 - to add discount 
+*/				
+		
 // TO DO: impute missing values of av_cta, using non-missing values of the same region, different household type and possibly different band //
 
 	tab type ctband if av_cta!=.
 	tab type ctband if av_cta==. // need to impute missing values of av_cta
-	//
-	
+		
+	tab type ctband if gvtregno==1 // North East 	
 	tab type ctband if gvtregno==2 // North West 	
-	tab type ctband if gvtregno==4 // Yorks and the Humber  	
-	tab type ctband if gvtregno==5 // East Midlands	
+	tab type ctband if gvtregno==4 // Yorks and the Humber  stop 
+	tab type ctband if gvtregno==5 // East Midlands  
 	tab type ctband if gvtregno==6 // West Midlands	
-	tab type ctband if gvtregno==7 // East of England	
+    tab type ctband if gvtregno==7 // East of England	
+	tab type ctband if gvtregno==9 // South East 	
 	tab type ctband if gvtregno==10 // South West 
 	tab type ctband if gvtregno==12 // Scotland  
 	tab type ctband if gvtregno==11 // Wales	
-
-/*					
-					
-	type	ctband	gvtregn	singlehh	
-					
-118	Band F	East Midland	1	==> 117 0 - to add discount 
-139	Band G	East Midland	1	==> 138 0 - to add discount 
-154	Band H	North West	0	    ==> 134 0
-155	Band H	Yorks and th	0	==> 136 0
-157	Band H	West Midland	0	==> 140 0 
-159	Band H	East of Engl	1	==> 158 0 - to add discount 
-165	Band H	South West	1	    ==> 164 0 - to add discount 
-166	Band H	Scotland	0	    ==> 150 0 
-169	Band I	Wales	0	        ==> 167 0 
-170	Band I	Wales	1	        ==> 168 1 
 	
-*/	
+
 	gen type2=type
 	replace type2=117 if type==118
-	replace type2=138 if type==139
-	replace type2=134 if type==154
-	replace type2=136 if type==155	
-	replace type2=140 if type==157	
-	replace type2=158 if type==159
-	replace type2=164 if type==165
-	replace type2=150 if type==166
-	replace type2=167 if type==169
-	replace type2=168 if type==170	
+	replace type2=133 if type==134
+	replace type2=135 if type==156	
+	replace type2=137 if type==157	
+	replace type2=138 if type==158
+	replace type2=139 if type==159
+	replace type2=160 if type==161
+	replace type2=143 if type==162	
+	replace type2=165 if type==166
+	replace type2=151 if type==168
+	replace type2=152 if type==169
+	replace type2=170 if type==171	
 
 	tab type2 ctband if av_cta!=.
 	tab type2 ctband if av_cta==.
@@ -392,8 +399,8 @@ gen singlehh=(hhsize==1)
 
 	/*TO DO: when imputaion for single person hh was based on multiple memebers hh, 
 	apply the 25% discount to average, or the other way around*/
-	replace av2_cta=av2_cta*0.75 if type==118 | type==139 | type==159 | type== 165
-		
+	replace av2_cta=av2_cta*0.75 if type==118| type==134 | type==161 | type==166 | type==171 
+	
 	
 	*Tax - Council tax (based on average amount by region, band and household type)
 	gen tmu01=.
@@ -408,7 +415,7 @@ gen singlehh=(hhsize==1)
 	replace tmu02=ctannual/12 if tmu02==. & ctannual>0 & ctannual!=.
 	replace tmu02=av2_cta/12 if tmu02==. 	/*average imputed only to those missing ctannual*/
 
-	
+		
 * impute band rates using information on local authority rates for band D 
 gen ctband_d = 0 if ctamtbnd==0  | ctamtbnd==12 //Household not valued separately or in NI
 replace ctband_d = 150 if ctamtbnd==1
@@ -422,7 +429,7 @@ replace ctband_d = 2250 if ctamtbnd==8
 replace ctband_d = 2550 if ctamtbnd==9
 replace ctband_d = 2850 if ctamtbnd==10
 replace ctband_d = 3000 if ctamtbnd==11
-tab2 ctband_d gvtregno // 1,913 missing values are for NI 
+tab2 ctband_d gvtregno, m // 1,844 zero values are for NI 
 
 //generate bans rates for other bands using band d
 /*The ratios for council tax bands do not change from year to year. 
@@ -579,7 +586,8 @@ minclude
 	sort sernum person
 	save income, replace
 
-	 
+
+
 *******************************
 *  bdimb - Disability living allowance (mobility)
 
@@ -636,7 +644,7 @@ minclude
 	save income, replace
 
 **************************************************
-*  bdiscwa - Personal indipendence payment (daily living allowance)	
+*  bdiscwa - Personal independence payment (daily living allowance)	
 
 * new from 2014/15
 * benefit = 96					
@@ -653,7 +661,7 @@ minclude
 	save income, replace
 
 **************************************************
-*  bdimbwa - Personal indipendence payment (mobility allowance)  
+*  bdimbwa - Personal independence payment (mobility allowance)  
 
 * new from 2014/15
 * benefit = 97	                         
@@ -668,6 +676,14 @@ minclude
 	label var bdimbwa "PIPmob - monthly amount"
 	sort sernum person
 	save income, replace		
+
+/*Note: in the original FRS all disablity benefits are assimged to individuals aged 16+ only, meaning all child disability benefits are assigned to parent 	
+tab2 age2 bdisc
+tab2 age2 bdimb
+tab2 age2 bdiscwa	
+tab2 age2 bdimbwa
+*/  
+
 
 *********************************************************
 *  bsa - Income Support (includes income-based JSA)
@@ -861,7 +877,7 @@ minclude
 	rename benamt bdict01	
 	label var bdict01 "Incapacity Benefit - monthly amount"
 	
-	*DP: no obs reporting IB in 2021/22 and 2022/23 data so the following imputation is unnecessary hence coded out 
+	*Note: No obs reporting IB so the following imputation is unnecessary and coded out 
  /*	
 	ge ib=bdict01
 	
@@ -1371,7 +1387,7 @@ use sernum dhp dhpoamt dhpramt dhprpd dhptype using $data/renter.dta, clear
 	count if dhpoamt<=0 & dhpramt <=0 & dhp==1
 	
 	gen bhoot1 = 0
-	replace bhoot1 = dhpoamt/12 if dhpoamt>0 //lumpsum amount is divided by 12
+	replace bhoot1 = dhpoamt/12 if dhpoamt>0 & dhpoamt<. //lumpsum amount is divided by 12
 	//
 	gen bhoot2 = 0
 	replace bhoot2 = dhpramt/7*30.5 if dhprpd==1 & dhpramt>0 //regular amount for 1 week 
@@ -1381,7 +1397,7 @@ use sernum dhp dhpoamt dhpramt dhprpd dhptype using $data/renter.dta, clear
 	replace bhoot2 = dhpramt if dhprpd==5 & dhpramt>0 //regular amount for calendar month 
 	replace bhoot2 = dhpramt/2 if dhprpd==7 & dhpramt>0 //regular amount for 2 calendar months
 	replace bhoot2 = dhpramt/3 if dhprpd==13 & dhpramt>0 //regular amount for 3 calendar months
-		
+	
 	gen bhoot = bhoot1 + bhoot2 
 		
 	drop dhp dhpoamt dhpramt dhprpd dhptype bhoot1 bhoot2 

@@ -4,7 +4,7 @@
 * DESCRIPTION:          Produce statistics for the DRD
 * INPUT FILES:          UKMOD input database (i.e. cc_yyyy_x#.dta) 
 * OUTPUT FILES:         n/a
-* LAST UPDATE:          28/06/2024
+* LAST UPDATE:          09/06/2025
 ***************************************************************************************
 capture log close
 log using "${log}/DRD_UK_${frsyr}_${data_source}${data_ver}.log", replace     
@@ -148,9 +148,22 @@ foreach var of varlist hbai* {
 ***************************************************************************************
 * Summary statistics of all variables
 ***************************************************************************************
-
 aorder id* d* l* y* b* a* x* hbai*
-qui recode * (0=.) 
+
+* Define variables to exclude (all dummies) 
+local exclude ddi ddi03 dgn dhr lcr01 lmcee lowas lcs lle
+
+ds
+local to_recode
+foreach var of varlist `r(varlist)' {
+    if strpos(" `exclude' ", " `var' ") == 0 {
+        local to_recode `to_recode' `var'
+    }
+}
+
+di "`to_recode'"
+quietly recode `to_recode' (0=.)
+
 recode dag (.=0)
 recode ddi dew dot lindi loc amriv00 lcwnm  (-1=.) //bwkmcee
 sum *  [aw=dwt], sep(0)

@@ -31,7 +31,7 @@
           <PolicyID>2fb0f4c4-6f2c-4b02-97fc-9afb5433abf9</PolicyID>
           <Name>AddOn_Applic</Name>
           <Comment><![CDATA[DETERMINE TO WHICH SYSTEMS APPLICABLE]]></Comment>
-          <PrivateComment>""</PrivateComment>
+          <PrivateComment />
           <Order>0</Order>
           <Switch>on</Switch>
           <Private />
@@ -41,7 +41,7 @@
             <FunctionID>4838ecd1-ca22-47a1-a6aa-76def7e9bc51</FunctionID>
             <Name>description</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[Marginal Tax Rate Calculations]]></Value>
             <Order>0</Order>
             <ValueType>string</ValueType>
@@ -54,7 +54,7 @@
             <FunctionID>4838ecd1-ca22-47a1-a6aa-76def7e9bc51</FunctionID>
             <Name>sys</Name>
             <Comment><![CDATA[can use wild symbols (? and *)]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[uk_2016]]></Value>
             <Order>1</Order>
             <ValueType>string</ValueType>
@@ -67,7 +67,7 @@
             <FunctionID>4838ecd1-ca22-47a1-a6aa-76def7e9bc51</FunctionID>
             <Name>sys</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[uk_2017]]></Value>
             <Order>2</Order>
             <ValueType>string</ValueType>
@@ -80,7 +80,7 @@
             <FunctionID>4838ecd1-ca22-47a1-a6aa-76def7e9bc51</FunctionID>
             <Name>sys</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[uk_2018]]></Value>
             <Order>3</Order>
             <ValueType>string</ValueType>
@@ -93,7 +93,7 @@
             <FunctionID>4838ecd1-ca22-47a1-a6aa-76def7e9bc51</FunctionID>
             <Name>sys</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[uk_2019]]></Value>
             <Order>4</Order>
             <ValueType>string</ValueType>
@@ -106,7 +106,7 @@
             <FunctionID>4838ecd1-ca22-47a1-a6aa-76def7e9bc51</FunctionID>
             <Name>sys</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[uk_202?]]></Value>
             <Order>5</Order>
             <ValueType>string</ValueType>
@@ -146,7 +146,7 @@
           <PolicyID>2fb0f4c4-6f2c-4b02-97fc-9afb5433abf9</PolicyID>
           <Name>AddOn_Pol</Name>
           <Comment><![CDATA[ADD POLICY: preparations for marginal tax rate calculations]]></Comment>
-          <PrivateComment>""</PrivateComment>
+          <PrivateComment />
           <Order>1</Order>
           <Switch>on</Switch>
           <Private />
@@ -156,7 +156,7 @@
             <FunctionID>3c9f4e07-1938-48a7-aee5-ac467725901d</FunctionID>
             <Name>pol_name</Name>
             <Comment><![CDATA[store initial values, define loops etc]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[MTR_PREP]]></Value>
             <Order>1</Order>
             <ValueType>string</ValueType>
@@ -169,7 +169,7 @@
             <FunctionID>3c9f4e07-1938-48a7-aee5-ac467725901d</FunctionID>
             <Name>Insert_After_Pol</Name>
             <Comment><![CDATA[(IT: tax evasion correction has to be done first)]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[neg_=cc=]]></Value>
             <Order>2</Order>
             <ValueType>string</ValueType>
@@ -183,7 +183,7 @@
           <PolicyID>2fb0f4c4-6f2c-4b02-97fc-9afb5433abf9</PolicyID>
           <Name>AddOn_Pol</Name>
           <Comment><![CDATA[ADD POLICY: initialisations for marginal tax rate calculations]]></Comment>
-          <PrivateComment>""</PrivateComment>
+          <PrivateComment />
           <Order>2</Order>
           <Switch>on</Switch>
           <Private />
@@ -193,7 +193,7 @@
             <FunctionID>c33f79df-ecce-48bd-b088-599606321355</FunctionID>
             <Name>pol_name</Name>
             <Comment><![CDATA[e.g. adjust earnings]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[MTR_INIT]]></Value>
             <Order>1</Order>
             <ValueType>string</ValueType>
@@ -206,7 +206,7 @@
             <FunctionID>c33f79df-ecce-48bd-b088-599606321355</FunctionID>
             <Name>insert_after_pol</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[MTR_PREP]]></Value>
             <Order>2</Order>
             <ValueType>string</ValueType>
@@ -220,7 +220,7 @@
           <PolicyID>2fb0f4c4-6f2c-4b02-97fc-9afb5433abf9</PolicyID>
           <Name>AddOn_Pol</Name>
           <Comment><![CDATA[ADD POLICY: store each iteration's results for marginal tax rate calculations]]></Comment>
-          <PrivateComment>""</PrivateComment>
+          <PrivateComment />
           <Order>3</Order>
           <Switch>off</Switch>
           <Private />
@@ -230,7 +230,7 @@
             <FunctionID>14715db2-1b7a-4784-8b6d-33fb85463af5</FunctionID>
             <Name>pol_name</Name>
             <Comment><![CDATA[i.e. end of loops; restore ils_earns components]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[MTR_STORE]]></Value>
             <Order>1</Order>
             <ValueType>string</ValueType>
@@ -243,7 +243,7 @@
             <FunctionID>14715db2-1b7a-4784-8b6d-33fb85463af5</FunctionID>
             <Name>Insert_After_Pol</Name>
             <Comment><![CDATA[note that inserted *after* standard output policy]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[output_std_=cc=]]></Value>
             <Order>2</Order>
             <ValueType>string</ValueType>
@@ -257,7 +257,7 @@
           <PolicyID>2fb0f4c4-6f2c-4b02-97fc-9afb5433abf9</PolicyID>
           <Name>AddOn_Pol</Name>
           <Comment><![CDATA[ADD POLICY: calculation of marginal tax rates]]></Comment>
-          <PrivateComment>""</PrivateComment>
+          <PrivateComment />
           <Order>5</Order>
           <Switch>on</Switch>
           <Private />
@@ -267,7 +267,7 @@
             <FunctionID>26ce1c22-dfdb-4781-a479-e5e95f8218bf</FunctionID>
             <Name>pol_name</Name>
             <Comment><![CDATA[calculate indicators and output selected variables]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[MTR_CALC]]></Value>
             <Order>1</Order>
             <ValueType>string</ValueType>
@@ -280,7 +280,7 @@
             <FunctionID>26ce1c22-dfdb-4781-a479-e5e95f8218bf</FunctionID>
             <Name>insert_after_pol</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[MTR_STORE]]></Value>
             <Order>2</Order>
             <ValueType>string</ValueType>
@@ -294,7 +294,7 @@
           <PolicyID>2fb0f4c4-6f2c-4b02-97fc-9afb5433abf9</PolicyID>
           <Name>AddOn_Par</Name>
           <Comment><![CDATA[MODIFY STANDARD OUTPUT POLICY]]></Comment>
-          <PrivateComment>""</PrivateComment>
+          <PrivateComment />
           <Order>6</Order>
           <Switch>on</Switch>
           <Private />
@@ -304,7 +304,7 @@
             <FunctionID>5215863b-1937-4442-8c50-3266a3f3ecfb</FunctionID>
             <Name>insert_func</Name>
             <Comment><![CDATA[i.e. name of policy (sheet) and function row (by green numbers)]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[output_std_=cc=_#1]]></Value>
             <Order>1</Order>
             <ValueType>string</ValueType>
@@ -317,7 +317,7 @@
             <FunctionID>5215863b-1937-4442-8c50-3266a3f3ecfb</FunctionID>
             <Name>run_cond</Name>
             <Comment><![CDATA[new parameter (i.e. produce standard output only for the baseline)]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[loopcount_base=3]]></Value>
             <Order>3</Order>
             <ValueType>string</ValueType>
@@ -430,7 +430,7 @@
           <PolicyID>db006212-629d-4765-bbeb-febe2ec83fde</PolicyID>
           <Name>DefConst</Name>
           <Comment><![CDATA[define constants]]></Comment>
-          <PrivateComment>""</PrivateComment>
+          <PrivateComment />
           <Order>2</Order>
           <Switch>on</Switch>
           <Private />
@@ -440,7 +440,7 @@
             <FunctionID>ff5447a6-ea53-4393-bdfc-cb2b00074c5a</FunctionID>
             <Name>$MARGIN</Name>
             <Comment><![CDATA[change margin if required; increase income by x%/100 (see sheet: config); ]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[0.03]]></Value>
             <Order>1</Order>
             <ValueType>formula</ValueType>
@@ -454,7 +454,7 @@
           <PolicyID>db006212-629d-4765-bbeb-febe2ec83fde</PolicyID>
           <Name>DefTu</Name>
           <Comment><![CDATA[define hh unit (to ensure exists)]]></Comment>
-          <PrivateComment>""</PrivateComment>
+          <PrivateComment />
           <Order>3</Order>
           <Switch>on</Switch>
           <Private />
@@ -464,7 +464,7 @@
             <FunctionID>61580260-054b-4105-b76c-cb8688d84f93</FunctionID>
             <Name>name</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[tu_household_mtr]]></Value>
             <Order>1</Order>
             <ValueType>string</ValueType>
@@ -477,7 +477,7 @@
             <FunctionID>61580260-054b-4105-b76c-cb8688d84f93</FunctionID>
             <Name>type</Name>
             <Comment><![CDATA[comprises of all household members]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[HH]]></Value>
             <Order>2</Order>
             <ValueType>categorical</ValueType>
@@ -491,7 +491,7 @@
           <PolicyID>db006212-629d-4765-bbeb-febe2ec83fde</PolicyID>
           <Name>Store</Name>
           <Comment><![CDATA[STORE initial values (of input variables)]]></Comment>
-          <PrivateComment>""</PrivateComment>
+          <PrivateComment />
           <Order>6</Order>
           <Switch>on</Switch>
           <Private />
@@ -501,7 +501,7 @@
             <FunctionID>9cc65414-7ca2-4d05-8f36-96bb8562ae8b</FunctionID>
             <Name>postfix</Name>
             <Comment><![CDATA[ils_earns and its components are stored as x_backup]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[backup]]></Value>
             <Order>0</Order>
             <ValueType>string</ValueType>
@@ -514,7 +514,7 @@
             <FunctionID>9cc65414-7ca2-4d05-8f36-96bb8562ae8b</FunctionID>
             <Name>il</Name>
             <Comment><![CDATA[(i.e. ils_earns_backup, yem_backup, yse_backup)]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[ils_earns]]></Value>
             <Order>1</Order>
             <ValueType>incomelist</ValueType>
@@ -527,7 +527,7 @@
             <FunctionID>9cc65414-7ca2-4d05-8f36-96bb8562ae8b</FunctionID>
             <Name>var</Name>
             <Comment><![CDATA[PL: yem]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[yem]]></Value>
             <Order>5</Order>
             <ValueType>variable</ValueType>
@@ -540,7 +540,7 @@
             <FunctionID>9cc65414-7ca2-4d05-8f36-96bb8562ae8b</FunctionID>
             <Name>var</Name>
             <Comment><![CDATA[SK: gross self-empl profit]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[yse]]></Value>
             <Order>6</Order>
             <ValueType>variable</ValueType>
@@ -554,7 +554,7 @@
           <PolicyID>db006212-629d-4765-bbeb-febe2ec83fde</PolicyID>
           <Name>Loop</Name>
           <Comment><![CDATA[DEFINE primary loop over tax-ben calculations]]></Comment>
-          <PrivateComment>""</PrivateComment>
+          <PrivateComment />
           <Order>7</Order>
           <Switch>on</Switch>
           <Private />
@@ -564,7 +564,7 @@
             <FunctionID>52533433-c57d-46cd-baa2-5ba3b678c445</FunctionID>
             <Name>num_iterations</Name>
             <Comment><![CDATA[1st iteration: standard tax-ben calculations]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[3]]></Value>
             <Order>1</Order>
             <ValueType>amount</ValueType>
@@ -577,7 +577,7 @@
             <FunctionID>52533433-c57d-46cd-baa2-5ba3b678c445</FunctionID>
             <Name>loop_id</Name>
             <Comment><![CDATA[2nd iteration: tax-ben calculations with marginally increased income]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[base]]></Value>
             <Order>2</Order>
             <ValueType>string</ValueType>
@@ -590,7 +590,7 @@
             <FunctionID>52533433-c57d-46cd-baa2-5ba3b678c445</FunctionID>
             <Name>start_after_pol</Name>
             <Comment><![CDATA[loops over whole tax-benefit system including MTR_INIT and MTR_STORE]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[mtr_prep]]></Value>
             <Order>3</Order>
             <ValueType>string</ValueType>
@@ -603,7 +603,7 @@
             <FunctionID>52533433-c57d-46cd-baa2-5ba3b678c445</FunctionID>
             <Name>stop_before_pol</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[mtr_calc]]></Value>
             <Order>4</Order>
             <ValueType>string</ValueType>
@@ -617,7 +617,7 @@
           <PolicyID>db006212-629d-4765-bbeb-febe2ec83fde</PolicyID>
           <Name>UnitLoop</Name>
           <Comment><![CDATA[DEFINE secondary loop over household members]]></Comment>
-          <PrivateComment>""</PrivateComment>
+          <PrivateComment />
           <Order>10</Order>
           <Switch>on</Switch>
           <Private />
@@ -627,7 +627,7 @@
             <FunctionID>8eb4ef53-ffe4-482f-9e3c-3aafd0d97c9b</FunctionID>
             <Name>run_cond</Name>
             <Comment><![CDATA[loop is only carried out in the 2nd iteration of BASE-loop]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[loopcount_base=2]]></Value>
             <Order>1</Order>
             <ValueType>condition</ValueType>
@@ -640,7 +640,7 @@
             <FunctionID>8eb4ef53-ffe4-482f-9e3c-3aafd0d97c9b</FunctionID>
             <Name>elig_unit</Name>
             <Comment><![CDATA[loop iterates as often over household as there are persons]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[tu_individual_=cc=]]></Value>
             <Order>2</Order>
             <ValueType>taxunit</ValueType>
@@ -653,7 +653,7 @@
             <FunctionID>8eb4ef53-ffe4-482f-9e3c-3aafd0d97c9b</FunctionID>
             <Name>elig_unit_cond</Name>
             <Comment><![CDATA[… with positive income as defined by ils_earns]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[ils_earns>0]]></Value>
             <Order>3</Order>
             <ValueType>condition</ValueType>
@@ -666,7 +666,7 @@
             <FunctionID>8eb4ef53-ffe4-482f-9e3c-3aafd0d97c9b</FunctionID>
             <Name>loop_id</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[mtr]]></Value>
             <Order>4</Order>
             <ValueType>string</ValueType>
@@ -679,7 +679,7 @@
             <FunctionID>8eb4ef53-ffe4-482f-9e3c-3aafd0d97c9b</FunctionID>
             <Name>first_pol</Name>
             <Comment><![CDATA[loops over whole tax-benefit system including MTR_INIT and MTR_STORE]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[mtr_init]]></Value>
             <Order>5</Order>
             <ValueType>string</ValueType>
@@ -692,7 +692,7 @@
             <FunctionID>8eb4ef53-ffe4-482f-9e3c-3aafd0d97c9b</FunctionID>
             <Name>last_pol</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[mtr_store]]></Value>
             <Order>6</Order>
             <ValueType>string</ValueType>
@@ -755,7 +755,7 @@
           <PolicyID>6e8f8ce2-9d48-4d57-8afc-3e3dafd8de23</PolicyID>
           <Name>IlVarOp</Name>
           <Comment><![CDATA[modify earnings]]></Comment>
-          <PrivateComment>""</PrivateComment>
+          <PrivateComment />
           <Order>0</Order>
           <Switch>on</Switch>
           <Private />
@@ -765,7 +765,7 @@
             <FunctionID>911302b9-7339-4361-bd7e-24e7ac90efe6</FunctionID>
             <Name>run_cond</Name>
             <Comment><![CDATA[… to increase it for the following tax-ben calc. where appropriate]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[loopcount_base=2]]></Value>
             <Order>1</Order>
             <ValueType>condition</ValueType>
@@ -778,7 +778,7 @@
             <FunctionID>911302b9-7339-4361-bd7e-24e7ac90efe6</FunctionID>
             <Name>operator_il</Name>
             <Comment><![CDATA[i.e. increase only in 2nd iteration of the primary loop, increase only for]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[ils_earns]]></Value>
             <Order>2</Order>
             <ValueType>incomelist</ValueType>
@@ -791,7 +791,7 @@
             <FunctionID>911302b9-7339-4361-bd7e-24e7ac90efe6</FunctionID>
             <Name>operand</Name>
             <Comment><![CDATA[one person in time within each household]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[1+(IsCurElig_mtr*$MARGIN)]]></Value>
             <Order>3</Order>
             <ValueType>formula</ValueType>
@@ -804,7 +804,7 @@
             <FunctionID>911302b9-7339-4361-bd7e-24e7ac90efe6</FunctionID>
             <Name>sel_var</Name>
             <Comment><![CDATA[increase the main component of ils_earns]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[all]]></Value>
             <Order>4</Order>
             <ValueType>categorical</ValueType>
@@ -830,7 +830,7 @@
           <PolicyID>fc5f5d1a-70e8-4465-939b-3bff8ed0a25c</PolicyID>
           <Name>Store</Name>
           <Comment><![CDATA[STORE the results of the primary loop]]></Comment>
-          <PrivateComment>""</PrivateComment>
+          <PrivateComment />
           <Order>1</Order>
           <Switch>on</Switch>
           <Private />
@@ -840,7 +840,7 @@
             <FunctionID>65c889ea-48d6-4231-ab0f-81001009cd69</FunctionID>
             <Name>run_cond</Name>
             <Comment><![CDATA[only the results of baseline tax-benefit calculations]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[loopcount_base=1]]></Value>
             <Order>0</Order>
             <ValueType>condition</ValueType>
@@ -853,7 +853,7 @@
             <FunctionID>65c889ea-48d6-4231-ab0f-81001009cd69</FunctionID>
             <Name>postloop</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[base]]></Value>
             <Order>1</Order>
             <ValueType>string</ValueType>
@@ -866,7 +866,7 @@
             <FunctionID>65c889ea-48d6-4231-ab0f-81001009cd69</FunctionID>
             <Name>il</Name>
             <Comment><![CDATA[ils_dispy and its components are stored as x_base1]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[ils_dispy]]></Value>
             <Order>2</Order>
             <ValueType>incomelist</ValueType>
@@ -879,7 +879,7 @@
             <FunctionID>65c889ea-48d6-4231-ab0f-81001009cd69</FunctionID>
             <Name>il</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[ils_earns]]></Value>
             <Order>3</Order>
             <ValueType>incomelist</ValueType>
@@ -892,7 +892,7 @@
             <FunctionID>65c889ea-48d6-4231-ab0f-81001009cd69</FunctionID>
             <Name>il</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[ils_ben]]></Value>
             <Order>4</Order>
             <ValueType>incomelist</ValueType>
@@ -905,7 +905,7 @@
             <FunctionID>65c889ea-48d6-4231-ab0f-81001009cd69</FunctionID>
             <Name>il</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[ils_pen]]></Value>
             <Order>5</Order>
             <ValueType>incomelist</ValueType>
@@ -918,7 +918,7 @@
             <FunctionID>65c889ea-48d6-4231-ab0f-81001009cd69</FunctionID>
             <Name>il</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[ils_benmt]]></Value>
             <Order>6</Order>
             <ValueType>incomelist</ValueType>
@@ -931,7 +931,7 @@
             <FunctionID>65c889ea-48d6-4231-ab0f-81001009cd69</FunctionID>
             <Name>il</Name>
             <Comment><![CDATA[change income concepts if required]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[ils_bennt]]></Value>
             <Order>7</Order>
             <ValueType>incomelist</ValueType>
@@ -944,7 +944,7 @@
             <FunctionID>65c889ea-48d6-4231-ab0f-81001009cd69</FunctionID>
             <Name>il</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[ils_tax]]></Value>
             <Order>8</Order>
             <ValueType>incomelist</ValueType>
@@ -957,7 +957,7 @@
             <FunctionID>65c889ea-48d6-4231-ab0f-81001009cd69</FunctionID>
             <Name>il</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[ils_sicee]]></Value>
             <Order>9</Order>
             <ValueType>incomelist</ValueType>
@@ -970,7 +970,7 @@
             <FunctionID>65c889ea-48d6-4231-ab0f-81001009cd69</FunctionID>
             <Name>il</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[ils_sicse]]></Value>
             <Order>10</Order>
             <ValueType>incomelist</ValueType>
@@ -997,7 +997,7 @@
           <PolicyID>fc5f5d1a-70e8-4465-939b-3bff8ed0a25c</PolicyID>
           <Name>ArithOp</Name>
           <Comment><![CDATA[technical step]]></Comment>
-          <PrivateComment>""</PrivateComment>
+          <PrivateComment />
           <Order>2</Order>
           <Switch>on</Switch>
           <Private />
@@ -1007,7 +1007,7 @@
             <FunctionID>dc7b18a6-4baa-420e-854f-aa3016cc364b</FunctionID>
             <Name>formula</Name>
             <Comment><![CDATA[carry out any arithmetic operation using the newly defined HH unit;]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[0]]></Value>
             <Order>1</Order>
             <ValueType>formula</ValueType>
@@ -1020,7 +1020,7 @@
             <FunctionID>dc7b18a6-4baa-420e-854f-aa3016cc364b</FunctionID>
             <Name>output_var</Name>
             <Comment><![CDATA[this triggers the HH unit to be constructed (i.e. 'activated') which is]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[stm01_s]]></Value>
             <Order>2</Order>
             <ValueType>variable</ValueType>
@@ -1033,7 +1033,7 @@
             <FunctionID>dc7b18a6-4baa-420e-854f-aa3016cc364b</FunctionID>
             <Name>TAX_UNIT</Name>
             <Comment><![CDATA[necessary for the level parameter of func_store (see next function)]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[tu_household_mtr]]></Value>
             <Order>3</Order>
             <ValueType>taxunit</ValueType>
@@ -1047,7 +1047,7 @@
           <PolicyID>fc5f5d1a-70e8-4465-939b-3bff8ed0a25c</PolicyID>
           <Name>Store</Name>
           <Comment><![CDATA[STORE the results of the secondary loop (mostly at the hh level)]]></Comment>
-          <PrivateComment>""</PrivateComment>
+          <PrivateComment />
           <Order>3</Order>
           <Switch>on</Switch>
           <Private />
@@ -1057,7 +1057,7 @@
             <FunctionID>603e9965-9972-4140-b002-f5a46b39edb5</FunctionID>
             <Name>run_cond</Name>
             <Comment><![CDATA[i.e. calculations with increased income:]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[loopcount_base=2]]></Value>
             <Order>0</Order>
             <ValueType>condition</ValueType>
@@ -1070,7 +1070,7 @@
             <FunctionID>603e9965-9972-4140-b002-f5a46b39edb5</FunctionID>
             <Name>postloop</Name>
             <Comment><![CDATA[(there needs to be 1 storage variable per person with positive ils_earns)]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[mtr]]></Value>
             <Order>1</Order>
             <ValueType>string</ValueType>
@@ -1083,7 +1083,7 @@
             <FunctionID>603e9965-9972-4140-b002-f5a46b39edb5</FunctionID>
             <Name>il</Name>
             <Comment><![CDATA[store after tax income in ils_dispy_unit1, ils_dispy_unit2, etc.]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[ils_dispy]]></Value>
             <Order>2</Order>
             <ValueType>incomelist</ValueType>
@@ -1096,7 +1096,7 @@
             <FunctionID>603e9965-9972-4140-b002-f5a46b39edb5</FunctionID>
             <Name>il</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[ils_earns]]></Value>
             <Order>3</Order>
             <ValueType>incomelist</ValueType>
@@ -1109,7 +1109,7 @@
             <FunctionID>603e9965-9972-4140-b002-f5a46b39edb5</FunctionID>
             <Name>il</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[ils_ben]]></Value>
             <Order>4</Order>
             <ValueType>incomelist</ValueType>
@@ -1122,7 +1122,7 @@
             <FunctionID>603e9965-9972-4140-b002-f5a46b39edb5</FunctionID>
             <Name>il</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[ils_pen]]></Value>
             <Order>5</Order>
             <ValueType>incomelist</ValueType>
@@ -1135,7 +1135,7 @@
             <FunctionID>603e9965-9972-4140-b002-f5a46b39edb5</FunctionID>
             <Name>il</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[ils_benmt]]></Value>
             <Order>6</Order>
             <ValueType>incomelist</ValueType>
@@ -1148,7 +1148,7 @@
             <FunctionID>603e9965-9972-4140-b002-f5a46b39edb5</FunctionID>
             <Name>il</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[ils_bennt]]></Value>
             <Order>7</Order>
             <ValueType>incomelist</ValueType>
@@ -1161,7 +1161,7 @@
             <FunctionID>603e9965-9972-4140-b002-f5a46b39edb5</FunctionID>
             <Name>il</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[ils_tax]]></Value>
             <Order>8</Order>
             <ValueType>incomelist</ValueType>
@@ -1174,7 +1174,7 @@
             <FunctionID>603e9965-9972-4140-b002-f5a46b39edb5</FunctionID>
             <Name>il</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[ils_sicee]]></Value>
             <Order>9</Order>
             <ValueType>incomelist</ValueType>
@@ -1187,7 +1187,7 @@
             <FunctionID>603e9965-9972-4140-b002-f5a46b39edb5</FunctionID>
             <Name>il</Name>
             <Comment><![CDATA[change income concepts if required]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[ils_sicse]]></Value>
             <Order>10</Order>
             <ValueType>incomelist</ValueType>
@@ -1200,7 +1200,7 @@
             <FunctionID>603e9965-9972-4140-b002-f5a46b39edb5</FunctionID>
             <Name>var</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[yem]]></Value>
             <Order>13</Order>
             <ValueType>variable</ValueType>
@@ -1213,7 +1213,7 @@
             <FunctionID>603e9965-9972-4140-b002-f5a46b39edb5</FunctionID>
             <Name>var</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[yse]]></Value>
             <Order>14</Order>
             <ValueType>variable</ValueType>
@@ -1226,7 +1226,7 @@
             <FunctionID>603e9965-9972-4140-b002-f5a46b39edb5</FunctionID>
             <Name>level</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[tu_household_mtr]]></Value>
             <Order>19</Order>
             <ValueType>taxunit</ValueType>
@@ -1239,7 +1239,7 @@
             <FunctionID>603e9965-9972-4140-b002-f5a46b39edb5</FunctionID>
             <Name>il_level</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[tu_individual_=cc=]]></Value>
             <Order>20</Order>
             <ValueType>taxunit</ValueType>
@@ -1252,7 +1252,7 @@
             <FunctionID>603e9965-9972-4140-b002-f5a46b39edb5</FunctionID>
             <Name>var_level</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[tu_individual_=cc=]]></Value>
             <Order>21</Order>
             <ValueType>taxunit</ValueType>
@@ -1265,7 +1265,7 @@
             <FunctionID>603e9965-9972-4140-b002-f5a46b39edb5</FunctionID>
             <Name>var_level</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[tu_individual_=cc=]]></Value>
             <Order>22</Order>
             <ValueType>taxunit</ValueType>
@@ -1292,7 +1292,7 @@
           <PolicyID>fc5f5d1a-70e8-4465-939b-3bff8ed0a25c</PolicyID>
           <Name>Restore</Name>
           <Comment><![CDATA[]]></Comment>
-          <PrivateComment>""</PrivateComment>
+          <PrivateComment />
           <Order>4</Order>
           <Switch>on</Switch>
           <Private />
@@ -1302,7 +1302,7 @@
             <FunctionID>a9804ce8-763d-4dc9-ac57-285251e5f056</FunctionID>
             <Name>postfix</Name>
             <Comment><![CDATA[restore original income (ils_earns) at the beginning of each iteration …]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[backup]]></Value>
             <Order>1</Order>
             <ValueType>string</ValueType>
@@ -1328,7 +1328,7 @@
           <PolicyID>6a4645cb-a945-4cee-83da-b867eaa79e9c</PolicyID>
           <Name>DefVar</Name>
           <Comment><![CDATA[define new variables]]></Comment>
-          <PrivateComment>""</PrivateComment>
+          <PrivateComment />
           <Order>0</Order>
           <Switch>on</Switch>
           <Private />
@@ -1338,7 +1338,7 @@
             <FunctionID>4b8dbcf8-9213-43e8-b531-85d64d46fa7b</FunctionID>
             <Name>ils_earns_diff</Name>
             <Comment><![CDATA[marginal tax rate (in percent)]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[0]]></Value>
             <Order>0</Order>
             <ValueType>formula</ValueType>
@@ -1351,7 +1351,7 @@
             <FunctionID>4b8dbcf8-9213-43e8-b531-85d64d46fa7b</FunctionID>
             <Name>mtrpc</Name>
             <Comment><![CDATA[increase of earnings (at the individual level)]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[-999]]></Value>
             <Order>1</Order>
             <ValueType>formula</ValueType>
@@ -1364,7 +1364,7 @@
             <FunctionID>4b8dbcf8-9213-43e8-b531-85d64d46fa7b</FunctionID>
             <Name>mtrpc_pen</Name>
             <Comment><![CDATA[benefit component of marginal tax rate (in percent)]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[-999]]></Value>
             <Order>2</Order>
             <ValueType>formula</ValueType>
@@ -1377,7 +1377,7 @@
             <FunctionID>4b8dbcf8-9213-43e8-b531-85d64d46fa7b</FunctionID>
             <Name>mtrpc_benmt</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[-999]]></Value>
             <Order>3</Order>
             <ValueType>formula</ValueType>
@@ -1390,7 +1390,7 @@
             <FunctionID>4b8dbcf8-9213-43e8-b531-85d64d46fa7b</FunctionID>
             <Name>mtrpc_bennt</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[-999]]></Value>
             <Order>4</Order>
             <ValueType>formula</ValueType>
@@ -1403,7 +1403,7 @@
             <FunctionID>4b8dbcf8-9213-43e8-b531-85d64d46fa7b</FunctionID>
             <Name>mtrpc_tax</Name>
             <Comment><![CDATA[tax component of marginal tax rate (in percent)]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[-999]]></Value>
             <Order>5</Order>
             <ValueType>formula</ValueType>
@@ -1416,7 +1416,7 @@
             <FunctionID>4b8dbcf8-9213-43e8-b531-85d64d46fa7b</FunctionID>
             <Name>mtrpc_sicee</Name>
             <Comment><![CDATA[employee sic component of marginal tax rate (in percent)]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[-999]]></Value>
             <Order>6</Order>
             <ValueType>formula</ValueType>
@@ -1429,7 +1429,7 @@
             <FunctionID>4b8dbcf8-9213-43e8-b531-85d64d46fa7b</FunctionID>
             <Name>mtrpc_sicse</Name>
             <Comment><![CDATA[self-employed sic component of marginal tax rate (in percent)]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[-999]]></Value>
             <Order>7</Order>
             <ValueType>formula</ValueType>
@@ -1442,7 +1442,7 @@
             <FunctionID>4b8dbcf8-9213-43e8-b531-85d64d46fa7b</FunctionID>
             <Name>var_monetary</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[no]]></Value>
             <Order>9</Order>
             <ValueType>yes/no</ValueType>
@@ -1455,7 +1455,7 @@
             <FunctionID>4b8dbcf8-9213-43e8-b531-85d64d46fa7b</FunctionID>
             <Name>var_monetary</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[no]]></Value>
             <Order>10</Order>
             <ValueType>yes/no</ValueType>
@@ -1468,7 +1468,7 @@
             <FunctionID>4b8dbcf8-9213-43e8-b531-85d64d46fa7b</FunctionID>
             <Name>var_monetary</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[no]]></Value>
             <Order>11</Order>
             <ValueType>yes/no</ValueType>
@@ -1481,7 +1481,7 @@
             <FunctionID>4b8dbcf8-9213-43e8-b531-85d64d46fa7b</FunctionID>
             <Name>var_monetary</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[no]]></Value>
             <Order>12</Order>
             <ValueType>yes/no</ValueType>
@@ -1494,7 +1494,7 @@
             <FunctionID>4b8dbcf8-9213-43e8-b531-85d64d46fa7b</FunctionID>
             <Name>var_monetary</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[no]]></Value>
             <Order>13</Order>
             <ValueType>yes/no</ValueType>
@@ -1507,7 +1507,7 @@
             <FunctionID>4b8dbcf8-9213-43e8-b531-85d64d46fa7b</FunctionID>
             <Name>var_monetary</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[no]]></Value>
             <Order>14</Order>
             <ValueType>yes/no</ValueType>
@@ -1520,7 +1520,7 @@
             <FunctionID>4b8dbcf8-9213-43e8-b531-85d64d46fa7b</FunctionID>
             <Name>var_monetary</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[no]]></Value>
             <Order>15</Order>
             <ValueType>yes/no</ValueType>
@@ -1560,7 +1560,7 @@
           <PolicyID>6a4645cb-a945-4cee-83da-b867eaa79e9c</PolicyID>
           <Name>Elig</Name>
           <Comment><![CDATA[define eligible persons to calculate MTR]]></Comment>
-          <PrivateComment>""</PrivateComment>
+          <PrivateComment />
           <Order>1</Order>
           <Switch>on</Switch>
           <Private />
@@ -1570,7 +1570,7 @@
             <FunctionID>5322e3b5-b246-41cb-9337-3b00a8a5f076</FunctionID>
             <Name>elig_cond</Name>
             <Comment><![CDATA[i.e. a person for whom the unit loop was run]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[IsUlElig_mtr]]></Value>
             <Order>1</Order>
             <ValueType>condition</ValueType>
@@ -1583,7 +1583,7 @@
             <FunctionID>5322e3b5-b246-41cb-9337-3b00a8a5f076</FunctionID>
             <Name>TAX_UNIT</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[tu_individual_=cc=]]></Value>
             <Order>2</Order>
             <ValueType>taxunit</ValueType>
@@ -1597,7 +1597,7 @@
           <PolicyID>6a4645cb-a945-4cee-83da-b867eaa79e9c</PolicyID>
           <Name>ArithOp</Name>
           <Comment><![CDATA[calculate change in earnings]]></Comment>
-          <PrivateComment>""</PrivateComment>
+          <PrivateComment />
           <Order>2</Order>
           <Switch>on</Switch>
           <Private />
@@ -1607,7 +1607,7 @@
             <FunctionID>709db13b-27cf-4aae-a0f1-b5e343b1eff8</FunctionID>
             <Name>who_must_be_elig</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[one]]></Value>
             <Order>1</Order>
             <ValueType>categorical</ValueType>
@@ -1620,7 +1620,7 @@
             <FunctionID>709db13b-27cf-4aae-a0f1-b5e343b1eff8</FunctionID>
             <Name>formula</Name>
             <Comment><![CDATA[(note ils_earns from both loops is stored at IND level)]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[ils_earns_mtr - ils_earns_base1]]></Value>
             <Order>2</Order>
             <ValueType>formula</ValueType>
@@ -1633,7 +1633,7 @@
             <FunctionID>709db13b-27cf-4aae-a0f1-b5e343b1eff8</FunctionID>
             <Name>output_var</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[ils_earns_diff]]></Value>
             <Order>3</Order>
             <ValueType>variable</ValueType>
@@ -1646,7 +1646,7 @@
             <FunctionID>709db13b-27cf-4aae-a0f1-b5e343b1eff8</FunctionID>
             <Name>TAX_UNIT</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[tu_individual_=cc=]]></Value>
             <Order>4</Order>
             <ValueType>taxunit</ValueType>
@@ -1660,7 +1660,7 @@
           <PolicyID>6a4645cb-a945-4cee-83da-b867eaa79e9c</PolicyID>
           <Name>ArithOp</Name>
           <Comment><![CDATA[calculate MTR (in percentage terms)]]></Comment>
-          <PrivateComment>""</PrivateComment>
+          <PrivateComment />
           <Order>3</Order>
           <Switch>on</Switch>
           <Private />
@@ -1670,7 +1670,7 @@
             <FunctionID>e060c495-275e-4fcd-8c1e-6db946fe5cd0</FunctionID>
             <Name>who_must_be_elig</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[one]]></Value>
             <Order>1</Order>
             <ValueType>categorical</ValueType>
@@ -1683,7 +1683,7 @@
             <FunctionID>e060c495-275e-4fcd-8c1e-6db946fe5cd0</FunctionID>
             <Name>formula</Name>
             <Comment><![CDATA[(note ils_dispy_mtr is stored at HH level, ils_dispy_base1 at IND level)]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[(1 - (ils_dispy_mtr - ils_dispy_base1#1) / ils_earns_diff) * 100 - mtrpc]]></Value>
             <Order>2</Order>
             <ValueType>formula</ValueType>
@@ -1696,7 +1696,7 @@
             <FunctionID>e060c495-275e-4fcd-8c1e-6db946fe5cd0</FunctionID>
             <Name>#_level</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[tu_household_mtr]]></Value>
             <Order>3</Order>
             <ValueType>taxunit</ValueType>
@@ -1709,7 +1709,7 @@
             <FunctionID>e060c495-275e-4fcd-8c1e-6db946fe5cd0</FunctionID>
             <Name>Output_Add_Var</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[mtrpc]]></Value>
             <Order>4</Order>
             <ValueType>variable</ValueType>
@@ -1722,7 +1722,7 @@
             <FunctionID>e060c495-275e-4fcd-8c1e-6db946fe5cd0</FunctionID>
             <Name>TAX_UNIT</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[tu_individual_=cc=]]></Value>
             <Order>5</Order>
             <ValueType>taxunit</ValueType>
@@ -1736,7 +1736,7 @@
           <PolicyID>6a4645cb-a945-4cee-83da-b867eaa79e9c</PolicyID>
           <Name>ArithOp</Name>
           <Comment><![CDATA[calculate the contribution by components: public pensions]]></Comment>
-          <PrivateComment>""</PrivateComment>
+          <PrivateComment />
           <Order>4</Order>
           <Switch>on</Switch>
           <Private />
@@ -1746,7 +1746,7 @@
             <FunctionID>30c36cce-906a-4601-bc14-b2a3fe9441a2</FunctionID>
             <Name>who_must_be_elig</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[one]]></Value>
             <Order>1</Order>
             <ValueType>categorical</ValueType>
@@ -1759,7 +1759,7 @@
             <FunctionID>30c36cce-906a-4601-bc14-b2a3fe9441a2</FunctionID>
             <Name>formula</Name>
             <Comment><![CDATA[(note ils_pen_mtr is stored at HH level, ils_pen_base1 at IND level)]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[(ils_pen_base1#1 - ils_pen_mtr) / ils_earns_diff * 100 - mtrpc_pen]]></Value>
             <Order>2</Order>
             <ValueType>formula</ValueType>
@@ -1772,7 +1772,7 @@
             <FunctionID>30c36cce-906a-4601-bc14-b2a3fe9441a2</FunctionID>
             <Name>#_level</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[tu_household_mtr]]></Value>
             <Order>3</Order>
             <ValueType>taxunit</ValueType>
@@ -1785,7 +1785,7 @@
             <FunctionID>30c36cce-906a-4601-bc14-b2a3fe9441a2</FunctionID>
             <Name>Output_Add_Var</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[mtrpc_pen]]></Value>
             <Order>4</Order>
             <ValueType>variable</ValueType>
@@ -1798,7 +1798,7 @@
             <FunctionID>30c36cce-906a-4601-bc14-b2a3fe9441a2</FunctionID>
             <Name>TAX_UNIT</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[tu_individual_=cc=]]></Value>
             <Order>5</Order>
             <ValueType>taxunit</ValueType>
@@ -1812,7 +1812,7 @@
           <PolicyID>6a4645cb-a945-4cee-83da-b867eaa79e9c</PolicyID>
           <Name>ArithOp</Name>
           <Comment><![CDATA[calculate the contribution by components: means-tested benefits]]></Comment>
-          <PrivateComment>""</PrivateComment>
+          <PrivateComment />
           <Order>5</Order>
           <Switch>on</Switch>
           <Private />
@@ -1822,7 +1822,7 @@
             <FunctionID>18b49a11-cef5-4d1d-bfc2-eb4a159c0a6a</FunctionID>
             <Name>who_must_be_elig</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[one]]></Value>
             <Order>1</Order>
             <ValueType>categorical</ValueType>
@@ -1835,7 +1835,7 @@
             <FunctionID>18b49a11-cef5-4d1d-bfc2-eb4a159c0a6a</FunctionID>
             <Name>formula</Name>
             <Comment><![CDATA[(note ils_benmt_mtr is stored at HH level, ils_benmt_base1 at IND level)]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[(ils_benmt_base1#1 - ils_benmt_mtr) / ils_earns_diff * 100 - mtrpc_benmt]]></Value>
             <Order>2</Order>
             <ValueType>formula</ValueType>
@@ -1848,7 +1848,7 @@
             <FunctionID>18b49a11-cef5-4d1d-bfc2-eb4a159c0a6a</FunctionID>
             <Name>#_level</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[tu_household_mtr]]></Value>
             <Order>3</Order>
             <ValueType>taxunit</ValueType>
@@ -1861,7 +1861,7 @@
             <FunctionID>18b49a11-cef5-4d1d-bfc2-eb4a159c0a6a</FunctionID>
             <Name>Output_Add_Var</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[mtrpc_benmt]]></Value>
             <Order>4</Order>
             <ValueType>variable</ValueType>
@@ -1874,7 +1874,7 @@
             <FunctionID>18b49a11-cef5-4d1d-bfc2-eb4a159c0a6a</FunctionID>
             <Name>TAX_UNIT</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[tu_individual_=cc=]]></Value>
             <Order>5</Order>
             <ValueType>taxunit</ValueType>
@@ -1888,7 +1888,7 @@
           <PolicyID>6a4645cb-a945-4cee-83da-b867eaa79e9c</PolicyID>
           <Name>ArithOp</Name>
           <Comment><![CDATA[calculate the contribution by components: non means-tested benefits]]></Comment>
-          <PrivateComment>""</PrivateComment>
+          <PrivateComment />
           <Order>6</Order>
           <Switch>on</Switch>
           <Private />
@@ -1898,7 +1898,7 @@
             <FunctionID>7ac7d8f4-ee4c-458e-bc5c-77ffa0922890</FunctionID>
             <Name>who_must_be_elig</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[one]]></Value>
             <Order>1</Order>
             <ValueType>categorical</ValueType>
@@ -1911,7 +1911,7 @@
             <FunctionID>7ac7d8f4-ee4c-458e-bc5c-77ffa0922890</FunctionID>
             <Name>formula</Name>
             <Comment><![CDATA[(note ils_bennt_mtr is stored at HH level, ils_bennt_base1 at IND level)]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[(ils_bennt_base1#1 - ils_bennt_mtr) / ils_earns_diff * 100 - mtrpc_bennt]]></Value>
             <Order>2</Order>
             <ValueType>formula</ValueType>
@@ -1924,7 +1924,7 @@
             <FunctionID>7ac7d8f4-ee4c-458e-bc5c-77ffa0922890</FunctionID>
             <Name>#_level</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[tu_household_mtr]]></Value>
             <Order>3</Order>
             <ValueType>taxunit</ValueType>
@@ -1937,7 +1937,7 @@
             <FunctionID>7ac7d8f4-ee4c-458e-bc5c-77ffa0922890</FunctionID>
             <Name>Output_Add_Var</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[mtrpc_bennt]]></Value>
             <Order>4</Order>
             <ValueType>variable</ValueType>
@@ -1950,7 +1950,7 @@
             <FunctionID>7ac7d8f4-ee4c-458e-bc5c-77ffa0922890</FunctionID>
             <Name>TAX_UNIT</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[tu_individual_=cc=]]></Value>
             <Order>5</Order>
             <ValueType>taxunit</ValueType>
@@ -1964,7 +1964,7 @@
           <PolicyID>6a4645cb-a945-4cee-83da-b867eaa79e9c</PolicyID>
           <Name>ArithOp</Name>
           <Comment><![CDATA[calculate the contribution by components: taxes]]></Comment>
-          <PrivateComment>""</PrivateComment>
+          <PrivateComment />
           <Order>7</Order>
           <Switch>on</Switch>
           <Private />
@@ -1974,7 +1974,7 @@
             <FunctionID>2d4553da-d4f5-4cbd-b2de-80cbfe0e36ed</FunctionID>
             <Name>who_must_be_elig</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[one]]></Value>
             <Order>1</Order>
             <ValueType>categorical</ValueType>
@@ -1987,7 +1987,7 @@
             <FunctionID>2d4553da-d4f5-4cbd-b2de-80cbfe0e36ed</FunctionID>
             <Name>formula</Name>
             <Comment><![CDATA[(note ils_tax_mtr is stored at HH level, ils_tax_base1 at IND level)]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[(ils_tax_mtr - ils_tax_base1#1) / ils_earns_diff * 100 - mtrpc_tax]]></Value>
             <Order>2</Order>
             <ValueType>formula</ValueType>
@@ -2000,7 +2000,7 @@
             <FunctionID>2d4553da-d4f5-4cbd-b2de-80cbfe0e36ed</FunctionID>
             <Name>#_level</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[tu_household_mtr]]></Value>
             <Order>3</Order>
             <ValueType>taxunit</ValueType>
@@ -2013,7 +2013,7 @@
             <FunctionID>2d4553da-d4f5-4cbd-b2de-80cbfe0e36ed</FunctionID>
             <Name>Output_Add_Var</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[mtrpc_tax]]></Value>
             <Order>4</Order>
             <ValueType>variable</ValueType>
@@ -2026,7 +2026,7 @@
             <FunctionID>2d4553da-d4f5-4cbd-b2de-80cbfe0e36ed</FunctionID>
             <Name>TAX_UNIT</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[tu_individual_=cc=]]></Value>
             <Order>5</Order>
             <ValueType>taxunit</ValueType>
@@ -2040,7 +2040,7 @@
           <PolicyID>6a4645cb-a945-4cee-83da-b867eaa79e9c</PolicyID>
           <Name>ArithOp</Name>
           <Comment><![CDATA[calculate the contribution by components: employee SIC]]></Comment>
-          <PrivateComment>""</PrivateComment>
+          <PrivateComment />
           <Order>8</Order>
           <Switch>on</Switch>
           <Private />
@@ -2050,7 +2050,7 @@
             <FunctionID>341d5df6-3f27-4c95-9d6f-dfc4c6f253e5</FunctionID>
             <Name>who_must_be_elig</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[one]]></Value>
             <Order>1</Order>
             <ValueType>categorical</ValueType>
@@ -2063,7 +2063,7 @@
             <FunctionID>341d5df6-3f27-4c95-9d6f-dfc4c6f253e5</FunctionID>
             <Name>formula</Name>
             <Comment><![CDATA[(note ils_sicee_mtr is stored at HH level, ils_sicee_base1 at IND level)]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[(ils_sicee_mtr - ils_sicee_base1#1) / ils_earns_diff * 100 - mtrpc_sicee]]></Value>
             <Order>2</Order>
             <ValueType>formula</ValueType>
@@ -2076,7 +2076,7 @@
             <FunctionID>341d5df6-3f27-4c95-9d6f-dfc4c6f253e5</FunctionID>
             <Name>#_level</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[tu_household_mtr]]></Value>
             <Order>3</Order>
             <ValueType>taxunit</ValueType>
@@ -2089,7 +2089,7 @@
             <FunctionID>341d5df6-3f27-4c95-9d6f-dfc4c6f253e5</FunctionID>
             <Name>Output_Add_Var</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[mtrpc_sicee]]></Value>
             <Order>4</Order>
             <ValueType>variable</ValueType>
@@ -2102,7 +2102,7 @@
             <FunctionID>341d5df6-3f27-4c95-9d6f-dfc4c6f253e5</FunctionID>
             <Name>TAX_UNIT</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[tu_individual_=cc=]]></Value>
             <Order>5</Order>
             <ValueType>taxunit</ValueType>
@@ -2116,7 +2116,7 @@
           <PolicyID>6a4645cb-a945-4cee-83da-b867eaa79e9c</PolicyID>
           <Name>ArithOp</Name>
           <Comment><![CDATA[calculate the contribution by components: self-employed SIC]]></Comment>
-          <PrivateComment>""</PrivateComment>
+          <PrivateComment />
           <Order>9</Order>
           <Switch>on</Switch>
           <Private />
@@ -2126,7 +2126,7 @@
             <FunctionID>c6eb054e-6c41-4fbe-9e2d-b58e322e004a</FunctionID>
             <Name>who_must_be_elig</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[one]]></Value>
             <Order>1</Order>
             <ValueType>categorical</ValueType>
@@ -2139,7 +2139,7 @@
             <FunctionID>c6eb054e-6c41-4fbe-9e2d-b58e322e004a</FunctionID>
             <Name>formula</Name>
             <Comment><![CDATA[(note ils_sicse_mtr is stored at HH level, ils_sicse_base1 at IND level)]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[(ils_sicse_mtr - ils_sicse_base1#1) / ils_earns_diff * 100 - mtrpc_sicse]]></Value>
             <Order>2</Order>
             <ValueType>formula</ValueType>
@@ -2152,7 +2152,7 @@
             <FunctionID>c6eb054e-6c41-4fbe-9e2d-b58e322e004a</FunctionID>
             <Name>#_level</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[tu_household_mtr]]></Value>
             <Order>3</Order>
             <ValueType>taxunit</ValueType>
@@ -2165,7 +2165,7 @@
             <FunctionID>c6eb054e-6c41-4fbe-9e2d-b58e322e004a</FunctionID>
             <Name>Output_Add_Var</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[mtrpc_sicse]]></Value>
             <Order>4</Order>
             <ValueType>variable</ValueType>
@@ -2178,7 +2178,7 @@
             <FunctionID>c6eb054e-6c41-4fbe-9e2d-b58e322e004a</FunctionID>
             <Name>TAX_UNIT</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[tu_individual_=cc=]]></Value>
             <Order>5</Order>
             <ValueType>taxunit</ValueType>
@@ -2192,7 +2192,7 @@
           <PolicyID>6a4645cb-a945-4cee-83da-b867eaa79e9c</PolicyID>
           <Name>Restore</Name>
           <Comment><![CDATA[RESTORE results of baseline tax-benefit calculations]]></Comment>
-          <PrivateComment>""</PrivateComment>
+          <PrivateComment />
           <Order>11</Order>
           <Switch>off</Switch>
           <Private />
@@ -2202,7 +2202,7 @@
             <FunctionID>3d5d4d8e-5f1b-4a49-ba80-be20a2f419d5</FunctionID>
             <Name>postloop</Name>
             <Comment><![CDATA[this is switched off by default as baseline results are outputted in a separate file]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[base]]></Value>
             <Order>1</Order>
             <ValueType>string</ValueType>
@@ -2215,7 +2215,7 @@
             <FunctionID>3d5d4d8e-5f1b-4a49-ba80-be20a2f419d5</FunctionID>
             <Name>iteration</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[1]]></Value>
             <Order>2</Order>
             <ValueType>amount</ValueType>
@@ -2229,7 +2229,7 @@
           <PolicyID>6a4645cb-a945-4cee-83da-b867eaa79e9c</PolicyID>
           <Name>DefOutput</Name>
           <Comment><![CDATA[DEFINE output for marginal tax rate calculations]]></Comment>
-          <PrivateComment>""</PrivateComment>
+          <PrivateComment />
           <Order>12</Order>
           <Switch>off</Switch>
           <Private />
@@ -2239,7 +2239,7 @@
             <FunctionID>a1a481ad-7dd1-4c16-8528-088bdc59cbcd</FunctionID>
             <Name>file</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[=sys=_mtr]]></Value>
             <Order>0</Order>
             <ValueType>string</ValueType>
@@ -2252,7 +2252,7 @@
             <FunctionID>a1a481ad-7dd1-4c16-8528-088bdc59cbcd</FunctionID>
             <Name>var</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[idhh]]></Value>
             <Order>2</Order>
             <ValueType>variable</ValueType>
@@ -2265,7 +2265,7 @@
             <FunctionID>a1a481ad-7dd1-4c16-8528-088bdc59cbcd</FunctionID>
             <Name>var</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[idperson]]></Value>
             <Order>3</Order>
             <ValueType>variable</ValueType>
@@ -2278,7 +2278,7 @@
             <FunctionID>a1a481ad-7dd1-4c16-8528-088bdc59cbcd</FunctionID>
             <Name>var</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[yem_backup]]></Value>
             <Order>5</Order>
             <ValueType>variable</ValueType>
@@ -2291,7 +2291,7 @@
             <FunctionID>a1a481ad-7dd1-4c16-8528-088bdc59cbcd</FunctionID>
             <Name>var</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[yse_backup]]></Value>
             <Order>6</Order>
             <ValueType>variable</ValueType>
@@ -2304,7 +2304,7 @@
             <FunctionID>a1a481ad-7dd1-4c16-8528-088bdc59cbcd</FunctionID>
             <Name>il</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[ils_earns_backup]]></Value>
             <Order>12</Order>
             <ValueType>incomelist</ValueType>
@@ -2317,7 +2317,7 @@
             <FunctionID>a1a481ad-7dd1-4c16-8528-088bdc59cbcd</FunctionID>
             <Name>ilgroup</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[*base1]]></Value>
             <Order>13</Order>
             <ValueType>string</ValueType>
@@ -2330,7 +2330,7 @@
             <FunctionID>a1a481ad-7dd1-4c16-8528-088bdc59cbcd</FunctionID>
             <Name>vargroup</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[mtr*]]></Value>
             <Order>14</Order>
             <ValueType>string</ValueType>
@@ -2343,7 +2343,7 @@
             <FunctionID>a1a481ad-7dd1-4c16-8528-088bdc59cbcd</FunctionID>
             <Name>vargroup</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[*mtr]]></Value>
             <Order>15</Order>
             <ValueType>string</ValueType>
@@ -2356,7 +2356,7 @@
             <FunctionID>a1a481ad-7dd1-4c16-8528-088bdc59cbcd</FunctionID>
             <Name>vargroup</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[*diff]]></Value>
             <Order>16</Order>
             <ValueType>string</ValueType>
@@ -2369,7 +2369,7 @@
             <FunctionID>a1a481ad-7dd1-4c16-8528-088bdc59cbcd</FunctionID>
             <Name>replace_void_by</Name>
             <Comment><![CDATA[replace missing (i.e. void) values]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[9999999]]></Value>
             <Order>18</Order>
             <ValueType>amount</ValueType>
@@ -2382,7 +2382,7 @@
             <FunctionID>a1a481ad-7dd1-4c16-8528-088bdc59cbcd</FunctionID>
             <Name>nDecimals</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[2]]></Value>
             <Order>19</Order>
             <ValueType>amount</ValueType>
@@ -2395,7 +2395,7 @@
             <FunctionID>a1a481ad-7dd1-4c16-8528-088bdc59cbcd</FunctionID>
             <Name>TAX_UNIT</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[tu_individual_=cc=]]></Value>
             <Order>20</Order>
             <ValueType>taxunit</ValueType>
@@ -2435,7 +2435,7 @@
           <PolicyID>6a4645cb-a945-4cee-83da-b867eaa79e9c</PolicyID>
           <Name>ArithOp</Name>
           <Comment><![CDATA[calculate the contribution by components: other SIC]]></Comment>
-          <PrivateComment>""</PrivateComment>
+          <PrivateComment />
           <Order>10</Order>
           <Switch>off</Switch>
           <Private />
@@ -2445,7 +2445,7 @@
             <FunctionID>d3d03967-4b40-4f46-8011-7b3d8ef95955</FunctionID>
             <Name>who_must_be_elig</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[one]]></Value>
             <Order>0</Order>
             <ValueType>categorical</ValueType>
@@ -2458,7 +2458,7 @@
             <FunctionID>d3d03967-4b40-4f46-8011-7b3d8ef95955</FunctionID>
             <Name>formula</Name>
             <Comment><![CDATA[(note ils_sicot_mtr is stored at HH level, ils_sicot_base1 at IND level)]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[(ils_sicot_mtr - ils_sicot_base1#1) / ils_earns_diff * 100 - mtrpc_sicot]]></Value>
             <Order>1</Order>
             <ValueType>formula</ValueType>
@@ -2471,7 +2471,7 @@
             <FunctionID>d3d03967-4b40-4f46-8011-7b3d8ef95955</FunctionID>
             <Name>#_level</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[tu_household_mtr]]></Value>
             <Order>2</Order>
             <ValueType>taxunit</ValueType>
@@ -2484,7 +2484,7 @@
             <FunctionID>d3d03967-4b40-4f46-8011-7b3d8ef95955</FunctionID>
             <Name>Output_Add_Var</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[mtrpc_sicot]]></Value>
             <Order>3</Order>
             <ValueType>variable</ValueType>
@@ -2497,7 +2497,7 @@
             <FunctionID>d3d03967-4b40-4f46-8011-7b3d8ef95955</FunctionID>
             <Name>TAX_UNIT</Name>
             <Comment><![CDATA[]]></Comment>
-            <PrivateComment>""</PrivateComment>
+            <PrivateComment />
             <Value><![CDATA[tu_individual_=cc=]]></Value>
             <Order>4</Order>
             <ValueType>taxunit</ValueType>

@@ -4,7 +4,7 @@
 * DESCRIPTION:          append datasets with adult's and children's records
 * INPUT FILE:           household, adult, child
 * OUTPUT FILE:          individual
-* LAST UPDATE:          19/06/2024
+* LAST UPDATE:          09/06/2025
 ***************************************************************************************
 cap log close 
 log using "${log}/02_GetIndividualData.log", replace
@@ -26,3 +26,4 @@ log using "${log}/02_GetIndividualData.log", replace
 	save individual, replace
 
 cap log close
+

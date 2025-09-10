@@ -10,7 +10,7 @@
 * NEW VARs:
 *                       - boact00             Pension - first pension
 *                       - boactcm	          Pension - second pension
-* LAST UPDATE:          26/06/2024
+* LAST UPDATE:          09/06/2025
 *******************************************************************************************************
 cap log close 
 log using "${log}/11_Pensions.log", replace

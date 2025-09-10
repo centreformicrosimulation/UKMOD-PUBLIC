@@ -4,7 +4,7 @@
 * INPUT FILE:           pers, lab, income, exp. hbai, assets, earn_hours, pensions, nic_regime, invinc
 * OUTPUT FILE:          assembled
 * DESCRIPTION:          Create draft UKMOD database - before pension age reforms adjustments - merging previously created data files 
-* LAST UPDATE:          28/06/2024
+* LAST UPDATE:          09/06/2025
 ***************************************************************************************
 cap log close
 log using "${log}\14_Assemble.log", replace
@@ -45,14 +45,6 @@ drop _merge
 assert _merge==3
 drop _merge
 
-/*
-merge m:m sernum using expend_LCF
-drop _merge*/
-	  
-	foreach var of varlist _all {
-      replace `var' = 0 if missing(`var') 
-	  }
-	  
 
 sort sernum person 
 save assembled, replace

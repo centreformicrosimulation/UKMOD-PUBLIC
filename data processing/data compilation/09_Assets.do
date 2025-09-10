@@ -9,7 +9,7 @@
 *                       - amriv00 		Assets - Council Tax Band
 *						- amrtn 		Assets - Housing tenure
 *                       - afc 			Assets - Value of Financial capital
-* LAST UPDATE:          26/06/2024
+* LAST UPDATE:          09/06/2025
 ***************************************************************************************
 cap log close 
 log using "${log}/09_Assets.log", replace

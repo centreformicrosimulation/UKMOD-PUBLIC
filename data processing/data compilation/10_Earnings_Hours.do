@@ -14,7 +14,7 @@
 *						- yot01			Income - other taxable income
 *						- tpcpe			National Inusrance Contributions - Pensions
 *						- tpceepx		National Inusrance Contributions - private pension contribution rate
-* LAST UPDATE:          26/06/2024
+* LAST UPDATE:          09/06/2025
 ***************************************************************************************
 cap log close 
 log using "${log}/10_Earnings_Hours.log", replace

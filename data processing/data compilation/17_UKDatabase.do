@@ -4,7 +4,7 @@
 * INPUT FILE:           UK_${frsyr}_${data_source}${data_ver}_16b
 * OUTPUT FILE:          UKMOD input database (UK_${frsyr}_${data_source}${data_ver})
 * DESCRIPTION:          Create final UKMOD database (drop variables that are not needed, rename variables) 
-* LAST UPDATE:          28/06/2024
+* LAST UPDATE:          09/06/2025
 ***************************************************************************************
 capture log close
 log using "${log}/17_UKDatabase.log", replace     
@@ -214,6 +214,107 @@ compress
 save "${data}/UK_${frsyr}_${data_source}${data_ver}", replace	// final Input data file  DP: no reforms on SPA (no cases) and IB-ESA (no cases)
 de, short
  
-
 outsheet using "${data}/UK_${frsyr}_${data_source}${data_ver}.txt", replace nol
-capture log close
+
+
+*********************
+** Clean up folder **
+*********************
+fs *.dta
+
+if ${data_source_a}==1 {   
+#delimit ;
+local files_to_drop 
+accounts.dta
+care.dta
+extchild.dta
+individual.dta
+mortgage.dta
+pers.dta
+temp_pens.dta
+adult.dta
+child.dta
+frs2324.dta
+invinc.dta
+oddjob.dta
+rentcont.dta
+chldcare.dta
+govpay.dta
+job.dta
+owner.dta
+renter.dta
+assets.dta
+earn_hours.dta
+lab.dta
+penprov.dta
+temp.dta
+benefits.dta
+endowmnt.dta
+househol.dta
+maint.dta
+pension.dta
+temp_income.dta
+benunit.dta
+exp.dta
+income.dta
+mortcont.dta
+pensions.dta
+temp_lab.dta
+UK_2023_a${data_ver}_15.dta
+;
+#delimit cr // cr stands for carriage return
+
+foreach file in `files_to_drop' {
+    capture erase "$data/`file'"
+}
+} 
+
+if ${data_source_d}==1  {   
+#delimit ;
+local files_to_drop 
+accounts.dta
+care.dta
+extchild.dta
+individual.dta
+mortgage.dta
+pers.dta
+temp_pens.dta
+adult.dta
+child.dta
+frs2324.dta
+invinc.dta
+oddjob.dta
+rentcont.dta
+chldcare.dta
+govpay.dta
+job.dta
+owner.dta
+renter.dta
+assets.dta
+earn_hours.dta
+lab.dta
+penprov.dta
+temp.dta
+benefits.dta
+endowmnt.dta
+househol.dta
+maint.dta
+pension.dta
+temp_income.dta
+benunit.dta
+exp.dta
+income.dta
+mortcont.dta
+pensions.dta
+temp_lab.dta
+UK_2023_d${data_ver}_15.dta
+;
+#delimit cr // cr stands for carriage return
+
+foreach file in `files_to_drop' {
+    capture erase "$data/`file'"
+}
+} 
+
+
+cap log close

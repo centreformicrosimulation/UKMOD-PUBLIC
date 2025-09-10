@@ -15,7 +15,7 @@
 *						- xhcmomc		  Expenditure - Housing cost - Capital repayment of mortgage
 *						- xcc			  Expenditure - Child care costs
 *                       - xpp             Expenditure - Private pension contribution
-* LAST UPDATE:          26/06/2024
+* LAST UPDATE:          09/06/2025
 ***************************************************************************************
 cap log close
 log using "${log}\08_Expenditures.log", replace
@@ -207,7 +207,7 @@ sort sernum
 merge sernum using exp
 	replace xhcmomc=0 if _merge==2
 	replace xhcmomc=0 if hrpid!=1
-	drop _merge hrpid
+	drop _merge //hrpid
 	label var xhcmomc "monthly capital repayment"
 sort sernum person
 save exp, replace
@@ -270,7 +270,7 @@ merge sernum person using exp
 	replace xpp = r(p95) if xpp > r(p95)
 	su xpp if xpp> 0, d
 	
-keep sernum person xmp xhcrt xhcmomi xhcot xhcsc xhc01 xhc xhcmomc xcc xpp 
+keep sernum person xmp xhcrt xhcmomi xhcot xhcsc xhc01 xhc xhcmomc xcc xpp hrpid
 sort sernum person
 save exp, replace
 des
