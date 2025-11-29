@@ -10834,7 +10834,7 @@
             <Name>Formula</Name>
             <Comment><![CDATA[]]></Comment>
             <PrivateComment />
-            <Value><![CDATA[min(4.0,max(0.25,(max(250,ils_dispy#1) - bsav)/max(1,il_x_base)))]]></Value>
+            <Value><![CDATA[min(4.0,max(0.25,(max(250,ils_dispy#1) - bsav)/max(1,il_x)))]]></Value>
             <Order>1</Order>
             <ValueType>formula</ValueType>
             <Group />
@@ -10897,7 +10897,7 @@
             <Name>Formula</Name>
             <Comment><![CDATA[]]></Comment>
             <PrivateComment />
-            <Value><![CDATA[max(yds#1,250) - il_x_base]]></Value>
+            <Value><![CDATA[max(yds#1,250) - il_x]]></Value>
             <Order>0</Order>
             <ValueType>formula</ValueType>
             <Group />

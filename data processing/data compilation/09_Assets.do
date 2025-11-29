@@ -133,7 +133,10 @@ use sernum landlord accjob using $data/renter,clear
 
 * totcapb3 - BU - Total capital - v3
 ************************************
-	use sernum benunit totcapb3 using $data/benunit, clear // totcapb2 replaced by totcapb3 in second version of FRS 2009/10
+	use sernum benunit totcapb3 totcapb4 using $data/benunit, clear // totcapb2 replaced by totcapb3 in second version of FRS 2009/10
+	
+	sum totcapb3 totcapb4
+	sum totcapb4 if totcapb4>0
 		sort sernum benunit
 		save temp, replace
 		de

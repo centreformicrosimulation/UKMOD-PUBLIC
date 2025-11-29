@@ -55,7 +55,7 @@
 *                       - bwkmcee         Percentage of earnings received through CJRS 
 *                       - lmcse           Flag: Whether on SEISS
 *                       - bwkmcse         Total amount of SEISS received - changed to monthly in 17_UKDatabase.do
-* LAST UPDATE:          09/06/2025
+* LAST UPDATE:          27/11/2025
 ***************************************************************************************
 cap log close 
 log using "${log}/07_Income.log", replace
@@ -571,7 +571,8 @@ minclude
 * benefit = 1 
 **************************************************
 use sernum person benefit benamt using $data/benefits,clear
-	keep if benefit==1
+	keep if benefit==1 | benefit==121 //121=Child Disability Payment (Care) 
+	collapse (sum) benamt, by(sernum person)
 	isid sernum person
 	if ${use_assert} assert benamt>0 & benamt!=.
 	ta benamt
@@ -582,7 +583,7 @@ use sernum person benefit benamt using $data/benefits,clear
 	ta benamt
 minclude
 	rename benamt bdisc 
-	label var bdisc "DLAcare - monthly amount"
+	label var bdisc "DLA care - monthly amount"
 	sort sernum person
 	save income, replace
 
@@ -594,7 +595,8 @@ minclude
 * benefit = 2 
 *******************************
 use sernum person benefit benamt using $data/benefits,clear
-	keep if benefit==2 
+	keep if benefit==2 | benefit==122 //122= Child Disability Payment (Mobility) 
+	collapse (sum) benamt, by(sernum person)
 	isid sernum person
 	if ${use_assert} assert benamt>0 & benamt!=.
 	ta benamt	
@@ -617,7 +619,7 @@ minclude
 		replace benamt= $dlam_h *(52/12) if benamt>( $dlam_h *(52/12)) 
 	ta benamt
 	rename benamt bdimb 
-	label var bdimb "DLAmob - monthly amount"
+	label var bdimb "DLA mob - monthly amount"
 
 	
 **********************		AA-DLA_CARE-DLA_MOB consistency checks 
@@ -650,13 +652,14 @@ minclude
 * benefit = 96					
 **************************************************
 use sernum person benefit benamt using $data/benefits,clear
-	keep if benefit==96
-	isid sernum person
+	keep if benefit==96 |  benefit==117 //117= ADP (Daily Living)
+	collapse (sum) benamt, by(sernum person)
+	isid sernum person  
 	if ${use_assert} assert benamt>0 & benamt!=.
 	ta benamt
 minclude
 	rename benamt bdiscwa 
-	label var bdiscwa "PIPliving - monthly amount"
+	label var bdiscwa "PIP living - monthly amount"
 	sort sernum person
 	save income, replace
 
@@ -667,13 +670,14 @@ minclude
 * benefit = 97	                         
 **************************************************
 use sernum person benefit benamt using $data/benefits,clear
-	keep if benefit==97
-	isid sernum person
+	keep if benefit==97 | benefit==118 //118 = ADP (Mobility) 
+	collapse (sum) benamt, by(sernum person)
+	isid sernum person 
 	if ${use_assert} assert benamt>0 & benamt!=.
 	ta benamt
 minclude
 	rename benamt bdimbwa 
-	label var bdimbwa "PIPmob - monthly amount"
+	label var bdimbwa "PIP mob - monthly amount"
 	sort sernum person
 	save income, replace		
 

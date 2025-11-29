@@ -9,7 +9,7 @@
 * FRS VERSION:        	Family Resources Survey 2021/22, 2022/23, 2023/24
 * NATIONAL MODELLERS:   Justin Van de Ven, Daria Popova 
 * AUTHORS: 				Paola De Agostini, Iva Tasseva, Daria Popova 
-* LAST UPDATE:          11/06/2025
+* LAST UPDATE:          27/11/2025
 ***************************************************************************************
 clear all
 set type double
@@ -41,7 +41,7 @@ global data_source "b"	// a=single FRS wave, b=3 appended FRS waves
 ************************************************************************
 * Define EUROMOD-UK/UKMOD database version, i.e. # in CC_year_x# (eg. uk_2006_a1)
 ************************************************************************
-global data_ver "1"	
+global data_ver "2"	
 
 *******************************************************************************************
 * Append datasets, give a value variables with missing values and create pooled dataset
@@ -49,7 +49,7 @@ global data_ver "1"
 * append relevant EM input files
 use "${data}\$yrl2f\UK_${yrl2}.dta", clear 
 append using "${data}\$yrl1f\UK_${yrl1}.dta"
-append using "${data}\$yrf\UK_${yr}_a1.dta"
+append using "${data}\$yrf\UK_${yr}_a${data_ver}.dta"
 
 order dpd idhh idperson
 
@@ -76,11 +76,13 @@ replace yseny = 1 if yseny==.
 *** adjust sample weights
 ge dwtorig = dwt // store original weight value
 replace dwt = dwt/3 // divide by number of appended waves
+drop dwtorig
 
 *** adjust hbai weights 
 foreach var in hbai_gs_ad hbai_gs_bu hbai_gs_ch hbai_gs_hh hbai_gs_pn hbai_gs_pp hbai_gs_wa { 
 gen `var'_orig = `var' // store original weight value
 replace `var' = `var'/3 // divide by number of appended waves
+drop `var'_orig
 } 
 
 

@@ -61,10 +61,11 @@
         <p style='line-height:1.5;margin-left:24.0pt;'>      Personal income tax: ils_taxsim = tin_s = tin12_s + tin11_s + tin00_s</p>
         <p style='line-height:1.5;margin-left:36.0pt;'>         Devolved taxes in Scotland: tin12_s</p>
         <p style='line-height:1.5;margin-left:36.0pt;'>         Devolved taxes in Wales: tin11_s</p>
-        <p style='line-height:1.5;margin-left:36.0pt;'>         Non-devolved taxes: tin00_s = tax_nsnd_s + tax_sav_s + tax_div_s</p>
+        <p style='line-height:1.5;margin-left:36.0pt;'>         Non-devolved taxes: tin00_s = tax_nsnd_s + tax_sav_s + tax_div_s + tax_prop_s</p>
         <p style='line-height:1.5;margin-left:48.0pt;'>            Non-devolved non-saving non-dividend taxes: tax_nsnd_s</p>
         <p style='line-height:1.5;margin-left:48.0pt;'>            Non-devolved saving income taxes: tax_sav_s</p>
         <p style='line-height:1.5;margin-left:48.0pt;'>            Non-devolved dividend income taxes: tax_div_s</p>
+        <p style='line-height:1.5;margin-left:48.0pt;'>            Non-devolved property income taxes: tax_prop_s</p>
         <p style='line-height:1.5;margin-left:24.0pt;'>      Council tax: i_bmu_tmu</p>
         <p style='line-height:1.5;margin-left:12.0pt;'>   All national insurance contributions: ils_sicdy + ils_sicer</p>
         <p style='line-height:1.5;margin-left:24.0pt;'>      National insurance contributions (personal): ils_sicdy = ils_sicee + ils_sicse + ils_sicot</p>
@@ -628,6 +629,10 @@
       <OptionalVariable>
         <Name>tax_div_s</Name>
         <ReadVar>tax_div_s</ReadVar>
+      </OptionalVariable>
+      <OptionalVariable>
+        <Name>tax_prop_s</Name>
+        <ReadVar>tax_prop_s</ReadVar>
       </OptionalVariable>
       <OptionalVariable>
         <Name>tin11_s</Name>
@@ -3315,6 +3320,19 @@
                   <Parameter>
                     <Name>BasePar</Name>
                     <VarName>tax_div_s</VarName>
+                    <Reform>false</Reform>
+                  </Parameter>
+                </Parameters>
+              </CellAction>
+            </Row>
+            <Row>
+              <BackgroundColour>#D9D9D9</BackgroundColour>
+              <Name>............ property income taxes</Name>
+              <CellAction>
+                <Parameters>
+                  <Parameter>
+                    <Name>BasePar</Name>
+                    <VarName>tax_prop_s</VarName>
                     <Reform>false</Reform>
                   </Parameter>
                 </Parameters>

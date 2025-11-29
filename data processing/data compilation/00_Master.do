@@ -8,7 +8,7 @@
 * FRS VERSION:         	Family Resources Survey 2023-2024
 * NATIONAL MODELLERS:   Justin Van de Ven, Daria Popova 
 * AUTHORS: 				Francesca Zantomio, Francesco Figari, Paola De Agostini, Iva Tasseva, Daria Popova  
-* LAST UPDATE:          09/06/2025
+* LAST UPDATE:          27/11/2025
 ***********************************************************************************************************
 
 ************************************************************************
@@ -49,8 +49,8 @@ global frsyr "2023"
 * Define UKMOD database source and database version, i.e. x in CC_year_x# (eg. uk_2006_a1)
 * (will be used in the name of the final output file)	
 ************************************************************************
-global data_source_a = 1	//a=FRS   
-global data_source_d = 0	//d=FRS +LCFvars  
+global data_source_a = 0	//a=FRS   
+global data_source_d = 1	//d=FRS +LCFvars  
 
 ************************************************************************
 * Define folder paths for the analysis:	
@@ -82,18 +82,18 @@ global orig_hbai "D:\Dasha\UK-original-data\HBAI\UKDA-5828-stata\main"
 global hbai "${path_proj}\Data\HBAI\" // store HBAI data on housing costs
 
 *** Set globals for consumption data 
-/*global orig_lcf "D:\Dasha\UK-original-data\LCF\UKDA-9335-stata_2022_23\stata\stata13_se"
+global orig_lcf "D:\Dasha\UK-original-data\LCF\UKDA-9468-stata\stata\stata13_se"
 
 global dir_do_consumption "${do}\consumption"
 
-global UKMOD_a_dataset "$data\UK_2022_a1.txt"
+global UKMOD_a_dataset "$data\UK_2023_a2.txt"
 
-global LCF_hh_dataset "$orig_lcf\dvhh_ukanon_2022.dta"
+global LCF_hh_dataset "$orig_lcf\dvhh_ukanon_v2_2023.dta"
 
-global LCF_ind_dataset "$orig_lcf\dvper_ukanon_2022-23.dta"
+global LCF_ind_dataset "$orig_lcf\dvper_ukanon_202324_2023.dta"
 
 global summary_table_consumption "${path_proj}\data\summary_table_consumption" //Excel file to store consumption data stats 
-*/
+
 
 ***************************************************************************************************
 
@@ -131,7 +131,7 @@ cd $data
 //////////////////////////////////
 if ${data_source_a}==1 {   
 global data_source "a" // [TO DO]!
-global data_ver "1"	// [TO DO]!
+global data_ver "2"	// [TO DO]!
 
 do ${do}/01_AdjustFRS.do // previously adj_FRS.do			
 do ${do}/02_GetIndividualData.do 
@@ -174,7 +174,7 @@ do ${do}/18_DRD.do
 
 if ${data_source_d}==1 {   
 global data_source "d" // [TO DO]!
-global data_ver "1"	// [TO DO]!
+global data_ver "2"	// [TO DO]!
 
 do ${do}/01_AdjustFRS.do // previously adj_FRS.do			
 do ${do}/02_GetIndividualData.do 
@@ -193,8 +193,8 @@ do ${do}/10_Earnings_Hours.do
 do ${do}/11_Pensions.do					
 do ${do}/12_InvestmentIncome.do	
 
-//do ${do}/13a_GetHBAIData.do //keep this commented out after the dataset is produced because they refer to specific release of HBAI as the uprating reference year changes from year to year  	
-//do ${do}/13b_HBAIVars.do 
+do ${do}/13a_GetHBAIData.do //keep this commented out after the dataset is produced because they refer to specific release of HBAI as the uprating reference year changes from year to year  	
+do ${do}/13b_HBAIVars.do 
 do ${do}/14_Assemble.do	
 
 do ${do}/15_LCFconsumption.do 
