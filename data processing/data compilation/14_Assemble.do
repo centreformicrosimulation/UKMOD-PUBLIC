@@ -4,7 +4,7 @@
 * INPUT FILE:           pers, lab, income, exp. hbai, assets, earn_hours, pensions, nic_regime, invinc
 * OUTPUT FILE:          assembled
 * DESCRIPTION:          Create draft UKMOD database - before pension age reforms adjustments - merging previously created data files 
-* LAST UPDATE:          09/06/2025
+* LAST UPDATE:          15/06/2026
 ***************************************************************************************
 cap log close
 log using "${log}\14_Assemble.log", replace

@@ -3,25 +3,24 @@
 * DO-FILE NAME:         13a_GetHBAIData.do
 * DESCRIPTION:          Create HBAI housing cost and income data to be merged to the FRS
 * INPUT FILE:           HBAI data
-* OUTPUT FILE:          hbai_2023
+* OUTPUT FILE:          hbai_2024
 * NEW VARs:
 *                       - xhc_hbai             Expenditure - Total housing cost based on the HBAI data
 *                       - preliminary vars for SPI'd HBAI incomes  
-* LAST UPDATE:          09/06/2025
+* LAST UPDATE:          15/06/2026
 ***************************************************************************************
 cap log close
 log using "${log}\13a_GetHBAIData.log", replace
 
 set more off
 * create a dataset with HBAI variablea for each HBAI wave
-local v_2023 i2124e_2324prices // 2023/24 data 
-foreach year in 2023 {
-use "${orig_hbai}/`v_2023'.dta", clear // UKDA end user licence version //
+local v_2024 i2425e_2425prices_admin_linked // 2024/25 data 
+foreach year in 2024 {
+use "${orig_hbai}/`v_2024'.dta", clear // UKDA end user licence version //
 rename *, lower
 
 fre year 
-keep if year==30 //keep 2023-24 year only
-
+//keep if year==31 
 
 //create ids as in UKMOD input data
 sort sernum person

@@ -1,12 +1,8 @@
 ***************************************************
 *** LCF-FRS imputation of consumption data
 *** 4. Aggregate 5-digit COICOP categories into 4-digit COICOP categories to Be used By the TCO add-on. 
+* LAST UPDATE:          15 June 2026 DP 
 ***************************************************
-
-* Author: 			Daria Popova 
-* First version: 	Feb 2025
-* This version: 	28/11/2025
-
 
 clear all
 set more off

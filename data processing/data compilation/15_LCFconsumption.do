@@ -4,7 +4,7 @@
 * DESCRIPTION:          Retrieve expenditure from the FRS-LCF database   
 * INPUT FILE:           assembled
 * OUTPUT FILE:          assembled
-* LAST UPDATE:          08/04/2025
+* LAST UPDATE:          15 June 2026 DP 
 ******************************************************************************************
 cap log close
 log using "${log}\15_LCFconsumption.log", replace
@@ -30,10 +30,13 @@ replace `var' = 0 if hrpid != 1
 } 
 sum xtotal00 xtotal99
 
+
 **************************************************************************************
 * Check the income gradient of consumption in individual UKMOD data & produce graphs *
 **************************************************************************************
-//Disposable income deciles 
+/////////////////////////////////
+//By disposable income deciles //
+/////////////////////////////////
 	scalar pct = 10	
     local p = pct
 	bysort idhh: egen income_net_ukmod = total(yds)
@@ -53,8 +56,8 @@ foreach cat in `cat' {
 	local title_word : word `i' of `titles'  // Extract corresponding title
 	graph bar xtotal`cat', over(inc_net_pct_ukmod, label(labsize(small)) gap(10)) ///
 		ytitle("GBP/month") ///
-		title("Expenditure on `title_word', UKMOD") ///
-		subtitle("Deciles of disposable household income", size(medium) pos(6)) ///
+		title("`title_word', UKMOD") ///
+		subtitle("Income deciles", size(medium) pos(6)) ///
 		name(graph_`cat'_UKMOD, replace)
 		
 	local ++i  // Increment index
@@ -62,20 +65,65 @@ foreach cat in `cat' {
 }
 graph export "$graphs\graph_c_tot_income_UKMOD.png", as(png) name("graph_00_UKMOD") replace
 
+graph combine graph_01_UKMOD graph_02_UKMOD graph_03_UKMOD graph_04_UKMOD graph_05_UKMOD graph_06_UKMOD graph_07_UKMOD ///
+	graph_08_UKMOD graph_09_UKMOD graph_10_UKMOD graph_11_UKMOD graph_12_UKMOD graph_00_UKMOD  
+graph export "$graphs\graph_c_cat_income_UKMOD.png", as(png) replace
+
+
 graph bar income_net_ukmod, over(inc_net_pct_ukmod, label(labsize(small)) gap(10)) ///
 		ytitle("GBP/month") ///
 		title("Disposable household income, UKMOD") ///
 		subtitle("Deciles of disposable household income", size(medium) pos(6)) ///
 		name(graph_hhincome_UKMOD, replace)
 		//graph export "$graphs\graph_hhincome_UKMOD.png", as(png) replace
-		
-		
-graph combine graph_01_UKMOD graph_02_UKMOD graph_03_UKMOD graph_04_UKMOD graph_05_UKMOD graph_06_UKMOD graph_07_UKMOD ///
-	graph_08_UKMOD graph_09_UKMOD graph_10_UKMOD graph_11_UKMOD graph_12_UKMOD graph_00_UKMOD  
-graph export "$graphs\graph_c_cat_income_UKMOD.png", as(png) replace
 
 graph combine graph_hhincome_UKMOD graph_00_UKMOD graph_99_UKMOD , ycommon  
 graph export "$graphs\graph_c_cat_income_comp_UKMOD.png", as(png) replace
+
+
+/////////////////////////////////////////////
+//By equivalised disposable income deciles //
+/////////////////////////////////////////////
+	scalar pct = 10	
+    local p = pct
+	
+	// hh size 
+    sort idhh
+    cap drop hhsize 
+    bysort idhh : egen hhsize = count(idperson) 
+    //adult_eq 
+    cap gen child_14=(dag<=14)
+    bysort idhh : egen n_child_14 = total(child_14) 
+    cap gen adult_eq=1+0.5*(hhsize-n_child_14-1)+0.3*n_child_14
+    
+	cap gen income_eq_ukmod = income_net_ukmod /adult_eq //equivalised income
+    xtile inc_eq_pct_ukmod = income_eq_ukmod, n(`p')
+		
+// Define categories and corresponding titles
+local cat "00 01 02 03 04 05 06 07 08 09 10 11 12"
+local titles `" "total consumption, UKMOD" "food" "alcohol" "clothing" "housing" "bills" "health" "transport" "comms" "recreation" "education" "resthotels" "miscell" "'
+
+local i = 1
+foreach cat in `cat' {
+    //replace xtotal`cat'= xtotal`cat'/30.5*7 //move to weekly terms as in LCF
+
+	local title_word : word `i' of `titles'  // Extract corresponding title
+	graph bar xtotal`cat', over(inc_eq_pct_ukmod, label(labsize(vsmall)) gap(10)) ///
+		ytitle("GBP/month", size(small)) ///
+		ylabel(, labsize(vsmall)) ///
+		title("`title_word'") ///
+		subtitle("income deciles", size(small) pos(6)) ///
+		name(graph_`cat'_UKMOD, replace)
+		
+	local ++i  // Increment index
+	
+}
+graph export "$graphs\graph_c_EQincome_UKMOD.png", as(png) name("graph_00_UKMOD") replace
+
+ 		
+graph combine graph_01_UKMOD graph_02_UKMOD graph_03_UKMOD graph_04_UKMOD graph_05_UKMOD graph_06_UKMOD graph_07_UKMOD ///
+	graph_08_UKMOD graph_09_UKMOD graph_10_UKMOD graph_11_UKMOD graph_12_UKMOD   
+graph export "$graphs\graph_c_cat_EQincome_UKMOD.png", as(png) replace
 
 
 ///////////////////////////////////////////////		

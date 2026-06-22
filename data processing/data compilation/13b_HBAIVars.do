@@ -2,7 +2,7 @@
 * PROJECT:              EUROMODupdate/UKMOD: construct a EUROMOD-UK/UKMOD database from FRS database
 * DO-FILE NAME:         13b_HBAIVars.do
 * DESCRIPTION:          Create HBAI variables 
-* INPUT FILE:           individual, hbai_2023
+* INPUT FILE:           individual, hbai_2024
 * OUTPUT FILE:          hbai
 * NEW VARs:
 *                       - xhc_hbai      Expenditure - Total housing cost from HBAI (used to compute UKMOD AHC disposable income)
@@ -40,7 +40,7 @@
 *                       - hbai_gs_pn	spi'd grossing factor for pensioners
 *                       - hbai_gs_pp	spi'd grossing factor for all individuals
 *                       - hbai_gs_wa	spi'd grossing factor for working-age adults
-* LAST UPDATE:           09/06/2025
+* LAST UPDATE:           15/06/2026
 ***************************************************************************************
 cap log close
 log using "${log}\13b_HBAIVars.log", replace

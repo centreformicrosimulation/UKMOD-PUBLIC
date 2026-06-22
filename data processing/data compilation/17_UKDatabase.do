@@ -4,7 +4,7 @@
 * INPUT FILE:           UK_${frsyr}_${data_source}${data_ver}_16b
 * OUTPUT FILE:          UKMOD input database (UK_${frsyr}_${data_source}${data_ver})
 * DESCRIPTION:          Create final UKMOD database (drop variables that are not needed, rename variables) 
-* LAST UPDATE:          09/06/2025
+* LAST UPDATE:          15/06/2026
 ***************************************************************************************
 capture log close
 log using "${log}/17_UKDatabase.log", replace     
@@ -234,7 +234,7 @@ pers.dta
 temp_pens.dta
 adult.dta
 child.dta
-frs2324.dta
+frs2425.dta
 invinc.dta
 oddjob.dta
 rentcont.dta
@@ -260,7 +260,7 @@ income.dta
 mortcont.dta
 pensions.dta
 temp_lab.dta
-UK_2023_a${data_ver}_15.dta
+UK_2024_a${data_ver}_15.dta
 ;
 #delimit cr // cr stands for carriage return
 
@@ -281,7 +281,7 @@ pers.dta
 temp_pens.dta
 adult.dta
 child.dta
-frs2324.dta
+frs2425.dta
 invinc.dta
 oddjob.dta
 rentcont.dta
@@ -307,7 +307,7 @@ income.dta
 mortcont.dta
 pensions.dta
 temp_lab.dta
-UK_2023_d${data_ver}_15.dta
+UK_2024_d${data_ver}_15.dta
 ;
 #delimit cr // cr stands for carriage return
 

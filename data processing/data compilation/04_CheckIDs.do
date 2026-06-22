@@ -6,7 +6,7 @@
 *						- Create personal socio-demographic variables and household weights
 * INPUT FILE:           pers
 * OUTPUT FILE:          n/a
-* LAST UPDATE:          09/06/2025
+* LAST UPDATE:          11/06/2026
 ***************************************************************************************
 cap log close
 log using "${log}/04_CheckIDs.log", replace
@@ -14,27 +14,10 @@ log using "${log}/04_CheckIDs.log", replace
 use pers, clear
 
 *** check no loose children: dependent children always have either a father of a mother 
-	assert (idfather!=0 | idmother!=0) if dag<16	//11 contradictions in 6,777 observations
+	assert (idfather!=0 | idmother!=0) if dag<16	//1 contradiction in 6,392 observations
 	noi list idhh idperson idfather idmother dag if (idfather==0 & idmother==0) & dag<16  
 	assert (idfather!=0 | idmother!=0) if adult==0
 	noi list idhh idperson idfather idmother dag if (idfather==0 & idmother==0) & adult==0	
-	
-/*
-      idhh	idperson	idfather	idmother	dag	
-						
-2097.	980	    98003	0	0	4 //bug
-2098.	980	    98004	0	0	2 //bug	
-4434.	2036	203603	0	0	15	//orphan? 
-7002.	3231	323103	0	0	8	//grandchild? 
-12038.	5547	554704	0	0	1  //bug
-13287.	6116	611603	0	0	17	//grandchild? 
-14792.	6810	681003	0	0	4 //grandchild or child? 
-22154.	10197	1019702	0	0	8 //bug
-23521.	10822	1082203	0	0	13 //adoptive parent? 
-27007.	12421	1242103	0	0	9 //bug
-29337.	13495	1349503	0	0	15//grandchild? 
-32553.	15013	1501305	0	0	0 //not clear, most likely grandchild	
-*/
 	
 	
 **************
@@ -173,6 +156,8 @@ foreach parent in father mother {
 	if ${use_assert1} assert r(N) == 0
 
 	count if age_diff < 15
+	replace id`parent'bio = 0 if age_diff < 14 & id`parent'bio != 0
+	
 	if (r(N) > 0) noi di in y "Warning: there are " r(N) " observations where the `parent' is less than 15 years older than the child."
 	if (r(N) > 0 & r(N) <= ${maxN_obs_listed}) noi list idhh idperson id`parent' id`parent'bio dag `parent'_age age_diff if age_diff < 15
 	noi tab age_diff if age_diff < 15, m

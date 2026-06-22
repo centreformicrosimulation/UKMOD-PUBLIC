@@ -4,15 +4,14 @@
 ***************************************************
 
 * Author: 			Matteo Richiardi, Daria Popova 
-* First version: 	14 Feb 2025
-* This version: 	17 Sep 2025 DP 
+* LAST UPDATE:          15 June 2026 DP 
 
 	
 	cd "$dir_do_consumption"
 	
 *** Set macros and scalars
 	scalar pct = 10	// income percentiles used for matching
-	global CPI = 1.073 //CPI 2023 to 2022, because we use 2022 LCF data 
+	global CPI = 1.0261 //CPI 2024 to 2023, because we are using 2023 LCF data (taken from Uprating table of UKMOD)
 	
 
 * Prepare UKMOD and LCF data

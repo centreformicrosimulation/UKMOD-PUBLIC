@@ -4,7 +4,7 @@
 * INPUT FILE:           assembled
 * OUTPUT FILE:          UK_2023_a*_0
 * DESCRIPTION:          Create draft UKMOD database - before pension age reforms adjustments - merging previously created data files 
-* LAST UPDATE:          09/06/2025
+* LAST UPDATE:          15/06/2026
 ***************************************************************************************
 cap log close
 log using "${log}\15_CheckDraftData.log", replace

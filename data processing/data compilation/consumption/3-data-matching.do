@@ -1,11 +1,8 @@
 ***************************************************
 *** LCF-FRS imputation of consumption data
 *** 30. Compute Mahalanobis distance between obs. in LCF and FRS
+* LAST UPDATE:          15 June 2026 DP 
 ***************************************************
-
-* Author: 			Matteo Richiardi
-* First version: 	16 Feb 2025
-* This version: 	28 Nov 2025 DP 
 
 * Install the ultimatch package (if not already installed)
 //ssc install ultimatch, replace

@@ -1,11 +1,9 @@
 ***************************************************
 *** LCF-FRS imputation of consumption data
 *** 10. Data preparation - FRS
+* LAST UPDATE:          15 June 2026 DP 
 ***************************************************
 
-* Author: 			Matteo Richiardi
-* First version: 	14 Feb 2025
-* This version: 	28 Nov 2025 DP 
 
 ************************
 *** UKMOD input data ***

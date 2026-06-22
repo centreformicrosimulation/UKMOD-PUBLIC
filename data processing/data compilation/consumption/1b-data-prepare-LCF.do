@@ -1,11 +1,8 @@
 ***************************************************
 *** LCF-FRS imputation of consumption data
 *** 10. Data preparation
+* LAST UPDATE:          15 June 2026 DP 
 ***************************************************
-
-* Author: 			Matteo Richiardi
-* First version: 	14 Feb 2025
-* This version: 	27 Nov 2025
 
 ***********
 *** LCF ***
@@ -146,7 +143,12 @@ save "$data\lcf_pers_collapsed.dta", replace
 	local p = pct
 	gen income_net_lcf = p389p  * 52/12 * $CPI
 	xtile inc_net_pct_lcf = income_net_lcf, n(`p')
-
+	
+* Equivalised disposable income (GBP)
+	local p = pct
+	gen income_eq_lcf = eqincdop  * 52/12
+	xtile income_eq_pct_lcf = income_eq_lcf, n(`p')	
+		
 * Region
 	rename gorx region_lcf 
 

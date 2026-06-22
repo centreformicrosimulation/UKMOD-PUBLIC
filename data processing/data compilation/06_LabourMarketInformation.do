@@ -18,7 +18,7 @@
 *						- lcr01			  Caring for dependent person (for Income Support purposes): 1 yes, 0 no
 *						- lcr02	  		  Caring for dependent person (for Income Support purposes): 1 child, 2 adult, 3 elderly 
 *						- lle			  On leave (under unpaid Maternity, Paternity or Parental leave: for IS eligibility conditions)
-* LAST UPDATE:          09/06/2025
+* LAST UPDATE:          11/06/2026
 ***************************************************************************************
 cap log close 
 log using "${log}/06_LabourMarketInformation.log", replace

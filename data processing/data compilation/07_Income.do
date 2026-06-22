@@ -55,7 +55,7 @@
 *                       - bwkmcee         Percentage of earnings received through CJRS 
 *                       - lmcse           Flag: Whether on SEISS
 *                       - bwkmcse         Total amount of SEISS received - changed to monthly in 17_UKDatabase.do
-* LAST UPDATE:          27/11/2025
+* LAST UPDATE:          11/06/2026
 ***************************************************************************************
 cap log close 
 log using "${log}/07_Income.log", replace
@@ -157,7 +157,7 @@ save income, replace
 
 
 ***************************
-* yds - disposable income
+* yds - disaposable income
 
 * nindinc - Adult - Net Income
 * chincdv - Child - Total income
@@ -192,11 +192,7 @@ save income, replace
 *************************************************************
 use sernum person benefit benamt pres using $data/benefits,clear
 	keep if (benefit==31|benefit==32|benefit==33|benefit==34|benefit==35) & pres==1
-	//isid sernum person
-	duplicates tag sernum person, generate(dup_tag) //one person getting two types of benefits so need to collapse the data to merge correctly 
-    collapse (sum) benamt, by(sernum person)
 	isid sernum person
-
 	if ${use_assert} assert benamt>0 & benamt!=.
 	ta benamt
 minclude
@@ -257,6 +253,7 @@ save income, replace
 sort sernum person
 save income, replace 
 
+
 *******************************
 *  tmu01 tmu02 tmu03 tmu04 - Council Tax
 
@@ -300,17 +297,17 @@ save income, replace
 *	13	Northern Ireland
 * ctamtbnd -- Annual council tax payment bands for band D at local authority level   
 *       0                                                
-*       1  Under 300 a year                            
-*       2  300 and less than 600                      
-*       3  600 and less than 900                       
-*       4  900 and less than 1200                    
-*       5  1200 and less than 1500                    
-*       6  1500 and less than 1800                    
-*       7  1800 and less than 2100                  
-*       8  2100 and less than 2400                   
-*       9  2400 and less than 2700                   
-*       10 2700 and less than 3000                  
-*       11 Above 3000                                 
+*       1  Under �300 a year                            
+*       2  �300 and less than �600                      
+*       3  �600 and less than �900                       
+*       4  �900 and less than �1200                    
+*       5  �1200 and less than �1500                    
+*       6  �1500 and less than �1800                    
+*       7  �1800 and less than �2100                  
+*       8  �2100 and less than �2400                   
+*       9  �2400 and less than �2700                   
+*       10 �2700 and less than �3000                  
+*       11 Above �3000                                 
 *       12 Household not valued separately or in NI    
                                                  
 
@@ -333,87 +330,30 @@ gen singlehh=(hhsize==1)
 	sort type
 	replace type=0 if ctband==-1 | ctband ==10 | ctband==. 	/*n.i. or not separately valued*/
 	by type, sort: egen av_cta=mean(ctannual)
+	* Check that all valid band × region × household-type cells contain
+    * at least one observation. If not, donor-cell imputation rules may
+    * need to be updated.
+	tab type ctband if av_cta==.
+	count if av_cta==. & type!=0
 	list type ctband gvtregn singlehh if type!=0 &  av_cta==.
-/*
-	type	ctband	gvtregn	singlehh	
-					
-118	Band F	East Midland	1	==> 117 0 - to add discount 
-134	Band G	North East	    1   ==> 133 0 - to add discount
-156	Band H	North West	    0   ==> 135 0 
-157	Band H	Yorks and th	0	==> 137 0 
-158	Band H	Yorks and th	1	==> 138 1 
-159	Band H	East Midland	0	==> 139 0 
-161	Band H	West Midland	1	==> 160 0 - to add discount 
-162	Band H	East of Engl	0	==> 143 0 
-166	Band H	South East	    1	==> 165 0 - to add discount 
-168	Band H	Scotland	    0	==> 151 0 
-169	Band H	Scotland	    1	==> 152 1 
-171	Band H	Wales	        1	==> 170 0 - to add discount 
-*/				
-		
-// TO DO: impute missing values of av_cta, using non-missing values of the same region, different household type and possibly different band //
+if r(N)>0 {
+    di as error "ERROR: Missing council tax cells detected. Review council tax imputation."
+    error 9
+}
 
-	tab type ctband if av_cta!=.
-	tab type ctband if av_cta==. // need to impute missing values of av_cta
-		
-	tab type ctband if gvtregno==1 // North East 	
-	tab type ctband if gvtregno==2 // North West 	
-	tab type ctband if gvtregno==4 // Yorks and the Humber  stop 
-	tab type ctband if gvtregno==5 // East Midlands  
-	tab type ctband if gvtregno==6 // West Midlands	
-    tab type ctband if gvtregno==7 // East of England	
-	tab type ctband if gvtregno==9 // South East 	
-	tab type ctband if gvtregno==10 // South West 
-	tab type ctband if gvtregno==12 // Scotland  
-	tab type ctband if gvtregno==11 // Wales	
-	
-
-	gen type2=type
-	replace type2=117 if type==118
-	replace type2=133 if type==134
-	replace type2=135 if type==156	
-	replace type2=137 if type==157	
-	replace type2=138 if type==158
-	replace type2=139 if type==159
-	replace type2=160 if type==161
-	replace type2=143 if type==162	
-	replace type2=165 if type==166
-	replace type2=151 if type==168
-	replace type2=152 if type==169
-	replace type2=170 if type==171	
-
-	tab type2 ctband if av_cta!=.
-	tab type2 ctband if av_cta==.
-		
-	sort type2
-		by type2, sort: egen av2_cta=min(av_cta)
-		tab type2 ctband if av2_cta==.
-		replace av2_cta=av_cta if type==type2 & av_cta!=av2_cta & av_cta!=.
-		
-		if ${use_assert} assert av_cta==av2_cta if type==type2 
-		if ${use_assert} assert av_cta==av2_cta if type==type2 & av_cta!=.
-		if ${use_assert} assert av_cta>av2_cta if type!=type2 
-		
-		replace av2_cta=av_cta if av_cta>av2_cta & av_cta!=.
-		if ${use_assert} assert av_cta>=av2_cta if type!=type2 & av_cta!=.
-
-	/*TO DO: when imputaion for single person hh was based on multiple memebers hh, 
-	apply the 25% discount to average, or the other way around*/
-	replace av2_cta=av2_cta*0.75 if type==118| type==134 | type==161 | type==166 | type==171 
-	
 	
 	*Tax - Council tax (based on average amount by region, band and household type)
 	gen tmu01=.
 	replace tmu01=0 if ctband==-1 | ctband==.		/*n.ireland*/
 	replace tmu01=0 if ctband==10		/*not separately valued*/
-	replace tmu01=av2_cta/12 if tmu01==. 	/*average imputed also to those with non-missing ctannual*/
+	replace tmu01=av_cta/12 if tmu01==. 	/*average imputed also to those with non-missing ctannual*/
 
 	*Tax - Council tax (based on reported Council Tax Amount; for missing values based on average amount by region, band and hh type)
 	gen tmu02=.
 	replace tmu02=0 if ctband==-1 | ctband==.		/*n.ireland*/
 	replace tmu02=0 if ctband==10			/*not separately valued*/
 	replace tmu02=ctannual/12 if tmu02==. & ctannual>0 & ctannual!=.
-	replace tmu02=av2_cta/12 if tmu02==. 	/*average imputed only to those missing ctannual*/
+	replace tmu02=av_cta/12 if tmu02==. 	/*average imputed only to those missing ctannual*/
 
 		
 * impute band rates using information on local authority rates for band D 
@@ -429,7 +369,7 @@ replace ctband_d = 2250 if ctamtbnd==8
 replace ctband_d = 2550 if ctamtbnd==9
 replace ctband_d = 2850 if ctamtbnd==10
 replace ctband_d = 3000 if ctamtbnd==11
-tab2 ctband_d gvtregno, m // 1,844 zero values are for NI 
+tab2 ctband_d gvtregno // 1,913 missing values are for NI 
 
 //generate bans rates for other bands using band d
 /*The ratios for council tax bands do not change from year to year. 
@@ -491,6 +431,11 @@ gen ctband_i = ctband_d * 2.33 if gvtregno==11 //wales
 	fre tmu04 
 
 	inspect tmu01 tmu02 tmu03 tmu04 
+	count if missing(tmu01)
+    count if missing(tmu02)
+    count if missing(tmu03)
+    count if missing(tmu04)
+		
 	keep sernum tmu*
 	sort sernum
 	merge m:m sernum using income
@@ -571,9 +516,9 @@ minclude
 * benefit = 1 
 **************************************************
 use sernum person benefit benamt using $data/benefits,clear
+//fre benefit 
 	keep if benefit==1 | benefit==121 //121=Child Disability Payment (Care) 
-	collapse (sum) benamt, by(sernum person)
-	isid sernum person
+		isid sernum person
 	if ${use_assert} assert benamt>0 & benamt!=.
 	ta benamt
 *** [TO DO: imputation!] 
@@ -583,12 +528,11 @@ use sernum person benefit benamt using $data/benefits,clear
 	ta benamt
 minclude
 	rename benamt bdisc 
-	label var bdisc "DLA care - monthly amount"
+	label var bdisc "DLAcare - monthly amount"
 	sort sernum person
 	save income, replace
 
-
-
+	 
 *******************************
 *  bdimb - Disability living allowance (mobility)
 
@@ -596,8 +540,7 @@ minclude
 *******************************
 use sernum person benefit benamt using $data/benefits,clear
 	keep if benefit==2 | benefit==122 //122= Child Disability Payment (Mobility) 
-	collapse (sum) benamt, by(sernum person)
-	isid sernum person
+	     isid sernum person
 	if ${use_assert} assert benamt>0 & benamt!=.
 	ta benamt	
 		 
@@ -619,10 +562,10 @@ minclude
 		replace benamt= $dlam_h *(52/12) if benamt>( $dlam_h *(52/12)) 
 	ta benamt
 	rename benamt bdimb 
-	label var bdimb "DLA mob - monthly amount"
+	label var bdimb "DLAmob - monthly amount"
 
 	
-**********************		AA-DLA_CARE-DLA_MOB consistency checks 
+**********************	AA-DLA_CARE-DLA_MOB consistency checks 
 
 *** RECODE AA as DLAselfcare if received by those aged below 65
  		if ${use_assert} assert bdisc==0 if age2<${SPAm} & bdioa >0
@@ -646,48 +589,38 @@ minclude
 	save income, replace
 
 **************************************************
-*  bdiscwa - Personal independence payment (daily living allowance)	
+*  bdiscwa - Personal indipendence payment (daily living allowance)	
 
 * new from 2014/15
 * benefit = 96					
 **************************************************
 use sernum person benefit benamt using $data/benefits,clear
 	keep if benefit==96 |  benefit==117 //117= ADP (Daily Living)
-	collapse (sum) benamt, by(sernum person)
-	isid sernum person  
+	    isid sernum person
 	if ${use_assert} assert benamt>0 & benamt!=.
 	ta benamt
 minclude
 	rename benamt bdiscwa 
-	label var bdiscwa "PIP living - monthly amount"
+	label var bdiscwa "PIPliving - monthly amount"
 	sort sernum person
 	save income, replace
 
 **************************************************
-*  bdimbwa - Personal independence payment (mobility allowance)  
+*  bdimbwa - Personal indipendence payment (mobility allowance)  
 
 * new from 2014/15
 * benefit = 97	                         
 **************************************************
 use sernum person benefit benamt using $data/benefits,clear
 	keep if benefit==97 | benefit==118 //118 = ADP (Mobility) 
-	collapse (sum) benamt, by(sernum person)
-	isid sernum person 
+	isid sernum person
 	if ${use_assert} assert benamt>0 & benamt!=.
 	ta benamt
 minclude
 	rename benamt bdimbwa 
-	label var bdimbwa "PIP mob - monthly amount"
+	label var bdimbwa "PIPmob - monthly amount"
 	sort sernum person
 	save income, replace		
-
-/*Note: in the original FRS all disablity benefits are assimged to individuals aged 16+ only, meaning all child disability benefits are assigned to parent 	
-tab2 age2 bdisc
-tab2 age2 bdimb
-tab2 age2 bdiscwa	
-tab2 age2 bdimbwa
-*/  
-
 
 *********************************************************
 *  bsa - Income Support (includes income-based JSA)
@@ -848,9 +781,9 @@ minclude
 	capture drop single extraadult haschi
 	compare bdict maxib		
 	
-	// DP: 59 cases report more that they should get
+	// 7 cases report more that they should get
 	gen excess_ib=max(0, bdict- maxib)
-	replace bdict=maxib if excess_ib>0 & bsa==0		// DP 59 obs /*recode bdict to max possible amount if not on income support*/
+	replace bdict=maxib if excess_ib>0 & bsa==0		/*recode bdict to max possible amount if not on income support*/
 	ge bsa_ib=excess_ib if excess_ib>0 & bsa==0		// overreported IB is IS
 	su bsa_ib
 	replace bsa_ib=0 if bsa_ib==.
@@ -881,7 +814,7 @@ minclude
 	rename benamt bdict01	
 	label var bdict01 "Incapacity Benefit - monthly amount"
 	
-	*Note: No obs reporting IB so the following imputation is unnecessary and coded out 
+	*no obs reporting IB in 2024/25 so the following imputation is unnecessary  
  /*	
 	ge ib=bdict01
 	
@@ -950,7 +883,6 @@ minclude
 
 sort sernum person
 save income, replace
-
 
 ******************************************************************
 *  bdict02 - Employment and Support Allowance (contributory/IB)
@@ -1630,7 +1562,7 @@ keep sernum person ypp yptmp bch bsa* bho bhoro bhoot /*bhomy*/ yls bdioa bdisc 
 
 
 /*chgcovid furlough furlo2  furlpay furlpay2 seissgr seissnum seisstot
-*DP: recode missing values in COVID vars to -1 
+*Recode missing values in COVID vars to -1 
 foreach var in chgcovid furlough furlo2  furlpay furlpay2 seissgr seissnum seisstot {
 replace `var'=-1 if `var'==. | `var'<=-1
 }

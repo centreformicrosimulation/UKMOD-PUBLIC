@@ -1,11 +1,9 @@
 ***************************************************
 *** LCF-UKMOD imputation of consumption data
 *** 20. Data descriptive. This file compares statistics from UKMOD and LCF data.
+* LAST UPDATE:          15 June 2026 DP 
 ***************************************************
 
-* Author: 			Matteo Richiardi
-* First version: 	14 Feb 2025
-* This version: 	27 Nov 2025
 version 14
 
 * Append datasets
@@ -242,28 +240,57 @@ sum w_gross*
 	
 * Income gradient in original LCF data
 
-	graph bar c_tot, over(inc_net_pct_lcf, label(labsize(small)) gap(10)) ///
-		ytitle("GBP/week") ///
-		title("Total consumption by income, LCF") ///
-		subtitle("Deciles of disposable household income", size(medium) pos(6)) ///
+	graph bar c_tot, over(inc_net_pct_lcf, label(labsize(vsmall)) gap(10)) ///
+		ytitle("GBP/week", size(small)) ///
+		ylabel(, labsize(vsmall)) ///
+		title("total consumption") ///
+		subtitle("income deciles", size(small) pos(6)) ///
 		name(graph_c_tot, replace)
 		
 	graph export "$graphs\graph_c_tot_income_lcf.png", as(png) name("graph_c_tot") replace
 
-	local cat "food alcohol clothing housing bills health transport comms recreation education resthotels miscell noncons" 
+	local cat "food alcohol clothing housing bills health transport comms recreation education resthotels miscell" 
 	foreach c of local cat {
-		graph bar c_`c', over(inc_net_pct_lcf, label(labsize(small)) gap(10)) ///
-			ytitle("GBP/week") ///
-			title(`"Expenditure on `c', LCF"') ///
-			subtitle("Deciles of disposable household income", size(medium) pos(6)) ///
+		graph bar c_`c', over(inc_net_pct_lcf, label(labsize(vsmall)) gap(10)) ///
+			ytitle("GBP/week", size(small)) ///
+			ylabel(, labsize(vsmall)) ///
+			title("`c'") ///
+			subtitle("income deciles", size(small) pos(6)) ///
+			name(graph_`c', replace)
+	}
+
+	graph combine graph_c_tot graph_food graph_alcohol graph_clothing graph_housing graph_bills graph_health ///
+		graph_transport graph_comms graph_recreation graph_education graph_resthotels graph_miscell /*graph_noncons*/
+		
+	graph export "$graphs\graph_c_cat_income_lcf.png", as(png) replace
+
+
+//using equivalised income 	
+	graph bar c_tot, over(income_eq_pct_lcf, label(labsize(vsmall)) gap(10)) ///
+    ytitle("GBP/week", size(small)) ///
+    yscale(range(0 1200)) ///
+    ylabel(0(200)1200, labsize(vsmall)) ///
+    title("total consumption, LCF") ///
+    subtitle("income deciles", size(small) pos(6)) ///
+    name(graph_c_tot2, replace)
+
+	graph export "$graphs\graph_c_EQincome_lcf.png", as(png) name("graph_c_tot2") replace
+
+	
+	local cat "food alcohol clothing housing bills health transport comms recreation education resthotels miscell" 
+	foreach c of local cat {
+		graph bar c_`c', over(income_eq_pct_lcf, label(labsize(vsmall)) gap(10)) ///
+			ytitle("GBP/week", size(small)) ///
+			ylabel(, labsize(vsmall)) ///
+			title("`c'") ///
+			subtitle("income deciles", size(small) pos(6)) ///
 			name(graph_`c', replace)
 	}
 
 	graph combine graph_food graph_alcohol graph_clothing graph_housing graph_bills graph_health ///
-		graph_transport graph_comms graph_recreation graph_education graph_resthotels graph_miscell ///
-		graph_noncons
+		graph_transport graph_comms graph_recreation graph_education graph_resthotels graph_miscell /*graph_noncons*/
 		
-	graph export "$graphs\graph_c_cat_income_lcf.png", as(png) replace
+	graph export "$graphs\graph_c_cat_EQincome_lcf.png", as(png) replace
 
 * Determinants of consumption
 	gen logc_tot = log(c_tot)

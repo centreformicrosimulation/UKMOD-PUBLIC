@@ -36,7 +36,7 @@
 *                       - dhr             Person responsible for housing
 *                       - dpd             Data year 
 *                       - dot             Ethnic group
-* LAST UPDATE:          09/06/2025
+* LAST UPDATE:          11/06/2026
 ***************************************************************************************
 cap log close 
 log using "${log}/03_PersonalInformation.log", replace
@@ -312,88 +312,28 @@ global use_assert1 = 0 // separate switch for the script 04_CheckIDs.do
 	inspect idmother idmotherbio 
 	
 	
-/*Fixes to hh ids based on 04_CheckIds*/
-replace idfather = 98001 if idhh==980 & idperson==98003 | idperson==98004 
-replace idmother = 98002 if idhh==980 & idperson==98003 | idperson==98004 
-replace idfatherbio = 98001 if idhh==980 & idperson==98003 | idperson==98004 
-replace idmotherbio = 98002 if idhh==980 & idperson==98003 | idperson==98004 
+/*Fixes to hh ids based on 04_CheckIds */
+replace idfather =659001 if idperson==659003
+replace idmother =659002 if idperson==659003
 
-replace idmother=203602 if idhh==2036 & idperson==203603
+replace idmother =0 if idperson==83003
+replace idmotherbio =0 if idperson==83003
 
-replace idmother=323101 if idhh==3231 & idperson==323103
+replace idmother =83003 if idperson==83002
+replace idmotherbio =83003 if idperson==83002
 
-replace idmother=554702 if idhh==5547 & idperson==554704
-replace idmotherbio=554702 if idhh==5547 & idperson==554704
+replace idmother = 0 if idperson==1074201
+replace idmotherbio = 0 if idperson==1074201
 
-replace idmother=611601 if idhh==6116 & idperson==611603
+replace idmother = 1074201 if idperson==1074204
+replace idmotherbio = 1074201 if idperson==1074204
 
-replace idmother=681002 if idhh==6810 & idperson==681003
-replace idfather=681001 if idhh==6810 & idperson==681003
+replace idfather=0 if idperson==1179901
+replace idfatherbio=0 if idperson==1179901
 
-replace idmother=1019701 if idhh==10197 & idperson==1019702
-replace idmotherbio=1019701 if idhh==10197 & idperson==1019702
+replace idfather=1179901 if idperson==1179902
+replace idfatherbio=1179901 if idperson==1179902
 
-replace idmother=1082202 if idhh==10822 & idperson==1082203
-replace idmotherbio=1082202 if idhh==10822 & idperson==1082203
-
-replace idmother=1242101 if idhh==12421 & idperson==1242103
-replace idfather=1242102 if idhh==12421 & idperson==1242103
-replace idmotherbio=1242101 if idhh==12421 & idperson==1242103
-replace idfatherbio=1242102 if idhh==12421 & idperson==1242103
-
-replace idmother=1349502 if idhh==13495 & idperson==1349503
-replace idfather=1349501 if idhh==13495 & idperson==1349503
-
-replace idmother=1501303 if idhh==15013 & idperson==1501305
-replace idmotherbio=1501303 if idhh==15013 & idperson==1501305
-
-replace idpartner=0 if idhh==3668 & idperson==366804     
-
-replace idfather=0 if idhh==11714 & idperson==1171403 
-replace idfatherbio=0 if idhh==11714 & idperson==1171403 
-      
-replace idpartner=0 if idhh==11714 & idperson==1171402
-replace idpartner=1171404 if idhh==11714 & idperson==1171401
-replace idpartner=1171401 if idhh==11714 & idperson==1171404
-replace idfather=1171401 if idhh==11714 & idperson==1171406 
-replace idfatherbio=1171401 if idhh==11714 & idperson==1171406 
-
-replace idfather=1318201 if idhh==13182 & idperson==1318205
-replace idfatherbio=1318201 if idhh==13182 & idperson==1318205
-replace idmother=1318202 if idhh==13182 & idperson==1318204
-replace idmotherbio=1318202 if idhh==13182 & idperson==1318204
-
-replace idfather=1602301 if  idhh==16023 & idperson==1602304
-replace idfatherbio=1602301 if  idhh==16023 & idperson==1602304
-
-replace idmother=0 if idhh== 3390 & idperson== 339002 
-replace idmotherbio=0 if idhh== 3390 & idperson== 339002
-replace idmother=339002  if idhh== 3390 & idperson== 339001 
-replace idmotherbio=339002  if idhh== 3390 & idperson== 339001
- 
-replace idmother=1382302 if idhh==13823 & idperson==1382305
-replace idmotherbio=1382302 if idhh==13823 & idperson==1382305
-replace idmother=1382302 if idhh==13823 & idperson==1382306
-replace idmotherbio=1382302 if idhh==13823 & idperson==1382306
-
-replace idmother=0 if idhh==14204 & idperson==1420405
-replace idmotherbio=0 if idhh==14204 & idperson==1420405
-
-replace idmother=0 if idhh==15765 & idperson==1576503
-replace idmotherbio=0 if idhh==15765 & idperson==1576503
-replace idfather=0 if idhh==15765 & idperson==1576503
-replace idfatherbio=0 if idhh==15765 & idperson==1576503
- 
-replace idmother=905602 if idhh==9056 & idperson==905604
-replace idmotherbio=905602 if idhh==9056 & idperson==905604
-
-replace idmother=729402 if idhh==7294 & idperson==729405
-replace idmotherbio=729402 if idhh==7294 & idperson==729405
-     
-replace idmotherbio=0 if idhh==5978 & idperson==597802 
-replace idmotherbio=0 if idhh==5978 & idperson==597803
-
- 
 
 	keep idhh idperson sex age2 marital ms idpartner idfather idmother idfatherbio idmotherbio sernum benunit person /*
 */	empstati chealth1 chcond adult idorighh idorigbenunit idorigperson hrpid educft typeed typeed2 educleft educt97 intdate gvtregno gross4 /*
@@ -522,8 +462,8 @@ gen dhr=hrpid==1
 ***********************************
 *  dwt - HH cross-sectional weight
 ***********************************
-	rename gross4 dwt
-	
+rename gross4 dwt
+
 *********************************
 *  drgn1 - Region at NUTS1 level
 
@@ -549,8 +489,8 @@ gen dhr=hrpid==1
 
 * intdate - Date on which interview started
 ***************************
-	local yr1 "2023" // TO DO!
-	local yr2 "2024" // TO DO!
+	local yr1 "2024" // TO DO!
+	local yr2 "2025" // TO DO!
 	gen double ddt=`yr1'0315
 	replace ddt=`yr1'0415 if intdate>date("31-3-`yr1'", "DMY") 
 	replace ddt=`yr1'0515 if intdate>date("30-4-`yr1'", "DMY") 
@@ -704,8 +644,8 @@ count if deh!=(dec-2) & dec>0 & deh>0
 	replace educleft2=min(dag,20) if deh==4
 	replace educleft2=min(dag,22) if deh==5
 	*assert educleft2>0 & educleft2!=. if dew!=-1
-	gen yearnow=2023 // TO DO!
-	replace yearnow=2024 if intdate>date("31-12-2023", "DMY") // TO DO!	
+	gen yearnow=2024 // TO DO!
+	replace yearnow=2025 if intdate>date("31-12-2024", "DMY") // TO DO!	
 	gen cohort=(yearnow-dag) 
     replace dew = cohort + educleft2 if dew!=-1
 	
@@ -751,25 +691,31 @@ gen dpd = ${frsyr}
 *	3	Asian/ Asian British
 *	4	Black/ African/ Caribbean/ Black British
 *	5	Other ethnic group
+*   6   Not declared 
 **********************************************************
-gen dot = -1 // n/a
-replace dot = etngrp if etngrp !=.
-tab dot
-replace dot = 1 if ethgr3==1 & etngrp<=-1
-replace dot = 8 if ethgr3==2 & etngrp<=-1
-replace dot = 13 if ethgr3==3 & etngrp<=-1
-replace dot = 16 if ethgr3==4 & etngrp<=-1
-replace dot = 18 if ethgr3==5 & etngrp<=-1
-replace dot = -1 if etngrp <=-1 & ethgr3==. | ethgr3==6
 
+gen dot = -1   // default: n/a
+
+* Use detailed ethnicity where available
+replace dot = etngrp if !missing(etngrp)
 tab dot
-inspect dot
-fre dot etngrp ethgr3 
-fre dot etngrp ethgr3 if dag>16
-/*
-tab2  dot ethgr3 if dag>16, m
-tab2  dot ethgr3 , m
-*/
+
+* Impute missing detailed ethnicity from broad groups
+tab ethgr3 if missing(etngrp), m
+replace dot = 1  if dot==-1 & ethgr3==1
+replace dot = 8  if dot==-1 & ethgr3==2
+replace dot = 13 if dot==-1 & ethgr3==3
+replace dot = 16 if dot==-1 & ethgr3==4
+replace dot = 18 if dot==-1 & ethgr3==5
+tab dot
+
+* Leave as n/a if ethnicity not declared or unavailable
+replace dot = -1 if dot==-1 & (missing(ethgr3) | ethgr3==6)
+
+* Check results
+tab dot, m
+tab dot ethgr3, m
+* end 
 
 keep sernum person  idhh idorigperson idorighh idpartner idperson idfather idmother idfatherbio idmotherbio ///
  idorigbenunit dag dct dcz ddi ddi03 ddt* dec dec02 deh dew dey dgn dms drgn1 dwt dhr ///

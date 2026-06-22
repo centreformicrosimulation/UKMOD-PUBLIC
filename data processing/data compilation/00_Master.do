@@ -8,7 +8,7 @@
 * FRS VERSION:         	Family Resources Survey 2023-2024
 * NATIONAL MODELLERS:   Justin Van de Ven, Daria Popova 
 * AUTHORS: 				Francesca Zantomio, Francesco Figari, Paola De Agostini, Iva Tasseva, Daria Popova  
-* LAST UPDATE:          27/11/2025
+* LAST UPDATE:          11/06/2026
 ***********************************************************************************************************
 
 ************************************************************************
@@ -43,7 +43,7 @@ set maxvar 30000
 * (will be used in the name of output files)
 ************************************************************************
 local FRSv "_1st"
-global frsyr "2023"
+global frsyr "2024"
 
 ************************************************************************
 * Define UKMOD database source and database version, i.e. x in CC_year_x# (eg. uk_2006_a1)
@@ -63,30 +63,30 @@ sysdir set PLUS "C:\ado\plus\" // where ado files are stored
 global path_proj "D:\Dasha\ESSEX\UKMOD\input-dataset"
 
 * folder where original FRS data are stored 
-global origydata "D:\Dasha\UK-original-data\FRS\UKDA-9367-stata-2023-24\stata\stata13"	
+global origydata "D:\Dasha\UK-original-data\FRS\UKDA-9563-stata-2024-25\stata\stata13"	
 
-global data "${path_proj}\Data\FRS-2023-24\" // store FRS and UKMOD input micro-data
+global data "${path_proj}\Data\FRS-2024-25\" // store FRS and UKMOD input micro-data
 
 * folder where do-files are stored
-global do "${path_proj}\Do\FRS-2023-24"  
+global do "${path_proj}\Do\FRS-2024-25"  
    
 * folder where log-files *will be* stored  
-global log "${path_proj}\Log\FRS-2023-24"
+global log "${path_proj}\Log\FRS-2024-25"
 
 * folder where graphs *will be* stored 
 global graphs "${data}\graphs"	
 
 *** set globals for HBAI 
-global orig_hbai "D:\Dasha\UK-original-data\HBAI\UKDA-5828-stata\main" 
+global orig_hbai "D:\Dasha\UK-original-data\HBAI\UKDA-5828-stata\stata\stata13_se\24-25prices" 
 
 global hbai "${path_proj}\Data\HBAI\" // store HBAI data on housing costs
 
 *** Set globals for consumption data 
-global orig_lcf "D:\Dasha\UK-original-data\LCF\UKDA-9468-stata\stata\stata13_se"
+global orig_lcf "D:\Dasha\UK-original-data\LCF\UKDA-9468-stata_2023_24\stata\stata13_se"
 
 global dir_do_consumption "${do}\consumption"
 
-global UKMOD_a_dataset "$data\UK_2023_a2.txt"
+global UKMOD_a_dataset "$data\UK_2024_a1.txt"
 
 global LCF_hh_dataset "$orig_lcf\dvhh_ukanon_v2_2023.dta"
 
@@ -131,7 +131,7 @@ cd $data
 //////////////////////////////////
 if ${data_source_a}==1 {   
 global data_source "a" // [TO DO]!
-global data_ver "2"	// [TO DO]!
+global data_ver "1"	// [TO DO]!
 
 do ${do}/01_AdjustFRS.do // previously adj_FRS.do			
 do ${do}/02_GetIndividualData.do 
@@ -140,22 +140,20 @@ if ${use_checkIDs} == 1 {
 	do ${do}/04_CheckIDs.do   // checks on id variables
 	do ${do}/03_PersonalInformation.do     // re-run 03_PersonalInformation.do 
 }
+
 do ${do}/05_BenefitParemeters.do // TO DO! update benefit amounts
-do ${do}/06_LabourMarketInformation.do			
-do ${do}/07_Income.do					
-do ${do}/08_Expenditures.do			
+do ${do}/06_LabourMarketInformation.do
+do ${do}/07_Income.do	
+do ${do}/08_Expenditures.do		
 do ${do}/09_Assets.do		// note: aca and aco not available anymore from uk_2017_*
 do ${do}/10_Earnings_Hours.do	
-do ${do}/11_Pensions.do					
+do ${do}/11_Pensions.do		
 do ${do}/12_InvestmentIncome.do	
 
 do ${do}/13a_GetHBAIData.do //keep this commented out after the dataset is produced because they refer to a specific release of HBAI as the uprating reference year changes from year to year  	
 do ${do}/13b_HBAIVars.do 
-
 do ${do}/14_Assemble.do	
-
 *do ${do}/15_LCFconsumption.do 
-
 do ${do}/16_CheckDraftData.do	
 
 /* reforms to be taken into account from 2008 onwards */
@@ -165,6 +163,7 @@ do ${do}/16_CheckDraftData.do
 do ${do}/17_UKDatabase.do
 do ${do}/18_DRD.do
 /**/
+
 } //end 
 
 
@@ -174,7 +173,7 @@ do ${do}/18_DRD.do
 
 if ${data_source_d}==1 {   
 global data_source "d" // [TO DO]!
-global data_ver "2"	// [TO DO]!
+global data_ver "1"	// [TO DO]!
 
 do ${do}/01_AdjustFRS.do // previously adj_FRS.do			
 do ${do}/02_GetIndividualData.do 

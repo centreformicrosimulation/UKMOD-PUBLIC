@@ -10,7 +10,7 @@
 * NEW VARs:
 *                       - boact00             Pension - first pension
 *                       - boactcm	          Pension - second pension
-* LAST UPDATE:          09/06/2025
+* LAST UPDATE:           11/06/2026
 *******************************************************************************************************
 cap log close 
 log using "${log}/11_Pensions.log", replace
@@ -62,10 +62,26 @@ use sernum benunit depchldb using $data/benunit, clear
 	ge retpen2=.
 	ge basic=.
 	ge serps=.
-	
+
 	//people below state pension age receiving pension???
-	if ${use_assert} assert retpen==0 if sex==1 & age<${SPAm} 
+    /*	
+    if ${use_assert} assert retpen==0 if sex==1 & age<${SPAm} 
 	if ${use_assert} assert retpen==0 if sex==2 & age<${SPAw} 
+	*/
+	
+count if retpen>0 & sex==1 & age2<${SPAm}
+if r(N)>0 {
+    di as error "WARNING: Men below State Pension Age are receiving Retirement Pension."
+    tab age2 if retpen>0 & sex==1 & age2<${SPAm}
+    list sernum person age2 retpen if retpen>0 & sex==1 & age2<${SPAm}, noobs
+}
+
+count if retpen>0 & sex==2 & age2<${SPAw}
+if r(N)>0 {
+    di as error "WARNING: Women below State Pension Age are receiving Retirement Pension."
+    tab age2 if retpen>0 & sex==2 & age2<${SPAw}
+    list sernum person age2 retpen if retpen>0 & sex==2 & age2<${SPAw}, noobs
+}
 		
 	//eligible for old state pension 
 	count if sex==1 & age2>=${NSPm} & retpen>0 

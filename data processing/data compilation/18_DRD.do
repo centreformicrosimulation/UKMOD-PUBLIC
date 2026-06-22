@@ -4,7 +4,7 @@
 * DESCRIPTION:          Produce statistics for the DRD
 * INPUT FILES:          UKMOD input database (i.e. cc_yyyy_x#.dta) 
 * OUTPUT FILES:         n/a
-* LAST UPDATE:          09/06/2025
+* LAST UPDATE:          15/06/2026
 ***************************************************************************************
 capture log close
 log using "${log}/DRD_UK_${frsyr}_${data_source}${data_ver}.log", replace     
