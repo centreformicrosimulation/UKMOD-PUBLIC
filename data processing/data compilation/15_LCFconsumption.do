@@ -126,6 +126,101 @@ graph combine graph_01_UKMOD graph_02_UKMOD graph_03_UKMOD graph_04_UKMOD graph_
 graph export "$graphs\graph_c_cat_EQincome_UKMOD.png", as(png) replace
 
 
+/////////////////////////////////////////////
+// Consumption relative to income          //
+// By equivalised disposable income deciles //
+/////////////////////////////////////////////
+
+local cat "00 01 02 03 04 05 06 07 08 09 10 11 12"
+
+local titles `" "total consumption, UKMOD" "food" "alcohol" "clothing" "housing" "bills" "health" "transport" "comms" "recreation" "education" "resthotels" "miscell" "'
+
+local i = 1
+
+foreach cat in `cat' {
+
+    cap drop cshare`cat'
+    gen cshare`cat' = 100 * xtotal`cat' / income_net_ukmod ///
+        if income_net_ukmod > 0
+
+    local title_word : word `i' of `titles'
+
+    graph bar cshare`cat', ///
+        over(inc_eq_pct_ukmod, label(labsize(vsmall)) gap(10)) ///
+        ytitle("% of income", size(small)) ///
+        ylabel(, labsize(vsmall)) ///
+        title("`title_word'") ///
+        subtitle("equivalised income deciles", size(small) pos(6)) ///
+        name(cshare_`cat'_UKMOD, replace)
+
+    if "`cat'" == "00" {
+        graph export "$graphs\graph_cshare_EQincome_UKMOD.png", ///
+            as(png) replace
+    }
+
+    local ++i
+}
+
+graph combine ///
+    cshare_01_UKMOD cshare_02_UKMOD cshare_03_UKMOD ///
+    cshare_04_UKMOD cshare_05_UKMOD cshare_06_UKMOD ///
+    cshare_07_UKMOD cshare_08_UKMOD cshare_09_UKMOD ///
+    cshare_10_UKMOD cshare_11_UKMOD cshare_12_UKMOD, ///
+    cols(3)
+
+graph export "$graphs\graph_cshare_cat_EQincome_UKMOD.png", ///
+    as(png) replace
+	
+	
+	
+/////////////////////////////////////////////
+// Consumption relative to income          //
+// By equivalised disposable income deciles //
+// Excluding bottom income decile          //
+/////////////////////////////////////////////
+
+local cat "00 01 02 03 04 05 06 07 08 09 10 11 12"
+
+local titles `" "total consumption, UKMOD" "food" "alcohol" "clothing" "housing" "bills" "health" "transport" "comms" "recreation" "education" "resthotels" "miscell" "'
+
+local i = 1
+
+foreach cat in `cat' {
+
+    cap drop cshare`cat'
+    gen cshare`cat' = 100 * xtotal`cat' / income_net_ukmod ///
+        if income_net_ukmod > 0
+
+    local title_word : word `i' of `titles'
+
+    graph bar cshare`cat' if inc_eq_pct_ukmod > 1, ///
+        over(inc_eq_pct_ukmod, label(labsize(vsmall)) gap(10)) ///
+        ytitle("% of income", size(small)) ///
+        ylabel(, labsize(vsmall)) ///
+        title("`title_word'") ///
+        subtitle("equivalised income deciles, excluding bottom decile", ///
+        size(small) pos(6)) ///
+        name(cshare_`cat'_UKMOD, replace)
+
+    if "`cat'" == "00" {
+        graph export "$graphs\graph_cshare_EQincome_UKMOD_excl1.png", ///
+            as(png) replace
+    }
+
+    local ++i
+}
+
+graph combine ///
+    cshare_01_UKMOD cshare_02_UKMOD cshare_03_UKMOD ///
+    cshare_04_UKMOD cshare_05_UKMOD cshare_06_UKMOD ///
+    cshare_07_UKMOD cshare_08_UKMOD cshare_09_UKMOD ///
+    cshare_10_UKMOD cshare_11_UKMOD cshare_12_UKMOD, ///
+    cols(3)
+
+graph export "$graphs\graph_cshare_cat_EQincome_UKMOD_excl1.png", ///
+    as(png) replace	
+	
+	
 ///////////////////////////////////////////////		
 //output to Excel file with summary stats   ///
 ///////////////////////////////////////////////
@@ -287,3 +382,4 @@ save assembled, replace
 //end of imputation
 cap log close
 
+graph drop _all

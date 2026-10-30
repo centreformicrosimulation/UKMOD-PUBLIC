@@ -1,7 +1,7 @@
 ***************************************************
 *** LCF-FRS imputation of consumption data
 *** 10. Data preparation
-* LAST UPDATE:          15 June 2026 DP 
+* LAST UPDATE:         8 Oct 2026 DP 
 ***************************************************
 
 ***********
@@ -14,7 +14,7 @@
 *--------------------
 	use ${LCF_ind_dataset}, clear
 	//keep case Person a005p a012p A003 A007 A010 A015 A206 B325 B403 B405 B418 P016 P035 P049p 
-    keep case person a005p /*a012p*/ a003 a007 a010 a015 a206 b325 b403 b405 b418 p016 p035 /*p049p*/
+    keep case person a005p /*a012p*/ a003 a007 a010 a015 a206 b325 b403 b405 b418 p016 p035 p049p //==> a012p ethnicity is removed 
 * Household Reference Person
 	gen d_hrp_lcf = (a003 == 1)
 
@@ -61,6 +61,7 @@
 
 * Ethnicity
     gen ethnicity_hrp_lcf=0 
+
 	*recode a012p (10 = 5), gen(ethnicity_hrp_lcf)
 	/*
 					 White |      5,178       91.94       91.94
@@ -72,7 +73,7 @@
 
 * Activity status (18+)
 	gen d_employed_lcf = (a206 >=1 & a206 <= 3)
-	gen d_retired_lcf = (p035 == 1 /*| P049p > 0*/) & d_employed_lcf == 0
+	gen d_retired_lcf = (p035 == 1 | p049p > 0) & d_employed_lcf == 0
 	gen d_unemployed_lcf = (a206 == 4) & d_retired_lcf == 0
 	gen d_student_lcf = (a015 == 3) & d_employed_lcf == 0 & d_retired_lcf == 0
 
@@ -168,8 +169,24 @@ save "$data\lcf_pers_collapsed.dta", replace
 	8 -                     Rent free |         42        0.75      100.00
 	*/
 
+foreach n of numlist 600/620 {
+    capture confirm variable p`n'
+    if !_rc local adult "p`n'"
+    else local adult "MISSING"
 
-* COICOP expenditures (weekly, GBP)
+    capture confirm variable p`n'c
+    if !_rc local child "p`n'c"
+    else local child "MISSING"
+
+    capture confirm variable p`n't
+    if !_rc local total "p`n't"
+    else local total "MISSING"
+
+    di "`n'   adult: `adult'   child: `child'   total: `total'"
+}
+
+/* totals are not available in this release */
+/* COICOP expenditures (weekly, GBP)
 	rename p601t c_food			// total food and non-alcoholic beverages
 	rename p602t c_alcohol 		// alcoholic beverages, tobacco, and narcotics
 	rename p603t c_clothing		// clothing and footwear
@@ -184,8 +201,27 @@ save "$data\lcf_pers_collapsed.dta", replace
 	rename p612t c_miscell		// riscelaneous goods and sevices
 	rename p620tp c_noncons 	// non-consumption expenditure
 	rename p600t c_totorig		// COICOP: Total consumption expenditure
+*/
 	
+* COICOP expenditures (weekly, GBP)
+egen c_food      = rowtotal(p601 p601c)      // food and non-alcoholic beverages
+egen c_alcohol   = rowtotal(p602 p602c)      // alcoholic beverages, tobacco, and narcotics
+egen c_clothing  = rowtotal(p603 p603c)      // clothing and footwear
+egen c_housing   = rowtotal(p604 p604c)      // housing, water, electricity, gas and other fuels
+egen c_bills     = rowtotal(p605 p605c)      // furnishing, HH equipment and routine maintenance
+egen c_health    = rowtotal(p606 p606c)      // health
+egen c_transport = rowtotal(p607 p607c)      // transport
+egen c_comms     = rowtotal(p608 p608c)      // communication
+egen c_recreation= rowtotal(p609 p609c)      // recreation and culture
+egen c_education = rowtotal(p610 p610c)      // education
+egen c_resthotels= rowtotal(p611 p611c)      // restaurants and hotels
+egen c_miscell   = rowtotal(p612 p612c)      // miscellaneous goods and services	
+rename p620t c_noncons 	// non-consumption expenditure
+rename p600t c_totorig		// COICOP: Total consumption expenditure	
+
+
 	foreach var in eqincdop c_food c_alcohol c_clothing c_housing c_bills c_health c_transport c_comms c_recreation c_education c_resthotels c_miscell c_noncons c_totorig {
+	sum `var'
 	replace `var' = `var' * $CPI
 	} 
 	

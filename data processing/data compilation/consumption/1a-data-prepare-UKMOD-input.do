@@ -1,7 +1,7 @@
 ***************************************************
 *** LCF-FRS imputation of consumption data
 *** 10. Data preparation - FRS
-* LAST UPDATE:          15 June 2026 DP 
+* LAST UPDATE:          8 Oct 2026 DP 
 ***************************************************
 
 
@@ -94,5 +94,5 @@ import delimited ${UKMOD_a_dataset}, clear
 	label values tenure_ukmod lab_tenure
 
 * Save final dataset
-	keep if d_hrp_ukmod
+	keep if d_hrp_ukmod //keep reference persons only
 	save "$data\ukmod.dta", replace

@@ -1,7 +1,7 @@
 ***************************************************
 *** LCF-FRS imputation of consumption data
 *** 4. Aggregate 5-digit COICOP categories into 4-digit COICOP categories to Be used By the TCO add-on. 
-* LAST UPDATE:          15 June 2026 DP 
+* LAST UPDATE:          8 Oct 2026 DP 
 ***************************************************
 
 clear all
@@ -38,13 +38,13 @@ Certain variaBle names are suffixed with a letter and their definition is as fol
 ‘L’	expenditure in a large supermarket
 ‘p’ 	anonymised (proxy) variaBles
 ‘t’ 	total child and adult expenditure
-‘u’	unanonymised variaBles
+‘u’	unanonymised variables
 ‘w’	internet expenditure
 ‘x’	clothing/footwear expenditure in a selected clothing chain
 ‘y’	clothing/footwear expenditure in a large supermarket
 ‘z’	clothing/footwear expenditure in a charity shop
 Please note that adult expenditure has no suffix.	
-Therefore we need to keep all C variaBles ending with "t" 
+Therefore we need to keep all C variables ending with "t" 
 */
  
 * Create lists of consumption variables at 5 digit level from the diary by category 
@@ -179,7 +179,6 @@ c45312t
 c45411t
 c45412t
 c45511t
-c31111t
 	;
 #delimit cr // cr stands for carriage return
 
@@ -683,7 +682,7 @@ b280 ///
 b281 ///
 b282 ///
 b283 )
-
+drop if _merge!=3 
 drop _merge
 //rename vars that will be kept in the input data 
 rename id_lcf x_idhh //EXPENDITURE : LCF Household ID
@@ -703,7 +702,6 @@ rename c_resthotels xtotal11	//EXPENDITURE :COICOP: resturant and hotels
 rename c_miscell xtotal12	//EXPENDITURE :COICOP: miscelaneous goods and sevices
 rename c_noncons xtotal20	//EXPENDITURE :COICOP: non-consumption expenditure
 rename c_totorig xtotal00	//EXPENDITURE :COICOP: Total consumption expenditure - children and adults
-
 
 
 ****************************************************************************************

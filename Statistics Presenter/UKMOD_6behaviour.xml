@@ -13,7 +13,7 @@
     </Description>
     <GeneralDescription>
       <![CDATA[
-        <p style='line-height:1.5'><b><span style='color:#0070C0'>Template version: 2024.01 </span></b></p>
+        <p style='line-height:1.5'><b><span style='color:#0070C0'>Template version: 2026.01 </span></b></p>
         <p style='line-height:1.5'><b><span style='color:#0070C0'>Behavioural responses: </span></b></p>
         <p style='line-height:1.5'>Responses are projected for the reform scenario, relative to the base scenario. These responses are projected using the BVR add-on supplied with UKMOD.</p>
         <p style='line-height:1.5'>Reference is made throughout this template to <u>Reform (static)</u> projections under the reform policy scenario that omit behavioural responses and <u>Reform (behavioural)</u> projections that include behavioural responses to the reform policy scenario. Reference is also made to <u>static effects</u> that report the difference between the base and static reform projections, <u>behavioural effects</u> that report the difference between the static and behavioural reform projections, and <u>total effects</u> that report the difference between the base and behavioural reform projections. Hence, total effect = static effect + behavioural effect.</p>
@@ -62,9 +62,9 @@
         <p style='line-height:1.5;margin-left:36.0pt;'>         Devolved taxes in Wales: tin11_s</p>
         <p style='line-height:1.5;margin-left:36.0pt;'>         Non-devolved taxes: tin00_s = tax_nsnd_s + tax_sav_s + tax_div_s + tax_prop_s</p>
         <p style='line-height:1.5;margin-left:48.0pt;'>            Non-devolved non-saving non-dividend taxes: tax_nsnd_s</p>
+        <p style='line-height:1.5;margin-left:48.0pt;'>            Non-devolved property income taxes: tax_prop_s</p>
         <p style='line-height:1.5;margin-left:48.0pt;'>            Non-devolved saving income taxes: tax_sav_s</p>
         <p style='line-height:1.5;margin-left:48.0pt;'>            Non-devolved dividend income taxes: tax_div_s</p>
-        <p style='line-height:1.5;margin-left:48.0pt;'>            Non-devolved property income taxes: tax_prop_s</p>
         <p style='line-height:1.5;margin-left:24.0pt;'>      Council tax: i_bmu_tmu</p>
         <p style='line-height:1.5;margin-left:12.0pt;'>   All national insurance contributions: ils_sicdy + ils_sicer</p>
         <p style='line-height:1.5;margin-left:24.0pt;'>      National insurance contributions (personal): ils_sicdy = ils_sicee + ils_sicse + ils_sicot</p>
@@ -2186,6 +2186,27 @@
             </Row>
             <Row>
               <BackgroundColour>#D9D9D9</BackgroundColour>
+              <Name>............ property income taxes</Name>
+              <CellAction>
+                <Parameters>
+                  <Parameter>
+                    <Name>BasePar</Name>
+                    <VarName>tax_prop_s</VarName>
+                    <Reform>false</Reform>
+                  </Parameter>
+                  <Parameter>
+                    <Name>RefParS</Name>
+                    <VarName>tax_prop_sPrim</VarName>
+                  </Parameter>
+                  <Parameter>
+                    <Name>RefParD</Name>
+                    <VarName>tax_prop_s</VarName>
+                  </Parameter>
+                </Parameters>
+              </CellAction>
+            </Row>
+            <Row>
+              <BackgroundColour>#D9D9D9</BackgroundColour>
               <Name>............ saving income taxes</Name>
               <CellAction>
                 <Parameters>
@@ -2222,27 +2243,6 @@
                   <Parameter>
                     <Name>RefParD</Name>
                     <VarName>tax_div_s</VarName>
-                  </Parameter>
-                </Parameters>
-              </CellAction>
-            </Row>
-            <Row>
-              <BackgroundColour>#D9D9D9</BackgroundColour>
-              <Name>............ property income taxes</Name>
-              <CellAction>
-                <Parameters>
-                  <Parameter>
-                    <Name>BasePar</Name>
-                    <VarName>tax_prop_s</VarName>
-                    <Reform>false</Reform>
-                  </Parameter>
-                  <Parameter>
-                    <Name>RefParS</Name>
-                    <VarName>tax_prop_sPrim</VarName>
-                  </Parameter>
-                  <Parameter>
-                    <Name>RefParD</Name>
-                    <VarName>tax_prop_s</VarName>
                   </Parameter>
                 </Parameters>
               </CellAction>

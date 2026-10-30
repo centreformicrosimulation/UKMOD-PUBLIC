@@ -13,7 +13,7 @@
     </Description>
     <GeneralDescription>
       <![CDATA[
-        <p style='line-height:1.5'><b><span style='color:#0070C0'>Template version: 2024.02 </span></b></p>
+        <p style='line-height:1.5'><b><span style='color:#0070C0'>Template version: 2026.01 </span></b></p>
         <p style='line-height:1.5'><b><span style='color:#0070C0'>Note:</span></b> The current template is based on the default template, where the definition of disposable income has been altered to deduct both <b>direct and indirect taxes</b></p>
         <p style='line-height:1.5'><b><span style='color:#0070C0'>Income concepts: </span></b></p>
         <p style='line-height:1.5'><u>Market/Original incomes</u> are the sum of income from employment and self-employment plus income from other sources. Other sources of market income include income from investment, property, private pensions, private transfers, and income of children younger than 16, minus private transfers paid to other households.</p>
@@ -63,9 +63,9 @@
         <p style='line-height:1.5;margin-left:36.0pt;'>         Devolved taxes in Wales: tin11_s</p>
         <p style='line-height:1.5;margin-left:36.0pt;'>         Non-devolved taxes: tin00_s = tax_nsnd_s + tax_sav_s + tax_div_s + tax_prop_s</p>
         <p style='line-height:1.5;margin-left:48.0pt;'>            Non-devolved non-saving non-dividend taxes: tax_nsnd_s</p>
+        <p style='line-height:1.5;margin-left:48.0pt;'>            Non-devolved property income taxes: tax_prop_s</p>
         <p style='line-height:1.5;margin-left:48.0pt;'>            Non-devolved saving income taxes: tax_sav_s</p>
         <p style='line-height:1.5;margin-left:48.0pt;'>            Non-devolved dividend income taxes: tax_div_s</p>
-        <p style='line-height:1.5;margin-left:48.0pt;'>            Non-devolved property income taxes: tax_prop_s</p>
         <p style='line-height:1.5;margin-left:24.0pt;'>      Council tax: i_bmu_tmu</p>
         <p style='line-height:1.5;margin-left:12.0pt;'>   All national insurance contributions: ils_sicdy + ils_sicer</p>
         <p style='line-height:1.5;margin-left:24.0pt;'>      National insurance contributions (personal): ils_sicdy = ils_sicee + ils_sicse + ils_sicot</p>
@@ -3301,6 +3301,19 @@
             </Row>
             <Row>
               <BackgroundColour>#D9D9D9</BackgroundColour>
+              <Name>............ property income taxes</Name>
+              <CellAction>
+                <Parameters>
+                  <Parameter>
+                    <Name>BasePar</Name>
+                    <VarName>tax_prop_s</VarName>
+                    <Reform>false</Reform>
+                  </Parameter>
+                </Parameters>
+              </CellAction>
+            </Row>
+            <Row>
+              <BackgroundColour>#D9D9D9</BackgroundColour>
               <Name>............ saving income taxes</Name>
               <CellAction>
                 <Parameters>
@@ -3320,19 +3333,6 @@
                   <Parameter>
                     <Name>BasePar</Name>
                     <VarName>tax_div_s</VarName>
-                    <Reform>false</Reform>
-                  </Parameter>
-                </Parameters>
-              </CellAction>
-            </Row>
-            <Row>
-              <BackgroundColour>#D9D9D9</BackgroundColour>
-              <Name>............ property income taxes</Name>
-              <CellAction>
-                <Parameters>
-                  <Parameter>
-                    <Name>BasePar</Name>
-                    <VarName>tax_prop_s</VarName>
                     <Reform>false</Reform>
                   </Parameter>
                 </Parameters>

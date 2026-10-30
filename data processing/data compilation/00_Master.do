@@ -5,10 +5,10 @@
 *                       call sub-scripts
 ************************************************************************
 * COUNTRY:              UK
-* FRS VERSION:         	Family Resources Survey 2023-2024
+* FRS VERSION:         	Family Resources Survey 2024-2025
 * NATIONAL MODELLERS:   Justin Van de Ven, Daria Popova 
 * AUTHORS: 				Francesca Zantomio, Francesco Figari, Paola De Agostini, Iva Tasseva, Daria Popova  
-* LAST UPDATE:          11/06/2026
+* LAST UPDATE:          8/10/2026
 ***********************************************************************************************************
 
 ************************************************************************
@@ -82,18 +82,17 @@ global orig_hbai "D:\Dasha\UK-original-data\HBAI\UKDA-5828-stata\stata\stata13_s
 global hbai "${path_proj}\Data\HBAI\" // store HBAI data on housing costs
 
 *** Set globals for consumption data 
-global orig_lcf "D:\Dasha\UK-original-data\LCF\UKDA-9468-stata_2023_24\stata\stata13_se"
+global orig_lcf "D:\Dasha\UK-original-data\LCF\UKDA-9603-stata_2024_25\UKDA-9603-stata\stata\stata13_se"
 
 global dir_do_consumption "${do}\consumption"
 
 global UKMOD_a_dataset "$data\UK_2024_a1.txt"
 
-global LCF_hh_dataset "$orig_lcf\dvhh_ukanon_v2_2023.dta"
+global LCF_hh_dataset "$orig_lcf\dvhh_uk_anon_v3_2024.dta"
 
-global LCF_ind_dataset "$orig_lcf\dvper_ukanon_202324_2023.dta"
+global LCF_ind_dataset "$orig_lcf\dvper_uk_anon_2024.dta"
 
 global summary_table_consumption "${path_proj}\data\summary_table_consumption" //Excel file to store consumption data stats 
-
 
 ***************************************************************************************************
 
@@ -173,7 +172,7 @@ do ${do}/18_DRD.do
 
 if ${data_source_d}==1 {   
 global data_source "d" // [TO DO]!
-global data_ver "1"	// [TO DO]!
+global data_ver "2"	// [TO DO]!
 
 do ${do}/01_AdjustFRS.do // previously adj_FRS.do			
 do ${do}/02_GetIndividualData.do 

@@ -1,0 +1,1 @@
+The UK_2024_d2 dataset contains expenditure data from the latest release of LCF (2024/25)

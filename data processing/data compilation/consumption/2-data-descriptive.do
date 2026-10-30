@@ -1,8 +1,9 @@
 ***************************************************
 *** LCF-UKMOD imputation of consumption data
 *** 20. Data descriptive. This file compares statistics from UKMOD and LCF data.
-* LAST UPDATE:          15 June 2026 DP 
+* LAST UPDATE:          8 Oct 2026 DP 
 ***************************************************
+/*Notes: Ethnicity is NA in LCF */
 
 version 14
 
@@ -11,7 +12,7 @@ version 14
 	append using "$data\lcf.dta"
 	save "$data\ukmod-lcf-compare.dta", replace
 
-	//pause on
+	pause on
 
 * Age oh HRP
 	twoway (histogram age_hrp_ukmod, fraction lcolor(gs12) fcolor(gs12)) ///
@@ -19,7 +20,7 @@ version 14
        legend(label(1 "UKMOD") label(2 "LCF")) ///
        title("Age of HRP") ytitle("Frequency")
 	   
-	  // pause Press 'q+ENTER' to continue
+	//pause Press 'q+ENTER' to continue
 	   
    
 * Education of HRP
@@ -28,7 +29,7 @@ version 14
        legend(label(1 "UKMOD") label(2 "LCF")) ///
        title("Education of HRP") ytitle("Frequency")
 	   
-	 // pause Press 'q+ENTER' to continue
+	//pause Press 'q+ENTER' to continue
 	   
 * Gender of HRP    
 	twoway (histogram d_male_hrp_ukmod, fraction lcolor(gs12) fcolor(gs12)) ///
@@ -36,15 +37,15 @@ version 14
        legend(label(1 "UKMOD") label(2 "LCF")) ///
        title("Gender of HRP") ytitle("Frequency")	  
 	   
-	  // pause Press 'q+ENTER' to continue
+	//pause Press 'q+ENTER' to continue
 
-* Ethnicity of HRP
+* Ethnicity of HRP ==> missing in this version 
 	twoway (histogram ethnicity_hrp_ukmod, fraction lcolor(gs12) fcolor(gs12)) ///
        (histogram ethnicity_hrp_lcf, xlabel(1 "White" 2 "Mixed" 3 "Asian" 4 "Black" 5 "Other") fraction fcolor(none) lcolor(red)), ///
        legend(label(1 "UKMOD") label(2 "LCF")) ///
        title("Ethnicity of HRP") ytitle("Frequency")
 	   
-	 // pause Press 'q+ENTER' to continue
+	//pause Press 'q+ENTER' to continue
 	 
 * Household size
 	twoway (histogram hh_size_ukmod, fraction lcolor(gs12) fcolor(gs12)) ///
@@ -52,29 +53,29 @@ version 14
        legend(label(1 "UKMOD") label(2 "LCF")) ///
        title("HH size") ytitle("Frequency")
 	   
-	 // pause Press 'q+ENTER' to continue
+	//pause Press 'q+ENTER' to continue
 	   
 * Number of children 
 	twoway (histogram n_ch_01_ukmod, fraction lcolor(gs12) fcolor(gs12)) ///
        (histogram n_ch_01_lcf, fraction fcolor(none) lcolor(red)), ///
        legend(label(1 "UKMOD") label(2 "LCF")) ///
        title("No. of children 0-1 (inclusive)") ytitle("Frequency")
-	   
-	 //pause Press 'q+ENTER' to continue
+   
+	//pause Press 'q+ENTER' to continue
 	   
 	twoway (histogram n_ch_24_ukmod, fraction lcolor(gs12) fcolor(gs12)) ///
        (histogram n_ch_24_lcf, fraction fcolor(none) lcolor(red)), ///
        legend(label(1 "UKMOD") label(2 "LCF")) ///
        title("No. of children 2-4 (inclusive)") ytitle("Frequency")
 	   
-	// pause Press 'q+ENTER' to continue
+	//pause Press 'q+ENTER' to continue
 	   
 	twoway (histogram n_ch_517_ukmod, fraction lcolor(gs12) fcolor(gs12)) ///
        (histogram n_ch_517_lcf, fraction fcolor(none) lcolor(red)), ///
        legend(label(1 "UKMOD") label(2 "LCF")) ///
        title("No. of children 5-17 (inclusive)") ytitle("Frequency")	
 	   
-	 // pause Press 'q+ENTER' to continue
+	//pause Press 'q+ENTER' to continue
 	   
 * Disability
 	twoway (histogram d_disability_ukmod, fraction lcolor(gs12) fcolor(gs12)) ///
@@ -82,7 +83,7 @@ version 14
        legend(label(1 "UKMOD") label(2 "LCF")) ///
 	   title("Presence of disabled persons in the HH") ytitle("Frequency")	
 	   
-	 // pause Press 'q+ENTER' to continue
+	//pause Press 'q+ENTER' to continue
 	   
 * Activity status
 	twoway (histogram activity_hrp_ukmod, fraction lcolor(gs12) fcolor(gs12)) ///
@@ -90,36 +91,40 @@ version 14
        legend(label(1 "UKMOD") label(2 "LCF")) ///
        title("Activity status of HRP") ytitle("Frequency")
 	   
-	 // pause Press 'q+ENTER' to continue
+	//pause Press 'q+ENTER' to continue
 
 	twoway (histogram n_employed_ukmod, fraction lcolor(gs12) fcolor(gs12)) ///
        (histogram n_employed_lcf, fraction fcolor(none) lcolor(red)), ///
        legend(label(1 "UKMOD") label(2 "LCF")) ///
        title("No. of employed persons") ytitle("Frequency")
 	   
-	 // pause Press 'q+ENTER' to continue
+	//pause Press 'q+ENTER' to continue
 	   
 	twoway (histogram n_unemployed_ukmod, fraction lcolor(gs12) fcolor(gs12)) ///
        (histogram n_unemployed_lcf, fraction fcolor(none) lcolor(red)), ///
        legend(label(1 "UKMOD") label(2 "LCF")) ///
        title("No. of unemployed persons") ytitle("Frequency")
 	   
-	 // pause Press 'q+ENTER' to continue
+	//pause Press 'q+ENTER' to continue
 	   
 	twoway (histogram n_retired_ukmod, fraction lcolor(gs12) fcolor(gs12)) ///
        (histogram n_retired_lcf, fraction fcolor(none) lcolor(red)), ///
        legend(label(1 "UKMOD") label(2 "LCF")) ///
        title("No. of retired persons") ytitle("Frequency")
 	   
-	  //pause Press 'q+ENTER' to continue
+	  ////pause Press 'q+ENTER' to continue
 	   
 	twoway (histogram n_students_ukmod, fraction lcolor(gs12) fcolor(gs12)) ///
        (histogram n_students_lcf, fraction fcolor(none) lcolor(red)), ///
        legend(label(1 "UKMOD") label(2 "LCF")) ///
        title("No. of students") ytitle("Frequency")	   
 	   
-	 // pause Press 'q+ENTER' to continue
+	//pause Press 'q+ENTER' to continue
 	   
+* Censor UKMOD income to the observed minimum and maximum values in LCF:
+* UKMOD values below the LCF minimum are set to the LCF minimum,
+* and values above the LCF maximum are set to the LCF maximum.
+* LCF income is not changed.
 
 * Gross income, raw
 sum income_gross_ukmod income_gross_lcf, det
@@ -129,7 +134,7 @@ sum income_gross_ukmod income_gross_lcf, det
        legend(label(1 "UKMOD") label(2 "LCF")) ///
        title("Gross income, raw") xtitle("GBP/month") ytitle("Frequency")
 	   
-	 // pause Press 'q+ENTER' to continue
+	 //pause Press 'q+ENTER' to continue
 
 * Gross income, censored
 	sum income_gross_lcf, det
@@ -146,7 +151,7 @@ sum income_gross_ukmod income_gross_lcf, det
        legend(label(1 "UKMOD") label(2 "LCF")) ///
        title("Gross income, censored") xtitle("GBP/month") ytitle("Frequency")
 	   
-	 // pause Press 'q+ENTER' to continue
+	  //pause Press 'q+ENTER' to continue
 	   
 * Net income, raw
 	sum income_net_ukmod income_net_lcf, det
@@ -156,7 +161,7 @@ sum income_gross_ukmod income_gross_lcf, det
        legend(label(1 "UKMOD") label(2 "LCF")) ///
        title("Net  income, raw") xtitle("GBP/month") ytitle("Frequency")
 	   
-	 // pause Press 'q+ENTER' to continue
+	 //pause Press 'q+ENTER' to continue
 
 * Net income, censored
 	sum income_net_lcf, det
@@ -173,7 +178,7 @@ sum income_gross_ukmod income_gross_lcf, det
        legend(label(1 "UKMOD") label(2 "LCF")) ///
        title("Net income, censored") xtitle("GBP/month") ytitle("Frequency")	
 	   
-	 // pause Press 'q+ENTER' to continue
+	 //pause Press 'q+ENTER' to continue
      
 * Region
 	twoway (histogram region_ukmod, fraction lcolor(gs12) fcolor(gs12)) ///
@@ -181,7 +186,7 @@ sum income_gross_ukmod income_gross_lcf, det
        legend(label(1 "UKMOD") label(2 "LCF")) ///
        title("Region") xtitle("GOR-12") ytitle("Frequency")
 	   
-	 // pause Press 'q+ENTER' to continue
+	 //pause Press 'q+ENTER' to continue
    
 * Tenure
 	twoway (histogram tenure_ukmod, xlabel(1 "Free" 2 "Rent" 3 "Mortgage" 4 "Owned outright") fraction lcolor(gs12) fcolor(gs12))  ///
@@ -189,7 +194,7 @@ sum income_gross_ukmod income_gross_lcf, det
        legend(label(1 "UKMOD") label(2 "LCF")) ///
        title("Housing tenure") ytitle("Frequency")
 	   
-	 // pause Press 'q+ENTER' to continue
+	 //pause Press 'q+ENTER' to continue
 	   
 * Consumption - levels
 	twoway (histogram c_totorig, fraction lcolor(gs12) fcolor(gs12)) ///
@@ -197,7 +202,7 @@ sum income_gross_ukmod income_gross_lcf, det
        legend(label(1 "total (P600t)") label(2 "total (sum)")) ///
        title("Consumption") xtitle("GBP/week") ytitle("Frequency")
 	   
-	 // pause Press 'q+ENTER' to continue
+	 //pause Press 'q+ENTER' to continue
 
 /* Consumption - shares of gross income
 sum w_gross*
@@ -214,7 +219,7 @@ sum w_gross*
 	graph_w_gross_transport graph_w_gross_comms graph_w_gross_recreation graph_w_gross_education graph_w_gross_resthotels graph_w_gross_miscell ///
 	graph_w_gross_noncons
 
-	pause Press 'q+ENTER' to continue
+	//pause Press 'q+ENTER' to continue
 
 	graph export "$graphs\consumption_shares_gross.png", as(png) replace
 	restore
@@ -226,9 +231,9 @@ sum w_gross*
 	preserve
 	local cat "food alcohol clothing housing bills health transport comms recreation education resthotels miscell noncons" 
 	foreach c of local cat {
-		replace w_net_`c' = 0 if w_net_`c' < 0
-		replace w_net_`c' = 1 if w_net_`c' > 1
-		twoway (histogram w_net_`c'), title("`c'") name(graph_w_net_`c', replace)
+		//replace w_net_`c' = 0 if w_net_`c' < 0
+		//replace w_net_`c' = 1 if w_net_`c' > 1
+		twoway (histogram w_net_`c') if w_net_`c'>0	& w_net_`c'<1, title("`c'") name(graph_w_net_`c', replace)
 	}
 
 	graph combine graph_w_net_food graph_w_net_alcohol graph_w_net_clothing graph_w_net_housing graph_w_net_bills graph_w_net_health ///
@@ -302,3 +307,6 @@ sum w_gross*
 		i.activity_hrp_lcf n_employed_lcf n_unemployed_lcf n_retired_lcf n_students_lcf ///
 		i.tenure_lcf income_net_lcf income2_net_lcf ///
 		i.region_lcf 
+
+graph drop _all
+		

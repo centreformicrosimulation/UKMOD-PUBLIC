@@ -1,7 +1,7 @@
 ***************************************************
 *** LCF-FRS imputation of consumption data
 *** 30. Compute Mahalanobis distance between obs. in LCF and FRS
-* LAST UPDATE:          15 June 2026 DP 
+* LAST UPDATE:         8 Oct 2026 DP 
 ***************************************************
 
 * Install the ultimatch package (if not already installed)
@@ -292,7 +292,7 @@ local round = 6
 
 	
 
-*** Round 7: Ethnicity removed from matching ***
+*** Round 7: Ethnicity removed from matching *** ==> this round is essentially the same as round 6 but we keep it in case ethnicity becomes available 
 *--------------------------------------------
 	local round = 7
 
@@ -413,7 +413,7 @@ local round = 6
 	graph bar c_tot, over(inc_net_pct_ukmod, label(labsize(small)) gap(10)) ///
 		ytitle("GBP/week") ///
 		title("Total consumption, UKMOD") ///
-		subtitle("Deciles of disposable household income", size(medium) pos(6)) ///
+		subtitle("income delices", size(medium) pos(6)) ///
 		name(graph_tot, replace) 
 			
 	graph export "$graphs\graph_c_tot_income.png", as(png) name("graph_tot") replace
@@ -422,8 +422,8 @@ local round = 6
 	foreach c of local cat {
 		graph bar c_`c', over(inc_net_pct_ukmod, label(labsize(small)) gap(10)) ///
 			ytitle("GBP/week") ///
-			title(`"Expenditure on `c', UKMOD"') ///
-			subtitle("Deciles of disposable household income", size(medium) pos(6)) ///
+			title(`"`c', UKMOD"') ///
+			subtitle("income deciles", size(medium) pos(6)) ///
 			name(graph_`c', replace)
 	}
 
@@ -433,5 +433,5 @@ local round = 6
 		
 	graph export "$graphs\graph_c_cat_income.png", as(png) replace
 	
-	
+graph drop _all
 	

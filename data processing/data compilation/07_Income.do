@@ -1451,9 +1451,9 @@ save income, replace
 ***************************************************************************************
 * ypr, yprtx and yprnt- Taxable and non taxable ("rent a room" scheme) income from rent
 
-* royyr1 - Rent before tax from other property
-* subrent - Amount of rent from subletting
-* tentyp2 - Tenure type (housing analysts full breakdown - see also PTENTYP)	
+* royyr1 //- Rent before tax from other property = the rental profit/net amount before income tax, not gross rent received
+* subrent //- Amount of rent from subletting
+* tentyp2 //- Tenure type (housing analysts full breakdown - see also PTENTYP)	
 *	1	LA / New Town / NIHE / Council rented
 *	2	Housing Association / Co-Op / Trust rented
 *	3	Other private rented unfurnished
@@ -1466,6 +1466,7 @@ save income, replace
 
 ***************************************************************************************
 use sernum hhstat tentyp2 subrent using $data/househol, clear
+
 sort sernum
 merge sernum using income
 drop _merge
@@ -1475,8 +1476,8 @@ drop _merge
 											/*attributed to person receiving the income*/
 		
 		gen ypr_in=0						/*initially attribute to each hh member*/
-		replace ypr_in= subrent*52/12 if (tentyp2==5|tentyp2==6) & subrent>0 & subrent!=.		/*rent of owners letting room*/
-		replace cvpay=0 if cvpay<0 | cvpay==.
+		replace ypr_in= subrent*52/12 if (tentyp2==5|tentyp2==6) & subrent>0 & subrent!=.		/*rent of owners letting out a room*/
+		replace cvpay=0 if cvpay<0 | cvpay==. /*amount of rent after state benefits*/ 
 		by sernum, sort: egen cvpayhh=max(cvpay)
 		replace ypr_in = ypr_in + cvpayhh*52/12  	/*from boarders/lodgers (it is net of HB)*/
 		if ${use_assert} assert ypr_in==ypr_in[_n-1] if sernum==sernum[_n-1]
